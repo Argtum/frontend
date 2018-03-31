@@ -1,0 +1,53 @@
+$white-font-color: rgb(245,245,245);
+$headline_color: rgb(51,51,51);
+$base_color: rgb(21,169,139);
+$text_color: rgb(85,85,85);
+
+@mixin top_menu_button($icon_name, $color, $hover_color, $background_color, $fonts...)
+{
+	display: block;
+	float: left;
+	height: 50px;
+	padding: 0 20px 0 45px;
+	border: none;
+	background: url(../images/#{$icon_name}_icon.png) no-repeat 0 0;
+	background-position: 20px 17px;
+	@include font_style($color, $fonts);
+
+	@media screen and (max-width: 1023px)
+	{
+		float: none;
+	}
+
+	&:hover
+	{
+		background: url(../images/#{$icon_name}_icon_white.png) no-repeat 0 0;
+		background-position: 20px 15px;
+		background-color: $background_color;
+        @include font_style($hover_color, $fonts);
+	}
+}
+
+@mixin font_style($color, $fonts...)
+{
+	font: $fonts;
+	color: $color;
+}
+
+@mixin form_style
+{
+	width: 100%;
+	border-radius: 3px;
+	border: 2px solid rgb(201, 201, 201);
+
+	&:hover
+	{
+		border: 2px solid rgb(166, 166, 166);
+	}
+
+	&:focus
+	{
+		outline: none;
+		border: 2px solid $base_color;
+	}
+}

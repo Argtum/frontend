@@ -1,0 +1,478 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  /*list-style: none;*/
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.top_menu {
+  margin: 0 auto;
+  max-width: 960px;
+  height: 50px;
+}
+.top_menu .about_me_button {
+  display: block;
+  float: left;
+  height: 50px;
+  padding: 0 20px 0 45px;
+  border: none;
+  background: url(../images/about_me_icon.png) no-repeat 0 0;
+  background-position: 20px 17px;
+  font: 19px/32px "Georgia", sans-serif;
+  color: #333333;
+}
+@media screen and (max-width: 1023px) {
+  .top_menu .about_me_button {
+    float: none;
+  }
+}
+.top_menu .about_me_button:hover {
+  background: url(../images/about_me_icon_white.png) no-repeat 0 0;
+  background-position: 20px 15px;
+  background-color: #15a98b;
+  font: 19px/32px "Georgia", sans-serif;
+  color: whitesmoke;
+}
+.top_menu .my_hobby_button {
+  display: block;
+  float: left;
+  height: 50px;
+  padding: 0 20px 0 45px;
+  border: none;
+  background: url(../images/hobby_icon.png) no-repeat 0 0;
+  background-position: 20px 17px;
+  font: 19px/32px "Georgia", sans-serif;
+  color: #333333;
+}
+@media screen and (max-width: 1023px) {
+  .top_menu .my_hobby_button {
+    float: none;
+  }
+}
+.top_menu .my_hobby_button:hover {
+  background: url(../images/hobby_icon_white.png) no-repeat 0 0;
+  background-position: 20px 15px;
+  background-color: #15a98b;
+  font: 19px/32px "Georgia", sans-serif;
+  color: whitesmoke;
+}
+.top_menu .favorite_films_button {
+  display: block;
+  float: left;
+  height: 50px;
+  padding: 0 20px 0 45px;
+  border: none;
+  background: url(../images/favorite_films_icon.png) no-repeat 0 0;
+  background-position: 20px 17px;
+  font: 19px/32px "Georgia", sans-serif;
+  color: #333333;
+}
+@media screen and (max-width: 1023px) {
+  .top_menu .favorite_films_button {
+    float: none;
+  }
+}
+.top_menu .favorite_films_button:hover {
+  background: url(../images/favorite_films_icon_white.png) no-repeat 0 0;
+  background-position: 20px 15px;
+  background-color: #15a98b;
+  font: 19px/32px "Georgia", sans-serif;
+  color: whitesmoke;
+}
+
+.content {
+  margin: 0 auto;
+  background: url(../images/background.png) no-repeat 0 0;
+  background-position: 50% 0;
+}
+@media screen and (max-width: 1023px) {
+  .content {
+    background-image: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .content {
+    margin: 10px;
+  }
+}
+
+.content .main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.content .main .column_one {
+  float: left;
+  max-width: 330px;
+  margin: 210px 60px 0 0;
+}
+@media screen and (max-width: 1023px) {
+  .content .main .column_one {
+    margin: 130px auto 0;
+    float: none;
+  }
+}
+
+.content .main .column_one .picture {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+}
+.content .main .column_one .my_books {
+  margin-top: 45px;
+}
+.content .main .column_one .my_books .books_hedline {
+  font: 700 24px/32px "Open Sans", sans-serif;
+  color: #15a98b;
+  margin-top: 45px;
+}
+.content .main .column_one .my_books .books_list {
+  list-style-position: inside;
+}
+.content .main .column_one .my_books .books_list .book {
+  font: 19px/31px "Georgia", sans-serif;
+  color: #555555;
+  margin-top: 15px;
+}
+.content .main .column_two {
+  float: left;
+  max-width: 570px;
+  margin-top: 210px;
+}
+@media screen and (max-width: 1023px) {
+  .content .main .column_two {
+    margin: 30px auto 0;
+    float: none;
+  }
+}
+
+.content .main .column_two .quote {
+  height: 210px;
+  padding-top: 25px;
+  font: italic 28px/42px "Georgia", sans-serif;
+  color: whitesmoke;
+}
+@media screen and (max-width: 1023px) {
+  .content .main .column_two .quote {
+    color: #333333;
+  }
+}
+.content .main .column_two .quote .author {
+  font: 700 16px/42px "Open Sans", sans-serif;
+  color: whitesmoke;
+}
+@media screen and (max-width: 1023px) {
+  .content .main .column_two .quote .author {
+    color: #333333;
+  }
+}
+.content .main .column_two .name {
+  font: 700 48px/42px "Open Sans", sans-serif;
+  color: #333333;
+}
+.content .main .column_two .name:after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 60px;
+  background-color: #15a98b;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+.content .main .column_two .info_about_me {
+  font: 19px/32px "Georgia", sans-serif;
+  color: #555555;
+  margin-top: 45px;
+}
+.content .main .column_two .hobby {
+  font: 600 36px/42px "Open Sans", sans-serif;
+  color: #333333;
+  margin-top: 45px;
+}
+.content .main .column_two .info_my_hobby {
+  font: 19px/32px "Georgia", sans-serif;
+  color: #555555;
+  margin-top: 15px;
+}
+.content .main .column_two .write_me_link {
+  display: inline-block;
+  font: 19px/32px "Georgia", sans-serif;
+  color: #15a98b;
+  margin-top: 40px;
+  text-decoration: none;
+}
+.content .main .column_two .write_me_link .link_without_arrow {
+  text-decoration: underline;
+}
+.content .my_movies {
+  height: auto;
+  margin: 45px auto 50px;
+  padding: 45px 0 50px;
+  background-color: #f9f9f9;
+}
+.content .my_movies .my_movies_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .content .my_movies .my_movies_container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .my_movies .my_movies_container {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .content .my_movies .my_movies_container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.content .my_movies .my_movies_container .favorite_movies {
+  font: 600 36px/42px "Open Sans", sans-serif;
+  color: #333333;
+}
+.content .my_movies .my_movies_container .movie {
+  width: 285px;
+  float: left;
+  margin: 5px 20px 0 0;
+}
+@media screen and (max-width: 480px) {
+  .content .my_movies .my_movies_container .movie {
+    float: none;
+    margin: 5px 0 0;
+  }
+}
+.content .my_movies .my_movies_container .movie .movie_image {
+  width: 285px;
+  height: 190px;
+  margin: 30px 0 25px;
+  border-radius: 5px;
+  display: block;
+}
+.content .my_movies .my_movies_container .movie .movie_name {
+  font: 700 22px/32px "Open Sans", sans-serif;
+  color: #333333;
+}
+.content .my_movies .my_movies_container .movie .movie_brief {
+  font: 16px/28px "Georgia", sans-serif;
+  color: #555555;
+  margin-top: 15px;
+}
+@media screen and (max-width: 1279px) {
+  .content .my_movies .my_movies_container .second_movie {
+    margin-right: 0;
+  }
+}
+.content .my_movies .my_movies_container .fourth_movie {
+  margin-right: 0;
+}
+.content .my_movies .all_movies {
+  margin: 55px auto 0;
+  width: 220px;
+}
+.content .my_movies .all_movies .all_movies_button {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  font: 19px/32px "Georgia", sans-serif;
+  color: whitesmoke;
+  background-color: #15a98b;
+  border: none;
+}
+
+.write_me_form {
+  margin: 55px auto 0;
+}
+.write_me_form .form_title {
+  font: 36px/42px "Open Sans", sans-serif;
+  color: #333333;
+  text-align: center;
+}
+.write_me_form .form_title:before, .write_me_form .form_title:after {
+  content: "";
+  display: inline-block;
+  background: url(../images/line.png) no-repeat 0 0;
+  margin: 0 10px 10px 100px;
+  height: 5px;
+  width: 200px;
+}
+@media screen and (max-width: 1023px) {
+  .write_me_form .form_title:before, .write_me_form .form_title:after {
+    display: none;
+  }
+}
+.write_me_form .form_title:after {
+  margin: 0 100px 10px 10px;
+}
+@media screen and (max-width: 480px) {
+  .write_me_form .write_me {
+    margin: 10px;
+  }
+}
+.write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_gender, .write_me_form .write_me .form_message, .write_me_form .write_me .form_button {
+  margin: 0 auto;
+  max-width: 540px;
+}
+.write_me_form .write_me .form_name .form_headline, .write_me_form .write_me .form_email .form_headline, .write_me_form .write_me .form_country .form_headline, .write_me_form .write_me .form_gender .form_headline, .write_me_form .write_me .form_message .form_headline, .write_me_form .write_me .form_button .form_headline {
+  font: 20px/32px "Open Sans", sans-serif;
+  color: #333333;
+}
+.write_me_form .write_me .form_name, .write_me_form .write_me .form_email {
+  margin-top: 70px;
+}
+.write_me_form .write_me .form_name .form_headline:after, .write_me_form .write_me .form_email .form_headline:after {
+  content: " *";
+  color: red;
+}
+.write_me_form .write_me .form_name #username, .write_me_form .write_me .form_name #email, .write_me_form .write_me .form_email #username, .write_me_form .write_me .form_email #email {
+  height: 50px;
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c9c9;
+}
+.write_me_form .write_me .form_name #username:hover, .write_me_form .write_me .form_name #email:hover, .write_me_form .write_me .form_email #username:hover, .write_me_form .write_me .form_email #email:hover {
+  border: 2px solid #a6a6a6;
+}
+.write_me_form .write_me .form_name #username:focus, .write_me_form .write_me .form_name #email:focus, .write_me_form .write_me .form_email #username:focus, .write_me_form .write_me .form_email #email:focus {
+  outline: none;
+  border: 2px solid #15a98b;
+}
+.write_me_form .write_me .form_email {
+  margin-top: 20px;
+}
+.write_me_form .write_me .form_country {
+  margin-top: 25px;
+}
+.write_me_form .write_me .form_country #country {
+  height: 50px;
+  padding-left: 15px;
+  font: 18px/32px "Open Sans", sans-serif;
+  color: #555555;
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c9c9;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../images/arrow_down.png) no-repeat 0 0;
+  background-position: 500px 20px;
+}
+.write_me_form .write_me .form_country #country:hover {
+  border: 2px solid #a6a6a6;
+}
+.write_me_form .write_me .form_country #country:focus {
+  outline: none;
+  border: 2px solid #15a98b;
+}
+.write_me_form .write_me .form_gender {
+  margin-top: 45px;
+  font: 18px/32px "Open Sans", sans-serif;
+  color: #333333;
+}
+.write_me_form .write_me .form_gender .form_headline:after {
+  content: " *";
+  color: red;
+}
+.write_me_form .write_me .form_gender .gender_name {
+  margin-right: 30px;
+}
+.write_me_form .write_me .form_message {
+  margin-top: 40px;
+}
+.write_me_form .write_me .form_message #message {
+  height: 140px;
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c9c9;
+  resize: none;
+}
+.write_me_form .write_me .form_message #message:hover {
+  border: 2px solid #a6a6a6;
+}
+.write_me_form .write_me .form_message #message:focus {
+  outline: none;
+  border: 2px solid #15a98b;
+}
+.write_me_form .write_me .form_button {
+  margin-top: 50px;
+}
+.write_me_form .write_me .form_button .send {
+  width: 220px;
+  height: 50px;
+  border-radius: 5px;
+  font: 19px/32px "Georgia", sans-serif;
+  color: whitesmoke;
+  background-color: #15a98b;
+  border: none;
+}
+
+.footer {
+  height: 70px;
+  margin: 50px auto 0;
+  padding-top: 20px;
+  font: 16px/32px "Georgia", sans-serif;
+  color: #555555;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+/*# sourceMappingURL=style.css.map */

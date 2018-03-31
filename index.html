@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>First</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="top_menu">
+            <input class="about_me_button" type="submit" value="Обо мне">
+            <input class="my_hobby_button" type="submit" value="Мое хобби">
+            <input class="favorite_films_button" type="submit" value="Любимые фильмы">
+        </header>
+        <div class="content">
+            <div class="main">
+                <div class="column_one">
+                    <img class="picture" src="images/my_photo.jpg" alt="My photo">
+                    <div class="my_books">
+                        <h3 class="books_hedline">Прочитанные книги:</h3>
+                        <ul class="books_list">
+                            <li class="book">"Жемчужины программирования" Джон Бентли</li>
+                            <li class="book">"Мифический человеко-месяц" Фредерик Брукс</li>
+                        </ul>
+                        <h3 class="books_hedline">Собираюсь прочитать:</h3>
+                        <ol class="books_list">
+                            <li class="book">"Выразительный Javascript" Марейн Хавербек</li>
+                            <li class="book">"Тестирование программного обеспечения" Святослав Куликов</li>
+                        </ol>
+                    </div> <!--my_books-->
+                </div> <!--colon_one-->
+                <div class="column_two">
+                    <blockquote class="quote">
+                        Всё, что ни делается, – к лучшему.<br>
+                        <span class="author">— Конфуций</span>
+                    </blockquote> <!--quote-->
+                    <h1 class="name">Alex Silver</h1>
+                    <p class="info_about_me">
+                        Меня зовут Алексей и это моя первая веб-страница. 
+                        В будущем я собираюсь написать много веб-страниц и сайтов 
+                        и планирую серьёзно углубиться в эту тему. Источником моих знаний служат книги.
+                        Книги которые я прочитал и 
+                        собираюсь прочитать вы можете увидеть на этой странице. Помимо книг 
+                        читаю статьи на темы связанные с IT.
+                    </p> <!--info_about_me-->
+                    <h2 class="hobby">Мое хобби</h2>
+                    <p class="info_my_hobby">
+                        Люблю футбол. Болею за Лондонский Арсенал.  
+                        На моей работе проводится ежегодный турнир по футболу и 
+                        моя команда на прошлом турнире заняла 2-е место. 
+                        Сейчас работаем над тем что бы превзойти свой результат.
+                        Так же люблю компьютерные игры, правда сейчас на них совсем нет времени. 
+                        Люблю читать.
+                    </p> <!--info_my_hobby-->
+                    <a class="write_me_link" href="https://vk.com/argtum"><span class="link_without_arrow">Напиши мне</span> →</a>
+                </div> <!--colon_two-->
+            </div> <!--main-->
+            <div class="clear"></div>
+            <div class="my_movies">
+                <div class="my_movies_container">
+                    <h2 class="favorite_movies">Любимые фильмы</h2>
+                    <div class="movie first_movie">
+                        <img class="movie_image" src="images/fight_club.jpg" alt="Fight club picture">
+                        <h4 class="movie_name">Бойцовский клуб</h4>
+                        <p class="movie_brief">
+                            Терзаемый хронической бессонницей и отчаянно пытающийся вырваться 
+                            из мучительно скучной жизни, клерк встречает некоего Тайлера Дардена, 
+                            харизматического торговца мылом с извращенной философией. 
+                            Тайлер уверен, что самосовершенствование — удел слабых, 
+                            а саморазрушение — единственное, ради чего стоит жить. Пройдет немного 
+                            времени, и вот уже главные герои лупят друг друга почем зря на стоянке 
+                            перед баром, и очищающий мордобой доставляет им высшее блаженство. 
+                            Приобщая других мужчин к простым радостям физической жестокости, 
+                            они основывают тайный Бойцовский Клуб.
+                        </p>
+                    </div> <!--movie first_movie-->
+                    <div class="movie second_movie">
+                        <img class="movie_image" src="images/forrest_gump.jpg" alt="Forrest gump picture">
+                        <h4 class="movie_name">Форрест Гамп</h4>
+                        <p class="movie_brief">
+                            От лица главного героя Форреста Гампа, слабоумного безобидного 
+                            человека с благородным и открытым сердцем, рассказывается история 
+                            его необыкновенной жизни. Фантастическим образом 
+                            превращается он в известного футболиста, героя войны, 
+                            преуспевающего бизнесмена. Он становится миллиардером, 
+                            но остается таким же бесхитростным, глупым и добрым. 
+                            Форреста ждет постоянный успех во всем, а он любит девочку, 
+                            с которой дружил в детстве, но взаимность приходит слишком поздно.
+                        </p>
+                    </div> <!--movie second_movie-->
+                    <div class="movie third_movie">
+                        <img class="movie_image" src="images/pulp_fiction.jpg" alt="Pulp fiction picture">
+                        <h4 class="movie_name">Криминальное чтиво</h4>
+                        <p class="movie_brief">
+                            Двое бандитов Винсент Вега и Джулс Винфилд проводят время в 
+                            философских беседах в перерыве между разборками и «решением 
+                            проблем» с должниками своего криминального босса Марселласа Уоллеса. 
+                            Параллельно разворачиваются три истории. В первой из них Винсент 
+                            присматривает за женой Марселласа Мией и спасает ее от передозировки 
+                            наркотиков. Во второй рассказывается о Бутче Кулидже, боксере, 
+                            нанятом Уоллесом, чтобы сдать бой, но обманувшим его. Третья история 
+                            объединяет первые две.
+                        </p>
+                    </div> <!--movie third_movie-->
+                    <div class="movie fourth_movie">
+                        <img class="movie_image" src="images/gravity.jpg" alt="Gravity picture">
+                        <h4 class="movie_name">Гравитация</h4>
+                        <p class="movie_brief">
+                            Доктор Райан Стоун, блестящий специалист в области медицинского 
+                            инжиниринга, отправляется в свою первую космическую миссию под 
+                            командованием ветерана астронавтики Мэтта Ковальски, для которого 
+                            этот полет — последний перед отставкой. Но во время, казалось бы, 
+                            рутинной работы за бортом случается катастрофа. Шаттл уничтожен, 
+                            а Стоун и Ковальски остаются совершенно одни; они находятся в 
+                            связке друг с другом, и все, что они могут, — это двигаться по 
+                            орбите в абсолютно черном пространстве без всякой связи с Землей 
+                            и какой-либо надежды на спасение.
+                        </p>
+                    </div> <!--movie fourth_movie-->
+                </div> <!--movie second_movie-->
+                <div class="clear"></div>
+                <div class="all_movies"><input type="submit" class="all_movies_button" value="Все фильмы"></div>
+            </div> <!--my_movies-->
+        </div> <!--content-->
+        <div class="write_me_form">
+            <h2 class="form_title">НАПИШИ МНЕ</h2>
+            <form class="write_me" method="POST">
+                <div class="form_name">
+                    <label class="form_headline" for="username">Ваше имя</label><br>
+                    <input id="username" type="text" required>
+                </div>
+                <div class="form_email">
+                    <label class="form_headline" for="email">Ваш email</label><br>
+                    <input id="email" type="text" required>
+                </div>
+                <div class="form_country">
+                    <label class="form_headline" for="country">Откуда вы?</label><br>
+                    <select id="country" size="1">
+                        <option value="Россия">Россия</option>
+                        <option value="Украина">Украина</option>
+                        <option value="Белорусия">Белорусия</option>
+                        <option value="Казахстан">Казахстан</option>
+                        <option value="Против всех">Против всех</option>
+                    </select>
+                </div>
+                <div class="form_gender">
+                    <p class="form_headline">Ваш пол</p>
+                    <input name="gender" id="gender_man" type="radio" value="man" checked>
+                    <label class="gender_name" for="gender_man">Мужской</label>
+                    <input name="gender" id="gender_women" type="radio" value="woman">
+                    <label class="gender_name" for="gender_women">Женский</label>
+                </div>
+                <div class="form_message">
+                    <label class="form_headline" for="message">Ваше сообщение</label><br>
+                    <textarea id="message" required></textarea>
+                </div>
+                <div class="form_button">
+                    <input class="send" type="submit" value="Отправить">
+                </div>
+            </form> <!--write_me-->   
+        </div> <!--write_me_form-->
+        <footer class="footer">© 1986-2018 Все права защищены</footer>
+    </body>
+</html>

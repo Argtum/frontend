@@ -1,0 +1,436 @@
+@import 'reset';
+@import 'mixins';
+
+.clear
+{
+    clear: both;
+}
+
+.top_menu
+{
+    margin: 0 auto;
+    max-width: 960px;
+    height: 50px;
+
+    .about_me_button 
+    {
+        @include top_menu_button(about_me, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+    }
+
+    .my_hobby_button
+    {
+        @include top_menu_button(hobby, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+    }
+
+    .favorite_films_button
+    {
+        @include top_menu_button(favorite_films, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+    }
+}
+
+.content
+{
+    margin: 0 auto;
+    background: url(../images/background.png) no-repeat 0 0;
+    background-position: 50% 0;
+
+    @media screen
+    {
+        @media (max-width: 1023px)
+        {
+            background-image: none;
+        }
+
+        @media (max-width: 480px)
+        {
+            margin: 10px;
+        }
+        
+    }
+
+    .main
+    {
+        max-width: 960px;
+        margin: 0 auto;
+        
+        .column_one
+        {
+            float: left;
+            max-width: 330px;
+            margin: 210px 60px 0 0;
+
+            @media screen
+            {
+                @media (max-width: 1023px)
+                {
+                    margin: 130px auto 0;
+                    float: none; 
+                }
+            }
+            
+            .picture
+            {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                display: block;   
+            }
+            
+            .my_books
+            {
+                margin-top: 45px;
+                
+                .books_hedline
+                {
+                    @include font_style($base_color, 700 24px/32px 'Open Sans', sans-serif);
+                    margin-top: 45px;
+                }
+                
+                .books_list
+                {
+                    list-style-position: inside;
+                    
+                    .book
+                    {
+                        @include font_style($text_color, 19px/31px 'Georgia', sans-serif);
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+        
+        .column_two
+        {
+            float: left;
+            max-width: 570px;
+            margin-top: 210px;
+
+            @media screen
+            {
+                @media (max-width: 1023px)
+                {
+                    margin: 30px auto 0;
+                    float: none; 
+                }
+            }
+            
+            .quote
+            {
+                height: 210px;
+                padding-top: 25px;
+                @include font_style($white-font-color, italic 28px/42px 'Georgia', sans-serif);
+
+                @media screen and (max-width: 1023px)
+                {
+                    color: $headline_color;
+                }
+                
+                .author
+                {
+                    @include font_style($white-font-color, 700 16px/42px 'Open Sans', sans-serif);
+
+                    @media screen and (max-width: 1023px)
+                    {
+                        color: $headline_color;
+                    }
+                }
+            }
+
+            .name
+            {
+                @include font_style($headline_color, 700 48px/42px 'Open Sans', sans-serif);
+
+                &:after
+                {  
+                    content: "";
+                    display: block;
+                    height: 5px;
+                    width: 60px;
+                    background-color: $base_color;
+                    border-radius: 5px;
+                    margin-top: 30px;
+                }
+            }
+
+            .info_about_me
+            {
+                @include font_style($text-color, 19px/32px 'Georgia', sans-serif);
+                margin-top: 45px;
+            }
+            
+            .hobby
+            {
+                @include font_style($headline_color, 600 36px/42px 'Open Sans', sans-serif);
+                margin-top: 45px;
+            }
+
+            .info_my_hobby
+            {
+                @include font_style($text-color, 19px/32px 'Georgia', sans-serif);
+                margin-top: 15px;
+            }
+
+            .write_me_link
+            {
+                display: inline-block;
+                @include font_style($base-color, 19px/32px 'Georgia', sans-serif);
+                margin-top: 40px;
+                text-decoration: none;
+
+                .link_without_arrow
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .my_movies
+    {
+        height: auto;
+        margin: 45px auto 50px;
+        padding: 45px 0 50px;
+        background-color: rgb(249, 249, 249);
+
+        .my_movies_container
+        {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            @media screen
+            {
+                @media (min-width: 768px) and (max-width: 1279px)
+                {
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+
+                @media (max-width: 600px)
+                {
+                    margin: 0 10px;
+                }
+
+                @media (max-width: 480px)
+                {
+                    max-width: 320px;
+                    margin: 0 auto; 
+                }
+            }
+
+            .favorite_movies
+            {
+                @include font_style($headline-color, 600 36px/42px 'Open Sans', sans-serif);
+            }
+    
+            .movie
+            {
+                width: 285px;
+                float: left;
+                margin: 5px 20px 0 0;
+
+                @media screen and (max-width: 480px)
+                {
+                    float: none;
+                    margin: 5px 0 0;
+                }
+    
+                .movie_image
+                {
+                    width: 285px;
+                    height: 190px;
+                    margin: 30px 0 25px;
+                    border-radius: 5px;
+                    display: block;
+                }
+    
+                .movie_name
+                {
+                    @include font_style($headline-color, 700 22px/32px 'Open Sans', sans-serif);
+                }
+    
+                .movie_brief
+                {
+                    @include font_style($text-color, 16px/28px 'Georgia', sans-serif);
+                    margin-top: 15px;
+                }
+            }
+
+            .second_movie
+            {
+                @media screen and (max-width: 1279px)
+                {
+                    margin-right: 0;
+                }
+            }
+    
+            .fourth_movie
+            {
+                margin-right: 0;
+            }
+        }
+
+        .all_movies
+        {
+            margin: 55px auto 0;
+            width: 220px;
+
+            .all_movies_button
+            {
+                width: 100%;
+                height: 50px;
+                border-radius: 5px;
+                @include font_style($white-font-color, 19px/32px 'Georgia', sans-serif);
+                background-color: $base_color;
+                border: none;
+            }
+        }
+    }
+}
+
+.write_me_form
+{
+    margin: 55px auto 0;
+
+    .form_title
+    {
+        @include font_style($headline-color, 36px/42px 'Open Sans', sans-serif);
+        text-align: center;
+
+        &:before, &:after
+        {
+            content: "";
+            display: inline-block;
+            background: url(../images/line.png) no-repeat 0 0;
+            margin: 0 10px 10px 100px;
+            height: 5px;
+            width: 200px;
+            
+            @media screen and (max-width: 1023px)
+            {
+                display: none;
+            }
+        }
+
+        &:after
+        {
+            margin: 0 100px 10px 10px;
+        }
+    }
+
+    .write_me
+    {
+        @media screen and (max-width: 480px)
+        {
+            margin: 10px;
+        }
+
+        .form_name, .form_email, .form_country, .form_gender, .form_message, .form_button
+        {
+            margin: 0 auto;
+            max-width: 540px;
+
+            .form_headline
+            {
+                @include font_style($headline-color, 20px/32px 'Open Sans', sans-serif);
+            }
+        }
+
+        .form_name, .form_email
+        {
+            margin-top: 70px;
+
+            .form_headline:after
+            {
+                content: " *";
+                color: red;
+            }
+            
+            #username, #email
+            {
+                height: 50px;
+                @include form_style;
+            }
+        }
+
+        .form_email
+        {
+            margin-top: 20px;
+        }
+
+        .form_country
+        {
+            margin-top: 25px;
+
+            #country
+            {
+                height: 50px;
+                padding-left: 15px;
+                @include font_style($text_color, 18px/32px 'Open Sans', sans-serif);
+                @include form_style;
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background: url(../images/arrow_down.png) no-repeat 0 0;
+                background-position: 500px 20px;
+            }
+        }
+
+        .form_gender
+        {
+            margin-top: 45px;
+            @include font_style($headline_color, 18px/32px 'Open Sans', sans-serif);
+
+            .form_headline
+            {
+                &:after
+                {
+                    content: " *";
+                    color: red;
+                }
+            }
+
+            .gender_name
+            {
+                margin-right: 30px;
+            }
+        }
+
+        .form_message
+        {
+            margin-top: 40px;
+
+            #message
+            {
+                height: 140px;
+                @include form_style;
+                resize: none;
+            }
+        }
+
+        .form_button
+        {
+            margin-top: 50px;
+
+            .send
+            {
+                width: 220px;
+                height: 50px;
+                border-radius: 5px;
+                @include font_style($white-font-color, 19px/32px 'Georgia', sans-serif);
+                background-color: $base_color;
+                border: none;
+            }
+        }
+    }
+}
+
+.footer
+{
+    height: 70px;
+    margin: 50px auto 0;
+    padding-top: 20px;
+    @include font_style($text-color, 16px/32px 'Georgia', sans-serif);
+    text-align: center;
+    background-color: rgb(245, 245, 245);
+}
