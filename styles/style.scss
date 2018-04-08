@@ -34,20 +34,6 @@
     background: url(../images/background.png) no-repeat 0 0;
     background-position: 50% 0;
 
-    @media screen
-    {
-        @media (max-width: 1023px)
-        {
-            background-image: none;
-        }
-
-        @media (max-width: 480px)
-        {
-            margin: 10px;
-        }
-        
-    }
-
     .main
     {
         max-width: 960px;
@@ -58,15 +44,6 @@
             float: left;
             max-width: 330px;
             margin: 210px 60px 0 0;
-
-            @media screen
-            {
-                @media (max-width: 1023px)
-                {
-                    margin: 130px auto 0;
-                    float: none; 
-                }
-            }
             
             .picture
             {
@@ -104,35 +81,16 @@
             float: left;
             max-width: 570px;
             margin-top: 210px;
-
-            @media screen
-            {
-                @media (max-width: 1023px)
-                {
-                    margin: 30px auto 0;
-                    float: none; 
-                }
-            }
             
             .quote
             {
                 height: 210px;
                 padding-top: 25px;
                 @include font_style($white-font-color, italic 28px/42px 'Georgia', sans-serif);
-
-                @media screen and (max-width: 1023px)
-                {
-                    color: $headline_color;
-                }
                 
                 .author
                 {
                     @include font_style($white-font-color, 700 16px/42px 'Open Sans', sans-serif);
-
-                    @media screen and (max-width: 1023px)
-                    {
-                        color: $headline_color;
-                    }
                 }
             }
 
@@ -197,26 +155,6 @@
             max-width: 1200px;
             margin: 0 auto;
 
-            @media screen
-            {
-                @media (min-width: 768px) and (max-width: 1279px)
-                {
-                    max-width: 600px;
-                    margin: 0 auto;
-                }
-
-                @media (max-width: 600px)
-                {
-                    margin: 0 10px;
-                }
-
-                @media (max-width: 480px)
-                {
-                    max-width: 320px;
-                    margin: 0 auto; 
-                }
-            }
-
             .favorite_movies
             {
                 @include font_style($headline-color, 600 36px/42px 'Open Sans', sans-serif);
@@ -227,12 +165,6 @@
                 width: 285px;
                 float: left;
                 margin: 5px 20px 0 0;
-
-                @media screen and (max-width: 480px)
-                {
-                    float: none;
-                    margin: 5px 0 0;
-                }
     
                 .movie_image
                 {
@@ -252,14 +184,6 @@
                 {
                     @include font_style($text-color, 16px/28px 'Georgia', sans-serif);
                     margin-top: 15px;
-                }
-            }
-
-            .second_movie
-            {
-                @media screen and (max-width: 1279px)
-                {
-                    margin-right: 0;
                 }
             }
     
@@ -282,6 +206,7 @@
                 @include font_style($white-font-color, 19px/32px 'Georgia', sans-serif);
                 background-color: $base_color;
                 border: none;
+                cursor: pointer;
             }
         }
     }
@@ -300,30 +225,19 @@
         {
             content: "";
             display: inline-block;
-            background: url(../images/line.png) no-repeat 0 0;
-            margin: 0 10px 10px 100px;
-            height: 5px;
+            border-bottom: 1px solid rgb(196, 196, 196);
+            margin: 0 10px 12px 100px;
             width: 200px;
-            
-            @media screen and (max-width: 1023px)
-            {
-                display: none;
-            }
         }
 
         &:after
         {
-            margin: 0 100px 10px 10px;
+            margin: 0 100px 12px 10px;
         }
     }
 
     .write_me
     {
-        @media screen and (max-width: 480px)
-        {
-            margin: 10px;
-        }
-
         .form_name, .form_email, .form_country, .form_gender, .form_message, .form_button
         {
             margin: 0 auto;
@@ -372,7 +286,7 @@
                 -moz-appearance: none;
                 appearance: none;
                 background: url(../images/arrow_down.png) no-repeat 0 0;
-                background-position: 500px 20px;
+                background-position: 97% 20px;
             }
         }
 
@@ -420,6 +334,7 @@
                 @include font_style($white-font-color, 19px/32px 'Georgia', sans-serif);
                 background-color: $base_color;
                 border: none;
+                cursor: pointer;
             }
         }
     }
@@ -433,4 +348,114 @@
     @include font_style($text-color, 16px/32px 'Georgia', sans-serif);
     text-align: center;
     background-color: rgb(245, 245, 245);
+}
+
+@media screen
+{
+    @media (max-width: 1023px)
+    {
+        .content
+        {
+            background-image: none;
+
+            .main
+            {
+                .column_one
+                {
+                    margin: 130px auto 0;
+                    float: none; 
+                }
+        
+                .column_two
+                {
+                    margin: 30px auto 0;
+                    float: none; 
+        
+                    .quote
+                    {
+                        color: $headline_color;
+        
+                        .author
+                        {
+                            color: $headline_color;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .write_me_form
+        {
+            .form_title:before, .form_title:after
+            {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1279px)
+    {
+        .content
+        {
+            .my_movies
+            {
+                .my_movies_container
+                {
+                    .second_movie
+                    {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 641px) and (max-width: 1279px)
+    {
+        .content
+        {
+            .my_movies
+            {
+                .my_movies_container
+                {
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 640px)
+    {
+        .content
+        {
+            margin: 10px;
+
+            .my_movies
+            {
+                .my_movies_container
+                {
+                    max-width: 320px;
+                    margin: 0 auto;
+                    
+                    .movie
+                    {
+                        float: none;
+                        margin: 5px auto 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 600px)
+    {        
+        .write_me_form
+        {
+            .write_me
+            {
+                margin: 10px;
+            }
+        }
+    } 
 }
