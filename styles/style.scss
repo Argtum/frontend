@@ -150,7 +150,7 @@
         padding: 45px 0 50px;
         background-color: rgb(249, 249, 249);
 
-        .my_movies_container
+        .my_movies_container_one, .my_movies_container_two
         {
             max-width: 1200px;
             margin: 0 auto;
@@ -187,10 +187,15 @@
                 }
             }
     
-            .fourth_movie
+            .fourth_movie, .eighth_movie
             {
                 margin-right: 0;
             }
+        }
+
+        .my_movies_container_two
+        {
+            display: none;
         }
 
         .all_movies
@@ -278,9 +283,12 @@
             #country
             {
                 height: 50px;
-                padding-left: 15px;
+                text-indent: 15px;
                 @include font_style($text_color, 18px/32px 'Open Sans', sans-serif);
                 @include form_style;
+                -webkit-box-sizing: unset;
+                -moz-box-sizing: unset;
+                box-sizing: unset;
 
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -319,6 +327,7 @@
                 height: 140px;
                 @include form_style;
                 resize: none;
+                padding: 0;
             }
         }
 
@@ -399,9 +408,9 @@
         {
             .my_movies
             {
-                .my_movies_container
+                .my_movies_container_one, .my_movies_container_two
                 {
-                    .second_movie
+                    .second_movie, .sixth_movie
                     {
                         margin-right: 0;
                     }
@@ -416,7 +425,7 @@
         {
             .my_movies
             {
-                .my_movies_container
+                .my_movies_container_one, .my_movies_container_two
                 {
                     max-width: 600px;
                     margin: 0 auto;
@@ -433,7 +442,7 @@
 
             .my_movies
             {
-                .my_movies_container
+                .my_movies_container_one, .my_movies_container_two
                 {
                     max-width: 320px;
                     margin: 0 auto;
