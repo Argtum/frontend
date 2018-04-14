@@ -119,7 +119,7 @@
                         </p>
                     </div> <!--movie fourth_movie-->
                 </div> <!--my_movies_container_one-->
-                <div class="my_movies_container_two">
+                <div class="my_movies_container_two" id="hidden_movie_container">
                     <div class="movie fifth_movie">
                         <img class="movie_image" src="images/Intouchables.jpg" alt="1+1 picture">
                         <h4 class="movie_name">1+1</h4>
@@ -180,11 +180,11 @@
             <form class="write_me" method="POST">
                 <div class="form_name">
                     <label class="form_headline" for="username">Ваше имя</label><br>
-                    <input id="username" type="text" required>
+                    <input id="username" type="text">
                 </div>
                 <div class="form_email">
                     <label class="form_headline" for="email">Ваш email</label><br>
-                    <input id="email" type="text" required>
+                    <input id="email" type="text">
                 </div>
                 <div class="form_country">
                     <label class="form_headline" for="country">Откуда вы?</label><br>
@@ -205,7 +205,7 @@
                 </div>
                 <div class="form_message">
                     <label class="form_headline" for="message">Ваше сообщение</label><br>
-                    <textarea id="message" required></textarea>
+                    <textarea id="message"></textarea>
                 </div>
                 <div class="form_button">
                     <input class="send" type="submit" value="Отправить">

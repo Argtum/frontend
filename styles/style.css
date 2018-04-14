@@ -227,7 +227,7 @@ input:focus {
   height: auto;
   margin: 45px auto 50px;
   padding: 45px 0 50px;
-  background-color: #f9f9f9;
+  /*background-color: rgb(249, 249, 249);*/
 }
 .content .my_movies .my_movies_container_one, .content .my_movies .my_movies_container_two {
   max-width: 1200px;
@@ -262,6 +262,10 @@ input:focus {
   margin-right: 0;
 }
 .content .my_movies .my_movies_container_two {
+  opacity: 1;
+  -moz-transition: opacity 1.5s;
+  -ms-transition: opacity 1.5s;
+  transition: opacity 1.5s;
   display: none;
 }
 .content .my_movies .all_movies {
@@ -286,16 +290,20 @@ input:focus {
   font: 36px/42px "Open Sans", sans-serif;
   color: #333333;
   text-align: center;
-}
-.write_me_form .form_title:before, .write_me_form .form_title:after {
-  content: "";
-  display: inline-block;
-  border-bottom: 1px solid #c4c4c4;
-  margin: 0 10px 12px 100px;
-  width: 200px;
-}
-.write_me_form .form_title:after {
-  margin: 0 100px 12px 10px;
+        /*&:before, &:after
+        {
+            content: "";
+            display: inline-block;
+            border-bottom: 1px solid rgb(196, 196, 196);
+            margin: 0 10px 12px 100px;
+            width: 200px;
+        }
+
+        &:after
+        {
+            margin: 0 100px 12px 10px;
+        }
+        */
 }
 .write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_gender, .write_me_form .write_me .form_message, .write_me_form .write_me .form_button {
   margin: 0 auto;
@@ -360,15 +368,15 @@ input:focus {
   font: 18px/32px "Open Sans", sans-serif;
   color: #333333;
 }
-.write_me_form .write_me .form_gender .form_headline:after {
-  content: " *";
-  color: red;
-}
 .write_me_form .write_me .form_gender .gender_name {
   margin-right: 30px;
 }
 .write_me_form .write_me .form_message {
   margin-top: 40px;
+}
+.write_me_form .write_me .form_message .form_headline:after {
+  content: " *";
+  color: red;
 }
 .write_me_form .write_me .form_message #message {
   height: 140px;

@@ -148,7 +148,7 @@
         height: auto;
         margin: 45px auto 50px;
         padding: 45px 0 50px;
-        background-color: rgb(249, 249, 249);
+        /*background-color: rgb(249, 249, 249);*/
 
         .my_movies_container_one, .my_movies_container_two
         {
@@ -195,6 +195,10 @@
 
         .my_movies_container_two
         {
+            opacity: 1;
+            -moz-transition: opacity 1.5s;
+            -ms-transition: opacity 1.5s;
+            transition: opacity 1.5s;
             display: none;
         }
 
@@ -220,13 +224,14 @@
 .write_me_form
 {
     margin: 55px auto 0;
+    //display: none;
 
     .form_title
     {
         @include font_style($headline-color, 36px/42px 'Open Sans', sans-serif);
         text-align: center;
 
-        &:before, &:after
+        /*&:before, &:after
         {
             content: "";
             display: inline-block;
@@ -239,6 +244,7 @@
         {
             margin: 0 100px 12px 10px;
         }
+        */ 
     }
 
     .write_me
@@ -303,15 +309,6 @@
             margin-top: 45px;
             @include font_style($headline_color, 18px/32px 'Open Sans', sans-serif);
 
-            .form_headline
-            {
-                &:after
-                {
-                    content: " *";
-                    color: red;
-                }
-            }
-
             .gender_name
             {
                 margin-right: 30px;
@@ -321,6 +318,12 @@
         .form_message
         {
             margin-top: 40px;
+
+            .form_headline:after
+            {
+                content: " *";
+                color: red;
+            }
 
             #message
             {

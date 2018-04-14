@@ -24,7 +24,7 @@ $text_color: rgb(85,85,85);
 		background: url(../images/#{$icon_name}_icon_white.png) no-repeat 0 0;
 		background-position: 20px 15px;
 		background-color: $background_color;
-        @include font_style($hover_color, $fonts);
+    	@include font_style($hover_color, $fonts);
 	}
 }
 
