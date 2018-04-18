@@ -195,11 +195,22 @@
 
         .my_movies_container_two
         {
-            opacity: 1;
-            -moz-transition: opacity 1.5s;
-            -ms-transition: opacity 1.5s;
-            transition: opacity 1.5s;
             display: none;
+            opacity: 0;
+            transition: 1.5s;
+            -webkit-transition: 1.5s;
+            -moz-transition: 1.5s;
+            -o-transition: 1.5s;
+        }
+
+        .display_movie_container
+        {
+            display: block;
+        }
+
+        .opacity_movie_container
+        {
+            opacity: 1;
         }
 
         .all_movies
@@ -230,21 +241,6 @@
     {
         @include font_style($headline-color, 36px/42px 'Open Sans', sans-serif);
         text-align: center;
-
-        /*&:before, &:after
-        {
-            content: "";
-            display: inline-block;
-            border-bottom: 1px solid rgb(196, 196, 196);
-            margin: 0 10px 12px 100px;
-            width: 200px;
-        }
-
-        &:after
-        {
-            margin: 0 100px 12px 10px;
-        }
-        */ 
     }
 
     .write_me
