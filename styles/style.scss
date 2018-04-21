@@ -134,6 +134,7 @@
                 @include font_style($base-color, 19px/32px 'Georgia', sans-serif);
                 margin-top: 40px;
                 text-decoration: none;
+                cursor: pointer;
 
                 .link_without_arrow
                 {
@@ -234,13 +235,36 @@
 
 .write_me_form
 {
-    margin: 55px auto 0;
-    //display: none;
+    margin: auto auto;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    width: 660px;
+    max-width: 100%;
+    height: 900px;
+    max-height: 100%;
+    display: none;
+    z-index: 1010;
+    border-radius: 10px;
+    background-color: rgb(255,255,255);
+
+    .cross
+    {
+        .close_modal_button
+        {
+            margin: 30px 0 0 92%;
+            width: 24px;
+            height: 24px;
+            background: url(../images/cross.png) no-repeat 0 0;
+            border: none;
+            cursor: pointer;
+        }
+    }
 
     .form_title
     {
         @include font_style($headline-color, 36px/42px 'Open Sans', sans-serif);
-        text-align: center;
+        margin-left: 60px;
     }
 
     .write_me
@@ -258,7 +282,7 @@
 
         .form_name, .form_email
         {
-            margin-top: 70px;
+            margin-top: 20px;
 
             .form_headline:after
             {
@@ -266,23 +290,23 @@
                 color: red;
             }
             
-            #username, #email
+            .username, .email
             {
                 height: 50px;
                 @include form_style;
             }
-        }
 
-        .form_email
-        {
-            margin-top: 20px;
+            .red_border
+            {
+                border-color: red;
+            }
         }
 
         .form_country
         {
             margin-top: 25px;
 
-            #country
+            .country
             {
                 height: 50px;
                 text-indent: 15px;
@@ -321,12 +345,17 @@
                 color: red;
             }
 
-            #message
+            .message
             {
                 height: 140px;
                 @include form_style;
                 resize: none;
                 padding: 0;
+            }
+
+            .red_border
+            {
+                border: 2px solid red;
             }
         }
 
@@ -346,6 +375,25 @@
             }
         }
     }
+}
+
+.modal_overlay
+{
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-color: rgb(51,51,51);
+    cursor: pointer;
+    display: none;
+}
+
+.view_modal
+{
+    display: block;
 }
 
 .footer

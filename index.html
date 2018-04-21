@@ -53,7 +53,7 @@
                         Так же люблю компьютерные игры, правда сейчас на них совсем нет времени. 
                         Люблю читать.
                     </p> <!--info_my_hobby-->
-                    <a class="write_me_link" href="https://vk.com/argtum"><span class="link_without_arrow">Напиши мне</span> →</a>
+                    <a id="write_me_link" class="write_me_link" href="#"><span class="link_without_arrow">Напиши мне</span> →</a>
                 </div> <!--colon_two-->
             </div> <!--main-->
             <div class="clear"></div>
@@ -175,20 +175,21 @@
                 <div class="all_movies"><input type="submit" id="all_movies_button" class="all_movies_button" value="Все фильмы"></div>
             </div> <!--my_movies-->
         </div> <!--content-->
-        <div class="write_me_form">
+        <div id="modal" class="write_me_form">
+            <div class="cross"><input type="submit" id="close_modal_button" class="close_modal_button" value=""></div>
             <h2 class="form_title">НАПИШИ МНЕ</h2>
             <form class="write_me" method="POST">
                 <div class="form_name">
                     <label class="form_headline" for="username">Ваше имя</label><br>
-                    <input id="username" type="text">
+                    <input id="username" class="username" type="text">
                 </div>
                 <div class="form_email">
                     <label class="form_headline" for="email">Ваш email</label><br>
-                    <input id="email" type="text">
+                    <input id="email" class="email" type="text">
                 </div>
                 <div class="form_country">
                     <label class="form_headline" for="country">Откуда вы?</label><br>
-                    <select id="country" size="1">
+                    <select id="country" class="country" size="1">
                         <option value="Россия">Россия</option>
                         <option value="Украина">Украина</option>
                         <option value="Белорусия">Белорусия</option>
@@ -205,15 +206,15 @@
                 </div>
                 <div class="form_message">
                     <label class="form_headline" for="message">Ваше сообщение</label><br>
-                    <textarea id="message"></textarea>
+                    <textarea id="message" class="message"></textarea>
                 </div>
                 <div class="form_button">
-                    <input class="send" type="submit" value="Отправить">
+                    <input class="send" id="send_form" type="submit" value="Отправить">
                 </div>
             </form> <!--write_me-->   
         </div> <!--write_me_form-->
+        <div class="modal_overlay" id="modal_overlay"></div>
         <footer class="footer">© 1986-2018 Все права защищены</footer>
-        <script src="js/jquery-3.3.1.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

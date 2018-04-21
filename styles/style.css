@@ -219,6 +219,7 @@ input:focus {
   color: #15a98b;
   margin-top: 40px;
   text-decoration: none;
+  cursor: pointer;
 }
 .content .main .column_two .write_me_link .link_without_arrow {
   text-decoration: underline;
@@ -268,7 +269,6 @@ input:focus {
   -webkit-transition: 1.5s;
   -moz-transition: 1.5s;
   -o-transition: 1.5s;
-  
 }
 .content .my_movies .display_movie_container {
   display: block;
@@ -292,26 +292,31 @@ input:focus {
 }
 
 .write_me_form {
-  margin: 55px auto 0;
+  margin: auto auto;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  width: 660px;
+  max-width: 100%;
+  height: 900px;
+  max-height: 100%;
+  display: none;
+  z-index: 1010;
+  border-radius: 10px;
+  background-color: white;
+}
+.write_me_form .cross .close_modal_button {
+  margin: 30px 0 0 92%;
+  width: 24px;
+  height: 24px;
+  background: url(../images/cross.png) no-repeat 0 0;
+  border: none;
+  cursor: pointer;
 }
 .write_me_form .form_title {
   font: 36px/42px "Open Sans", sans-serif;
   color: #333333;
-  text-align: center;
-        /*&:before, &:after
-        {
-            content: "";
-            display: inline-block;
-            border-bottom: 1px solid rgb(196, 196, 196);
-            margin: 0 10px 12px 100px;
-            width: 200px;
-        }
-
-        &:after
-        {
-            margin: 0 100px 12px 10px;
-        }
-        */
+  margin-left: 60px;
 }
 .write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_gender, .write_me_form .write_me .form_message, .write_me_form .write_me .form_button {
   margin: 0 auto;
@@ -322,32 +327,32 @@ input:focus {
   color: #333333;
 }
 .write_me_form .write_me .form_name, .write_me_form .write_me .form_email {
-  margin-top: 70px;
+  margin-top: 20px;
 }
 .write_me_form .write_me .form_name .form_headline:after, .write_me_form .write_me .form_email .form_headline:after {
   content: " *";
   color: red;
 }
-.write_me_form .write_me .form_name #username, .write_me_form .write_me .form_name #email, .write_me_form .write_me .form_email #username, .write_me_form .write_me .form_email #email {
+.write_me_form .write_me .form_name .username, .write_me_form .write_me .form_name .email, .write_me_form .write_me .form_email .username, .write_me_form .write_me .form_email .email {
   height: 50px;
   width: 100%;
   border-radius: 3px;
   border: 2px solid #c9c9c9;
 }
-.write_me_form .write_me .form_name #username:hover, .write_me_form .write_me .form_name #email:hover, .write_me_form .write_me .form_email #username:hover, .write_me_form .write_me .form_email #email:hover {
+.write_me_form .write_me .form_name .username:hover, .write_me_form .write_me .form_name .email:hover, .write_me_form .write_me .form_email .username:hover, .write_me_form .write_me .form_email .email:hover {
   border: 2px solid #a6a6a6;
 }
-.write_me_form .write_me .form_name #username:focus, .write_me_form .write_me .form_name #email:focus, .write_me_form .write_me .form_email #username:focus, .write_me_form .write_me .form_email #email:focus {
+.write_me_form .write_me .form_name .username:focus, .write_me_form .write_me .form_name .email:focus, .write_me_form .write_me .form_email .username:focus, .write_me_form .write_me .form_email .email:focus {
   outline: none;
   border: 2px solid #15a98b;
 }
-.write_me_form .write_me .form_email {
-  margin-top: 20px;
+.write_me_form .write_me .form_name .red_border, .write_me_form .write_me .form_email .red_border {
+  border-color: red;
 }
 .write_me_form .write_me .form_country {
   margin-top: 25px;
 }
-.write_me_form .write_me .form_country #country {
+.write_me_form .write_me .form_country .country {
   height: 50px;
   text-indent: 15px;
   font: 18px/32px "Open Sans", sans-serif;
@@ -364,10 +369,10 @@ input:focus {
   background: url(../images/arrow_down.png) no-repeat 0 0;
   background-position: 97% 20px;
 }
-.write_me_form .write_me .form_country #country:hover {
+.write_me_form .write_me .form_country .country:hover {
   border: 2px solid #a6a6a6;
 }
-.write_me_form .write_me .form_country #country:focus {
+.write_me_form .write_me .form_country .country:focus {
   outline: none;
   border: 2px solid #15a98b;
 }
@@ -386,7 +391,7 @@ input:focus {
   content: " *";
   color: red;
 }
-.write_me_form .write_me .form_message #message {
+.write_me_form .write_me .form_message .message {
   height: 140px;
   width: 100%;
   border-radius: 3px;
@@ -394,12 +399,15 @@ input:focus {
   resize: none;
   padding: 0;
 }
-.write_me_form .write_me .form_message #message:hover {
+.write_me_form .write_me .form_message .message:hover {
   border: 2px solid #a6a6a6;
 }
-.write_me_form .write_me .form_message #message:focus {
+.write_me_form .write_me .form_message .message:focus {
   outline: none;
   border: 2px solid #15a98b;
+}
+.write_me_form .write_me .form_message .red_border {
+  border: 2px solid red;
 }
 .write_me_form .write_me .form_button {
   margin-top: 50px;
@@ -413,6 +421,23 @@ input:focus {
   background-color: #15a98b;
   border: none;
   cursor: pointer;
+}
+
+.modal_overlay {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-color: #333333;
+  cursor: pointer;
+  display: none;
+}
+
+.view_modal {
+  display: block;
 }
 
 .footer {
