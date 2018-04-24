@@ -31,7 +31,7 @@ function checkForm(event)
 }
 
 //-------Отмена красных полей-------\\
-function getNormalName(a)
+function getNormalName()
 {
     document.getElementById("username").classList.remove("red_border");
 }

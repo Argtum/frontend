@@ -292,21 +292,21 @@ input:focus {
 }
 
 .write_me_form {
-  margin: auto auto;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 660px;
+  max-height: 900px;
   position: fixed;
-  top: 10%;
-  left: 30%;
-  width: 660px;
-  max-width: 100%;
-  height: 900px;
-  max-height: 100%;
   display: none;
   z-index: 1010;
   border-radius: 10px;
   background-color: white;
 }
 .write_me_form .cross .close_modal_button {
-  margin: 30px 0 0 92%;
+  margin: 20px 0 0 93%;
   width: 24px;
   height: 24px;
   background: url(../images/cross.png) no-repeat 0 0;
@@ -382,7 +382,7 @@ input:focus {
   color: #333333;
 }
 .write_me_form .write_me .form_gender .gender_name {
-  margin-right: 30px;
+  margin-right: 20px;
 }
 .write_me_form .write_me .form_message {
   margin-top: 40px;
@@ -407,7 +407,7 @@ input:focus {
   border: 2px solid #15a98b;
 }
 .write_me_form .write_me .form_message .red_border {
-  border: 2px solid red;
+  border-color: red;
 }
 .write_me_form .write_me .form_button {
   margin-top: 50px;
@@ -468,14 +468,15 @@ input:focus {
   .content .main .column_two .quote .author {
     color: #333333;
   }
-
-  .write_me_form .form_title:before, .write_me_form .form_title:after {
-    display: none;
-  }
 }
 @media screen and (max-width: 1279px) {
   .content .my_movies .my_movies_container_one .second_movie, .content .my_movies .my_movies_container_one .sixth_movie, .content .my_movies .my_movies_container_two .second_movie, .content .my_movies .my_movies_container_two .sixth_movie {
     margin-right: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .write_me_form {
+    margin: auto 10px;
   }
 }
 @media screen and (min-width: 641px) and (max-width: 1279px) {
@@ -498,8 +499,19 @@ input:focus {
   }
 }
 @media screen and (max-width: 600px) {
-  .write_me_form .write_me {
-    margin: 10px;
+  .write_me_form {
+    margin: auto 10px;
+  }
+  .write_me_form .cross .close_modal_button {
+    margin: 20px 0 0 90%;
+  }
+  .write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_message, .write_me_form .write_me .form_gender {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .write_me_form .form_title, .write_me_form .form_button {
+    margin-left: 0;
+    text-align: center;
   }
 }
 
