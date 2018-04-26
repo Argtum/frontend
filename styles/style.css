@@ -477,6 +477,10 @@ input:focus {
 @media screen and (max-width: 700px) {
   .write_me_form {
     margin: auto 10px;
+    overflow: auto;
+  }
+  .write_me_form .write_me .form_button {
+    margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 641px) and (max-width: 1279px) {

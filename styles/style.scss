@@ -464,6 +464,15 @@
         .write_me_form
         {
             margin: auto 10px;
+            overflow: auto;
+
+            .write_me
+            {
+                .form_button
+                {
+                    margin-bottom: 20px;
+                }
+            }
         }
     }
 
