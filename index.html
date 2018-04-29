@@ -9,9 +9,9 @@
     </head>
     <body>
         <header class="top_menu">
-            <input class="about_me_button" type="submit" value="Обо мне">
+            <input id="about_me_button" class="about_me_button" type="submit" value="Обо мне">
             <input class="my_hobby_button" type="submit" value="Мое хобби">
-            <input class="favorite_films_button" type="submit" value="Любимые фильмы">
+            <input id="favorite_films_button" class="favorite_films_button" type="submit" value="Любимые фильмы">
         </header>
         <div class="content">
             <div class="main">
@@ -36,7 +36,7 @@
                         <cite class="author">— Конфуций</cite>
                     </blockquote> <!--quote-->
                     <h1 class="name">Alex Silver</h1>
-                    <p class="info_about_me">
+                    <p id="info_about_me" class="info_about_me">
                         Меня зовут Алексей и это моя первая веб-страница. 
                         В будущем я собираюсь написать много веб-страниц и сайтов 
                         и планирую серьёзно углубиться в эту тему. Источником моих знаний служат книги.
@@ -57,7 +57,7 @@
                 </div> <!--colon_two-->
             </div> <!--main-->
             <div class="clear"></div>
-            <div class="my_movies">
+            <div id="my_movies" class="my_movies">
                 <div class="my_movies_container_one">
                     <h2 class="favorite_movies">Любимые фильмы</h2>
                     <div class="movie first_movie">
@@ -215,6 +215,8 @@
         </div> <!--write_me_form-->
         <div class="modal_overlay" id="modal_overlay"></div>
         <footer class="footer">© 1986-2018 Все права защищены</footer>
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/jquery-smooth-scroll.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

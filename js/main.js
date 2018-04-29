@@ -2,7 +2,7 @@
 function showMoreFilms(event)
 {
     event.preventDefault();
-    var hiddenMovieContainer = document.getElementById("hidden_movie_container");
+    let hiddenMovieContainer = document.getElementById("hidden_movie_container");
     
     document.getElementById("all_movies_button").style.display = "none";
     document.getElementById("all_movies_button").style.height = "0";
@@ -18,12 +18,12 @@ function showMoreFilms(event)
 function checkForm(event)
 {
     event.preventDefault();
-    var name = document.getElementById("username");
-    var email = document.getElementById("email");
-    var message = document.getElementById("message");
-    var fields = [name, email, message];
+    let name = document.getElementById("username");
+    let email = document.getElementById("email");
+    let message = document.getElementById("message");
+    let fields = [name, email, message];
 
-    for(var i = 0; i < fields.length; i++)
+    for(let i = 0; i < fields.length; i++)
     {
         if(fields[i].value == "")
         {
@@ -43,8 +43,8 @@ function getNormal(event)
 function writeMe(event)
 {
     event.preventDefault();
-    var modal = document.getElementById("modal");
-    var modalOverlay = document.getElementById("modal_overlay");
+    let modal = document.getElementById("modal");
+    let modalOverlay = document.getElementById("modal_overlay");
     modal.classList.add("view_modal");
     modalOverlay.classList.add("view_modal");
 }
@@ -53,8 +53,8 @@ function writeMe(event)
 function closeModal(event)
 {
     event.preventDefault();
-    var modal = document.getElementById("modal");
-    var modalOverlay = document.getElementById("modal_overlay");
+    let modal = document.getElementById("modal");
+    let modalOverlay = document.getElementById("modal_overlay");
     modal.classList.remove("view_modal");
     modalOverlay.classList.remove("view_modal");
 }
@@ -71,4 +71,4 @@ window.onload = function()
     document.getElementById("write_me_link").onclick = writeMe;
     document.getElementById("modal_overlay").onclick = closeModal;
     document.getElementById("close_modal_button").onclick = closeModal;
-}
+};
