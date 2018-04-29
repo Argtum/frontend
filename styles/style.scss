@@ -6,13 +6,18 @@
     clear: both;
 }
 
+.revealator-slideup {
+    transform: translate(0, 100px);
+    opacity: 0;
+}
+
 .top_menu
 {
     margin: 0 auto;
     max-width: 960px;
     height: 50px;
 
-    .about_me_button 
+    .about_me_button
     {
         @include top_menu_button(about_me, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
     }
@@ -26,6 +31,49 @@
     {
         @include top_menu_button(favorite_films, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
     }
+
+    .add_film_button
+    {
+        @include top_menu_button(add_film, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+    }
+
+    .mobile_menu
+    {
+        display: none;
+        margin-left: 10px;
+        height: 50px;
+        width: 30px;
+        border: none;
+        background: url(../images/hamburger_menu.svg) no-repeat 0 0;
+        background-position: center center;
+        cursor: pointer;
+    }
+
+    .close_mobile_menu
+    {
+        display: none;
+        margin-left: 10px;
+        height: 50px;
+        width: 30px;
+        border: none;
+        opacity: 0;
+        background: url(../images/cross_menu.svg) no-repeat 0 0;
+        background-position: center center;
+        cursor: pointer;
+    }
+
+    .mm
+    {
+        display: none;
+    }
+}
+
+.mobile_top_menu
+{
+    margin: auto;
+    max-width: 600px;
+    max-height: 800px;
+    background-color: rgb(255,255,255);
 }
 
 .content
@@ -274,6 +322,7 @@
             margin: 0 auto;
             max-width: 540px;
 
+
             .form_headline
             {
                 @include font_style($headline-color, 20px/32px 'Open Sans', sans-serif);
@@ -418,7 +467,7 @@
             {
                 .column_one
                 {
-                    margin: 130px auto 0;
+                    margin: 10px auto 0;
                     float: none; 
                 }
         
@@ -441,7 +490,7 @@
         }
     }
 
-    @media screen and (max-width: 1279px)
+    @media (max-width: 1279px)
     {
         .content
         {
@@ -454,6 +503,24 @@
                         margin-right: 0;
                     }
                 }
+            }
+        }
+    }
+
+    @media (max-width: 768px)
+    {
+        .top_menu
+        {
+            .about_me_button, .my_hobby_button, .favorite_films_button, .add_film_button
+            {
+                float: none;
+                display: none;
+                opacity: 0;
+            }
+
+            .mobile_menu
+            {
+                display: block;
             }
         }
     }

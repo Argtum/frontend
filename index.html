@@ -3,40 +3,44 @@
     <head>
         <meta charset="utf-8">
         <title>First</title>
+        <link rel="stylesheet" href="styles/fm.revealator.jquery.min.css">
         <link rel="stylesheet" href="styles/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header class="top_menu">
+            <input id="mobile_menu" class="mobile_menu" type="submit" value="">
+            <input id="close_mobile_menu" class="close_mobile_menu" type="submit" value="">
             <input id="about_me_button" class="about_me_button" type="submit" value="Обо мне">
-            <input class="my_hobby_button" type="submit" value="Мое хобби">
+            <input id="my_hobby_button" class="my_hobby_button" type="submit" value="Мое хобби">
             <input id="favorite_films_button" class="favorite_films_button" type="submit" value="Любимые фильмы">
+            <input id="add_film_button" class="add_film_button" type="submit" value="Добавить фильм">
         </header>
         <div class="content">
             <div class="main">
                 <div class="column_one">
                     <img class="picture" src="images/my_photo.jpg" alt="My photo">
                     <div class="my_books">
-                        <h3 class="books_hedline">Прочитанные книги:</h3>
+                        <h3 class="books_hedline revealator-slideup">Прочитанные книги:</h3>
                         <ul class="books_list">
-                            <li class="book">"Жемчужины программирования" Джон Бентли</li>
-                            <li class="book">"Мифический человеко-месяц" Фредерик Брукс</li>
+                            <li class="book revealator-slideup">"Жемчужины программирования" Джон Бентли</li>
+                            <li class="book revealator-slideup">"Мифический человеко-месяц" Фредерик Брукс</li>
                         </ul>
-                        <h3 class="books_hedline">Собираюсь прочитать:</h3>
+                        <h3 class="books_hedline revealator-slideup">Собираюсь прочитать:</h3>
                         <ol class="books_list">
-                            <li class="book">"Выразительный Javascript" Марейн Хавербек</li>
-                            <li class="book">"Тестирование программного обеспечения" Святослав Куликов</li>
+                            <li class="book revealator-slideup">"Выразительный Javascript" Марейн Хавербек</li>
+                            <li class="book revealator-slideup">"Тестирование программного обеспечения" Святослав Куликов</li>
                         </ol>
                     </div> <!--my_books-->
                 </div> <!--colon_one-->
                 <div class="column_two">
-                    <blockquote class="quote">
+                    <blockquote class="quote revealator-slideup">
                         Всё, что ни делается, – к лучшему.<br>
-                        <cite class="author">— Конфуций</cite>
+                        <cite class="author revealator-slideup">— Конфуций</cite>
                     </blockquote> <!--quote-->
-                    <h1 class="name">Alex Silver</h1>
-                    <p id="info_about_me" class="info_about_me">
+                    <h1 id="name" class="name revealator-slideup">Alex Silver</h1>
+                    <p class="info_about_me revealator-slideup">
                         Меня зовут Алексей и это моя первая веб-страница. 
                         В будущем я собираюсь написать много веб-страниц и сайтов 
                         и планирую серьёзно углубиться в эту тему. Источником моих знаний служат книги.
@@ -44,8 +48,8 @@
                         собираюсь прочитать вы можете увидеть на этой странице. Помимо книг 
                         читаю статьи на темы связанные с IT.
                     </p> <!--info_about_me-->
-                    <h2 class="hobby">Мое хобби</h2>
-                    <p class="info_my_hobby">
+                    <h2 id="hobby" class="hobby revealator-slideup">Мое хобби</h2>
+                    <p class="info_my_hobby revealator-slideup">
                         Люблю футбол. Болею за Лондонский Арсенал.  
                         На моей работе проводится ежегодный турнир по футболу и 
                         моя команда на прошлом турнире заняла 2-е место. 
@@ -59,11 +63,11 @@
             <div class="clear"></div>
             <div id="my_movies" class="my_movies">
                 <div class="my_movies_container_one">
-                    <h2 class="favorite_movies">Любимые фильмы</h2>
+                    <h2 class="favorite_movies revealator-slideup">Любимые фильмы</h2>
                     <div class="movie first_movie">
                         <img class="movie_image" src="images/fight_club.jpg" alt="Fight club picture">
-                        <h4 class="movie_name">Бойцовский клуб</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup">Бойцовский клуб</h4>
+                        <p class="movie_brief revealator-slideup">
                             Терзаемый хронической бессонницей и отчаянно пытающийся вырваться 
                             из мучительно скучной жизни, клерк встречает некоего Тайлера Дардена, 
                             харизматического торговца мылом с извращенной философией. 
@@ -77,8 +81,8 @@
                     </div> <!--movie first_movie-->
                     <div class="movie second_movie">
                         <img class="movie_image" src="images/forrest_gump.jpg" alt="Forrest gump picture">
-                        <h4 class="movie_name">Форрест Гамп</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup revealator-delay1">Форрест Гамп</h4>
+                        <p class="movie_brief revealator-slideup revealator-delay1">
                             От лица главного героя Форреста Гампа, слабоумного безобидного 
                             человека с благородным и открытым сердцем, рассказывается история 
                             его необыкновенной жизни. Фантастическим образом 
@@ -91,8 +95,8 @@
                     </div> <!--movie second_movie-->
                     <div class="movie third_movie">
                         <img class="movie_image" src="images/pulp_fiction.jpg" alt="Pulp fiction picture">
-                        <h4 class="movie_name">Криминальное чтиво</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup revealator-delay2">Криминальное чтиво</h4>
+                        <p class="movie_brief revealator-slideup revealator-delay2">
                             Двое бандитов Винсент Вега и Джулс Винфилд проводят время в 
                             философских беседах в перерыве между разборками и «решением 
                             проблем» с должниками своего криминального босса Марселласа Уоллеса. 
@@ -105,8 +109,8 @@
                     </div> <!--movie third_movie-->
                     <div class="movie fourth_movie">
                         <img class="movie_image" src="images/gravity.jpg" alt="Gravity picture">
-                        <h4 class="movie_name">Гравитация</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup revealator-delay3">Гравитация</h4>
+                        <p class="movie_brief revealator-slideup revealator-delay3">
                             Доктор Райан Стоун, блестящий специалист в области медицинского 
                             инжиниринга, отправляется в свою первую космическую миссию под 
                             командованием ветерана астронавтики Мэтта Ковальски, для которого 
@@ -122,8 +126,8 @@
                 <div class="my_movies_container_two" id="hidden_movie_container">
                     <div class="movie fifth_movie">
                         <img class="movie_image" src="images/Intouchables.jpg" alt="1+1 picture">
-                        <h4 class="movie_name">1+1</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup">1+1</h4>
+                        <p class="movie_brief revealator-slideup">
                             Пострадав в результате несчастного случая, богатый аристократ
                             Филипп нанимает в помощники человека, который менее всего подходит
                             для этой работы, — молодого жителя предместья Дрисса, только что
@@ -134,8 +138,8 @@
                     </div> <!--movie first_movie-->
                     <div class="movie sixth_movie">
                         <img class="movie_image" src="images/Interstellar.jpg" alt="Interstellar picture">
-                        <h4 class="movie_name">Интерстеллар</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup revealator-delay1">Интерстеллар</h4>
+                        <p class="movie_brief revealator-slideup revealator-delay1">
                             Когда засуха приводит человечество к продовольственному кризису,
                             коллектив исследователей и учёных отправляется сквозь червоточину
                             (которая предположительно соединяет области пространства-времени
@@ -146,8 +150,8 @@
                     </div> <!--movie second_movie-->
                     <div class="movie seventh_movie">
                         <img class="movie_image" src="images/prestige.jpg" alt="The Prestige picture">
-                        <h4 class="movie_name">Престиж</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup revealator-delay2">Престиж</h4>
+                        <p class="movie_brief revealator-slideup revealator-delay2">
                             Роберт и Альфред — фокусники-иллюзионисты, которые на рубеже XIX
                             и XX веков соперничали друг с другом в Лондоне. С годами их дружеская
                             конкуренция на профессиональной почве перерастает в настоящую войну.
@@ -158,8 +162,8 @@
                     </div> <!--movie third_movie-->
                     <div class="movie eighth_movie">
                         <img class="movie_image" src="images/matrix.jpg" alt="The Matrix picture">
-                        <h4 class="movie_name">Матрица</h4>
-                        <p class="movie_brief">
+                        <h4 class="movie_name revealator-slideup revealator-delay3">Матрица</h4>
+                        <p class="movie_brief revealator-slideup revealator-delay3">
                             Жизнь Томаса Андерсона разделена на две части: днём он самый обычный
                             офисный работник, получающий нагоняи от начальства, а ночью
                             превращается в хакера по имени Нео, и нет места в сети, куда он
@@ -215,7 +219,9 @@
         </div> <!--write_me_form-->
         <div class="modal_overlay" id="modal_overlay"></div>
         <footer class="footer">© 1986-2018 Все права защищены</footer>
+
         <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/fm.revealator.jquery.min.js"></script>
         <script src="js/jquery-smooth-scroll.js"></script>
         <script src="js/main.js"></script>
     </body>

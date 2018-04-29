@@ -72,3 +72,65 @@ window.onload = function()
     document.getElementById("modal_overlay").onclick = closeModal;
     document.getElementById("close_modal_button").onclick = closeModal;
 };
+
+
+$(window).on('load', function ()
+{
+    //----------smoothScroll----------\\
+    $('#about_me_button').on('click', function()
+    {
+        $.smoothScroll(
+            {
+                scrollTarget: '#name'
+            });
+        return false;
+    });
+
+    $('#my_hobby_button').on('click', function()
+    {
+        $.smoothScroll(
+            {
+                scrollTarget: '#hobby'
+            });
+        return false;
+    });
+
+    $('#favorite_films_button').on('click', function()
+    {
+        $.smoothScroll(
+            {
+                scrollTarget: '#my_movies'
+            });
+        return false;
+    });
+
+    //----------Open mobile menu ----------\\
+    let top_menu = [$('#close_mobile_menu'), $('#about_me_button'), $('#my_hobby_button'), $('#favorite_films_button'), $('#add_film_button')];
+
+    $('#mobile_menu').on('click', function()
+    {
+        $('#mobile_menu').css('display', 'none');
+        for (let i = 0; i < top_menu.length; i++)
+        {
+            top_menu[i].css('display', 'block');
+            top_menu[i].animate({ "opacity": "1" }, 1000 );
+        }
+
+    });
+
+    //----------Close mobile menu ----------\\
+    $('#close_mobile_menu').on('click', function()
+    {
+        for (let i = 0; i < top_menu.length; i++)
+        {
+            setTimeout(function () {
+                top_menu[i].css('display', 'none');
+            }, 1000);
+            top_menu[i].animate({ "opacity": "0" }, 1000 );
+        }
+
+        setTimeout(function () {
+            $('#mobile_menu').css('display', 'block');
+        }, 1000);
+    });
+});

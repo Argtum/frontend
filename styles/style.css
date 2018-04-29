@@ -18,7 +18,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  /*font: inherit;*/
   vertical-align: baseline;
 }
 
@@ -43,7 +43,7 @@ blockquote, q {
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none;
+  /*content: none;*/
 }
 
 table {
@@ -59,6 +59,11 @@ input:focus {
   clear: both;
 }
 
+.revealator-slideup {
+  transform: translate(0, 100px);
+  opacity: 0;
+}
+
 .top_menu {
   margin: 0 auto;
   max-width: 960px;
@@ -72,17 +77,13 @@ input:focus {
   border: none;
   background: url(../images/about_me_icon.png) no-repeat 0 0;
   background-position: 20px 17px;
+  cursor: pointer;
   font: 19px/32px "Georgia", sans-serif;
   color: #333333;
 }
-@media screen and (max-width: 1023px) {
-  .top_menu .about_me_button {
-    float: none;
-  }
-}
 .top_menu .about_me_button:hover {
   background: url(../images/about_me_icon_white.png) no-repeat 0 0;
-  background-position: 20px 15px;
+  background-position: 20px 17px;
   background-color: #15a98b;
   font: 19px/32px "Georgia", sans-serif;
   color: whitesmoke;
@@ -95,17 +96,13 @@ input:focus {
   border: none;
   background: url(../images/hobby_icon.png) no-repeat 0 0;
   background-position: 20px 17px;
+  cursor: pointer;
   font: 19px/32px "Georgia", sans-serif;
   color: #333333;
 }
-@media screen and (max-width: 1023px) {
-  .top_menu .my_hobby_button {
-    float: none;
-  }
-}
 .top_menu .my_hobby_button:hover {
   background: url(../images/hobby_icon_white.png) no-repeat 0 0;
-  background-position: 20px 15px;
+  background-position: 20px 17px;
   background-color: #15a98b;
   font: 19px/32px "Georgia", sans-serif;
   color: whitesmoke;
@@ -118,20 +115,66 @@ input:focus {
   border: none;
   background: url(../images/favorite_films_icon.png) no-repeat 0 0;
   background-position: 20px 17px;
+  cursor: pointer;
   font: 19px/32px "Georgia", sans-serif;
   color: #333333;
 }
-@media screen and (max-width: 1023px) {
-  .top_menu .favorite_films_button {
-    float: none;
-  }
-}
 .top_menu .favorite_films_button:hover {
   background: url(../images/favorite_films_icon_white.png) no-repeat 0 0;
-  background-position: 20px 15px;
+  background-position: 20px 17px;
   background-color: #15a98b;
   font: 19px/32px "Georgia", sans-serif;
   color: whitesmoke;
+}
+.top_menu .add_film_button {
+  display: block;
+  float: left;
+  height: 50px;
+  padding: 0 20px 0 45px;
+  border: none;
+  background: url(../images/add_film_icon.png) no-repeat 0 0;
+  background-position: 20px 17px;
+  cursor: pointer;
+  font: 19px/32px "Georgia", sans-serif;
+  color: #333333;
+}
+.top_menu .add_film_button:hover {
+  background: url(../images/add_film_icon_white.png) no-repeat 0 0;
+  background-position: 20px 17px;
+  background-color: #15a98b;
+  font: 19px/32px "Georgia", sans-serif;
+  color: whitesmoke;
+}
+.top_menu .mobile_menu {
+  display: none;
+  margin-left: 10px;
+  height: 50px;
+  width: 30px;
+  border: none;
+  background: url(../images/hamburger_menu.svg) no-repeat 0 0;
+  background-position: center center;
+  cursor: pointer;
+}
+.top_menu .close_mobile_menu {
+  display: none;
+  margin-left: 10px;
+  height: 50px;
+  width: 30px;
+  border: none;
+  opacity: 0;
+  background: url(../images/cross_menu.svg) no-repeat 0 0;
+  background-position: center center;
+  cursor: pointer;
+}
+.top_menu .mm {
+  display: none;
+}
+
+.mobile_top_menu {
+  margin: auto;
+  max-width: 600px;
+  max-height: 800px;
+  background-color: white;
 }
 
 .content {
@@ -228,7 +271,6 @@ input:focus {
   height: auto;
   margin: 45px auto 50px;
   padding: 45px 0 50px;
-  /*background-color: rgb(249, 249, 249);*/
 }
 .content .my_movies .my_movies_container_one, .content .my_movies .my_movies_container_two {
   max-width: 1200px;
@@ -455,7 +497,7 @@ input:focus {
     background-image: none;
   }
   .content .main .column_one {
-    margin: 130px auto 0;
+    margin: 10px auto 0;
     float: none;
   }
   .content .main .column_two {
@@ -472,6 +514,16 @@ input:focus {
 @media screen and (max-width: 1279px) {
   .content .my_movies .my_movies_container_one .second_movie, .content .my_movies .my_movies_container_one .sixth_movie, .content .my_movies .my_movies_container_two .second_movie, .content .my_movies .my_movies_container_two .sixth_movie {
     margin-right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top_menu .about_me_button, .top_menu .my_hobby_button, .top_menu .favorite_films_button, .top_menu .add_film_button {
+    float: none;
+    display: none;
+    opacity: 0;
+  }
+  .top_menu .mobile_menu {
+    display: block;
   }
 }
 @media screen and (max-width: 700px) {
