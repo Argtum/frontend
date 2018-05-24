@@ -47,3 +47,15 @@ $text_color: rgb(85,85,85);
 		border: 2px solid $base_color;
 	}
 }
+
+@mixin mobile_menu_settings($icon_name)
+{
+    display: none;
+    margin-left: 10px;
+    height: 50px;
+    width: 30px;
+    border: none;
+  	cursor: pointer;
+    background-position: center center;
+  	background: url(../images/#{$icon_name}_menu.svg) no-repeat 0 0;
+}

@@ -18,7 +18,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  /*font: inherit;*/
+  font: inherit;
   vertical-align: baseline;
 }
 
@@ -43,7 +43,7 @@ blockquote, q {
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  /*content: none;*/
+  content: none;
 }
 
 table {
@@ -151,9 +151,9 @@ input:focus {
   height: 50px;
   width: 30px;
   border: none;
-  background: url(../images/hamburger_menu.svg) no-repeat 0 0;
-  background-position: center center;
   cursor: pointer;
+  background-position: center center;
+  background: url(../images/hamburger_menu.svg) no-repeat 0 0;
 }
 .top_menu .close_mobile_menu {
   display: none;
@@ -161,13 +161,13 @@ input:focus {
   height: 50px;
   width: 30px;
   border: none;
-  opacity: 0;
-  background: url(../images/cross_menu.svg) no-repeat 0 0;
-  background-position: center center;
   cursor: pointer;
-}
-.top_menu .mm {
-  display: none;
+  background-position: center center;
+  background: url(../images/cross_menu.svg) no-repeat 0 0;
+  width: 150px;
+  padding: 0 0 15px 10px;
+  font: 19px/32px "Georgia", sans-serif;
+  color: #333333;
 }
 
 .mobile_top_menu {
@@ -347,7 +347,7 @@ input:focus {
   border-radius: 10px;
   background-color: white;
 }
-.write_me_form .cross .close_modal_button {
+.write_me_form .cross_write_me_form .close_write_me_button {
   margin: 20px 0 0 93%;
   width: 24px;
   height: 24px;
@@ -355,16 +355,16 @@ input:focus {
   border: none;
   cursor: pointer;
 }
-.write_me_form .form_title {
+.write_me_form .write_me_form_title {
   font: 36px/42px "Open Sans", sans-serif;
   color: #333333;
   margin-left: 60px;
 }
-.write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_gender, .write_me_form .write_me .form_message, .write_me_form .write_me .form_button {
+.write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_gender, .write_me_form .write_me .form_message, .write_me_form .write_me .form_write_me_button {
   margin: 0 auto;
   max-width: 540px;
 }
-.write_me_form .write_me .form_name .form_headline, .write_me_form .write_me .form_email .form_headline, .write_me_form .write_me .form_country .form_headline, .write_me_form .write_me .form_gender .form_headline, .write_me_form .write_me .form_message .form_headline, .write_me_form .write_me .form_button .form_headline {
+.write_me_form .write_me .form_name .form_headline, .write_me_form .write_me .form_email .form_headline, .write_me_form .write_me .form_country .form_headline, .write_me_form .write_me .form_gender .form_headline, .write_me_form .write_me .form_message .form_headline, .write_me_form .write_me .form_write_me_button .form_headline {
   font: 20px/32px "Open Sans", sans-serif;
   color: #333333;
 }
@@ -407,7 +407,6 @@ input:focus {
   box-sizing: unset;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
   background: url(../images/arrow_down.png) no-repeat 0 0;
   background-position: 97% 20px;
 }
@@ -451,10 +450,107 @@ input:focus {
 .write_me_form .write_me .form_message .red_border {
   border-color: red;
 }
-.write_me_form .write_me .form_button {
+.write_me_form .write_me .form_write_me_button {
   margin-top: 50px;
 }
-.write_me_form .write_me .form_button .send {
+.write_me_form .write_me .form_write_me_button .send_write_me {
+  width: 220px;
+  height: 50px;
+  border-radius: 5px;
+  font: 19px/32px "Georgia", sans-serif;
+  color: whitesmoke;
+  background-color: #15a98b;
+  border: none;
+  cursor: pointer;
+}
+
+.add_movie_form {
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 660px;
+  max-height: 670px;
+  position: fixed;
+  display: none;
+  z-index: 1010;
+  border-radius: 10px;
+  background-color: white;
+}
+.add_movie_form .cross_add_movie_form .close_add_movie_button {
+  margin: 20px 0 0 93%;
+  width: 24px;
+  height: 24px;
+  background: url(../images/cross.png) no-repeat 0 0;
+  border: none;
+  cursor: pointer;
+}
+.add_movie_form .add_movie_form_title {
+  font: 36px/42px "Open Sans", sans-serif;
+  color: #333333;
+  margin-left: 60px;
+}
+.add_movie_form .add_movie .form_url, .add_movie_form .add_movie .form_movie_name, .add_movie_form .add_movie .form_movie_description, .add_movie_form .add_movie .form_add_movie_button {
+  margin: 0 auto;
+  max-width: 540px;
+}
+.add_movie_form .add_movie .form_url .form_headline, .add_movie_form .add_movie .form_movie_name .form_headline, .add_movie_form .add_movie .form_movie_description .form_headline, .add_movie_form .add_movie .form_add_movie_button .form_headline {
+  font: 20px/32px "Open Sans", sans-serif;
+  color: #333333;
+}
+.add_movie_form .add_movie .form_url, .add_movie_form .add_movie .form_movie_name {
+  margin-top: 20px;
+}
+.add_movie_form .add_movie .form_url .form_headline:after, .add_movie_form .add_movie .form_movie_name .form_headline:after {
+  content: " *";
+  color: red;
+}
+.add_movie_form .add_movie .form_url .url, .add_movie_form .add_movie .form_url .movie_name, .add_movie_form .add_movie .form_movie_name .url, .add_movie_form .add_movie .form_movie_name .movie_name {
+  height: 50px;
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c9c9;
+}
+.add_movie_form .add_movie .form_url .url:hover, .add_movie_form .add_movie .form_url .movie_name:hover, .add_movie_form .add_movie .form_movie_name .url:hover, .add_movie_form .add_movie .form_movie_name .movie_name:hover {
+  border: 2px solid #a6a6a6;
+}
+.add_movie_form .add_movie .form_url .url:focus, .add_movie_form .add_movie .form_url .movie_name:focus, .add_movie_form .add_movie .form_movie_name .url:focus, .add_movie_form .add_movie .form_movie_name .movie_name:focus {
+  outline: none;
+  border: 2px solid #15a98b;
+}
+.add_movie_form .add_movie .form_url .red_border, .add_movie_form .add_movie .form_movie_name .red_border {
+  border-color: red;
+}
+.add_movie_form .add_movie .form_movie_description {
+  margin-top: 40px;
+}
+.add_movie_form .add_movie .form_movie_description .form_headline:after {
+  content: " *";
+  color: red;
+}
+.add_movie_form .add_movie .form_movie_description .movie_description {
+  height: 140px;
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c9c9;
+  resize: none;
+  padding: 0;
+}
+.add_movie_form .add_movie .form_movie_description .movie_description:hover {
+  border: 2px solid #a6a6a6;
+}
+.add_movie_form .add_movie .form_movie_description .movie_description:focus {
+  outline: none;
+  border: 2px solid #15a98b;
+}
+.add_movie_form .add_movie .form_movie_description .red_border {
+  border-color: red;
+}
+.add_movie_form .add_movie .form_add_movie_button {
+  margin-top: 50px;
+}
+.add_movie_form .add_movie .form_add_movie_button .send_add_movie {
   width: 220px;
   height: 50px;
   border-radius: 5px;
@@ -531,7 +627,15 @@ input:focus {
     margin: auto 10px;
     overflow: auto;
   }
-  .write_me_form .write_me .form_button {
+  .write_me_form .write_me .form_write_me_button {
+    margin-bottom: 20px;
+  }
+
+  .add_movie_form {
+    margin: auto 10px;
+    overflow: auto;
+  }
+  .add_movie_form .add_movie .form_add_movie_button {
     margin-bottom: 20px;
   }
 }
@@ -558,14 +662,29 @@ input:focus {
   .write_me_form {
     margin: auto 10px;
   }
-  .write_me_form .cross .close_modal_button {
+  .write_me_form .cross_write_me_form .close_write_me_button {
     margin: 20px 0 0 90%;
   }
   .write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_message, .write_me_form .write_me .form_gender {
     margin-left: 10px;
     margin-right: 10px;
   }
-  .write_me_form .form_title, .write_me_form .form_button {
+  .write_me_form .write_me_form_title, .write_me_form .form_write_me_button {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .add_movie_form {
+    margin: auto 10px;
+  }
+  .add_movie_form .cross_add_movie_form .close_add_movie_button {
+    margin: 20px 0 0 90%;
+  }
+  .add_movie_form .add_movie .form_url, .add_movie_form .add_movie .form_movie_name, .add_movie_form .add_movie .form_movie_description {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .add_movie_form .add_movie .add_movie_form_title, .add_movie_form .add_movie .form_add_movie_button {
     margin-left: 0;
     text-align: center;
   }

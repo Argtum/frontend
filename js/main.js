@@ -43,7 +43,7 @@ function getNormal(event)
 function writeMe(event)
 {
     event.preventDefault();
-    let modal = document.getElementById("modal");
+    let modal = document.getElementById("write_me_form");
     let modalOverlay = document.getElementById("modal_overlay");
     modal.classList.add("view_modal");
     modalOverlay.classList.add("view_modal");
@@ -53,7 +53,7 @@ function writeMe(event)
 function closeModal(event)
 {
     event.preventDefault();
-    let modal = document.getElementById("modal");
+    let modal = document.getElementById("write_me_form");
     let modalOverlay = document.getElementById("modal_overlay");
     modal.classList.remove("view_modal");
     modalOverlay.classList.remove("view_modal");
@@ -63,14 +63,14 @@ window.onload = function()
 {
     document.getElementById("all_movies_button").onclick = showMoreFilms;
 
-    document.getElementById("send_form").onclick = checkForm;
+    document.getElementById("send_write_me").onclick = checkForm;
     document.getElementById("username").onclick = getNormal;
     document.getElementById("email").onclick = getNormal;
     document.getElementById("message").onclick = getNormal;
 
     document.getElementById("write_me_link").onclick = writeMe;
     document.getElementById("modal_overlay").onclick = closeModal;
-    document.getElementById("close_modal_button").onclick = closeModal;
+    document.getElementById("close_write_me_button").onclick = closeModal;
 };
 
 
@@ -110,6 +110,7 @@ $(window).on('load', function ()
     $('#mobile_menu').on('click', function()
     {
         $('#mobile_menu').css('display', 'none');
+        $('#top_menu').addClass('background_top_menu');
         for (let i = 0; i < top_menu.length; i++)
         {
             top_menu[i].css('display', 'block');
@@ -133,4 +134,35 @@ $(window).on('load', function ()
             $('#mobile_menu').css('display', 'block');
         }, 1000);
     });
+
+//------------------------------Add movie------------------------------\\
+	$('#add_film_button').on('click', function()
+    {
+		$('#add_movie_form').css('display', 'block');
+		$('#modal_overlay').css('display', 'block');
+	});
+
+	//-------Проверка формы  на пустые поля-------\\
+    let add_movie_fields = [$('#url'), $('#movie_name'), $('#movie_description')];
+	$('#form_add_movie_button').on('click', function()
+    {
+		for(let i = 0; i < add_movie_fields.length; i++)
+		{
+			if(add_movie_fields[i].value == "")
+			{
+				add_movie_fields[i].css('border-color', 'red'); //---------------недоработано!!!!!!!!!!!!
+			}
+		}
+	})
+
+//------------------------------Close Add movie------------------------------\\
+    function IdontWantAddMovie(event)
+    {
+		event.preventDefault();
+		$('#add_movie_form').css('display', 'none'); //---------------------недораотано!!!!!!!!!!!!ы
+		$('#modal_overlay').css('display', 'none');
+    }
+
+	$('#close_add_movie_button').on('click', function()) = IdontWantAddMovie;
+	$('#modal_overlay').on('click', function()) = IdontWantAddMovie;
 });
