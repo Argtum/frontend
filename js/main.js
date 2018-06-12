@@ -78,6 +78,7 @@ $(window).on('load', function ()
 {
     //----------smoothScroll----------\\
     let smoothScrollElements = [['#about_me_button', '#name'], ['#my_hobby_button', '#hobby'], ['#favorite_films_button', '#my_movies']];
+
     for (let i = 0; i < smoothScrollElements.length; i++) {
         let buttonId = smoothScrollElements[i][0];
         let targetElement = smoothScrollElements[i][1];
@@ -85,32 +86,27 @@ $(window).on('load', function ()
         $(buttonId).click(function() {
             $.smoothScroll({ scrollTarget: $(targetElement) });
         });
-        if ($(buttonId).click) { return false; }
     }
 
     //----------Open mobile menu ----------\\
     let topMenuButtons = ['#close_mobile_menu', '#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
-    let mobileMenu = $('#mobile_menu');
-    let topMenu = $('#top_menu');
 
-	mobileMenu.click(function() {
-		mobileMenu.css('display', 'none');
-		topMenu.addClass('background_top_menu');
+	$('#mobile_menu').click(function() {
+		$('#mobile_menu').css('display', 'none');
+		$('#top_menu').addClass('background_top_menu');
         for (let i = 0; i < topMenuButtons.length; i++) {
             $(topMenuButtons[i]).css('display', 'block');
             $(topMenuButtons[i]).animate({ "opacity": "1" }, 1000 );
         }
-
     });
 
     //----------Close mobile menu ----------\\
-
     $('#close_mobile_menu').click(function() {
-        for (let i = 0; i < topMenu.length; i++) {
+        for (let i = 0; i < topMenuButtons.length; i++) {
             setTimeout(function() {
-                topMenu[i].css('display', 'none');
+				$(topMenuButtons[i]).css('display', 'none');
             }, 1000);
-            topMenu[i].animate({ "opacity": "0" }, 1000 );
+			$(topMenuButtons[i]).animate({ "opacity": "0" }, 1000 );
         }
 
         setTimeout(function () {
@@ -128,6 +124,7 @@ $(window).on('load', function ()
 
     //------------------------------Close------------------------------\\
     let closeAddMovieForm = ['#modal_overlay', '#close_add_movie_button'];
+
     for (let i = 0; i < closeAddMovieForm.length; i++) {
         $(closeAddMovieForm[i]).click(function() {
             $('#add_movie_form').css('display', 'none');
@@ -138,13 +135,15 @@ $(window).on('load', function ()
     //-------Проверка формы на пустые поля-------\\
     let addMovieFields = ['#url', '#movie_name', '#movie_description'];
 
-    $('#send_add_movie').click(function(event) {
+    $('#send_add_movie').click(function() {
         event.preventDefault();
 		for(let i = 0; i < addMovieFields.length; i++) {
-			if(addMovieFields[i].value === "") {
-				addMovieFields[i].addClass('red_border');
+			if($(addMovieFields[i]).value === '') {
+				$(addMovieFields[i]).addClass('red_border');
 			} else {
                 console.log("1");
+
+                $('#my_movies').append('<div class="my_movies_container"> sdf</div>');
             }
 		}
 	});

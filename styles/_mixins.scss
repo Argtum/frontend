@@ -16,16 +16,13 @@ $text_color: rgb(85,85,85);
 	height: 50px;
 	padding: 0 20px 0 45px;
 	border: none;
-	background: url(../images/#{$icon_name}_icon.png) no-repeat 0 0;
-	background-position: 20px 17px;
+	background: url(../images/#{$icon_name}_icon.png) no-repeat 20px 17px;
 	cursor: pointer;
 	@include font_style($color, $fonts);
 
 	&:hover
 	{
-		background: url(../images/#{$icon_name}_icon_white.png) no-repeat 0 0;
-		background-position: 20px 17px;
-		background-color: $background_color;
+		background: url(../images/#{$icon_name}_icon_white.png) no-repeat 20px 17px, $background_color;
     	@include font_style($hover_color, $fonts);
 	}
 }
@@ -56,6 +53,5 @@ $text_color: rgb(85,85,85);
     width: 30px;
     border: none;
   	cursor: pointer;
-    background-position: center center;
-  	background: url(../images/#{$icon_name}_menu.svg) no-repeat 0 0;
+  	background: url(../images/#{$icon_name}_menu.svg) no-repeat center center;
 }
