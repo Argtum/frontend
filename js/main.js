@@ -163,6 +163,6 @@ $(window).on('load', function ()
 		$('#modal_overlay').css('display', 'none');
     }
 
-	$('#close_add_movie_button').on('click', function()) = IdontWantAddMovie;
-	$('#modal_overlay').on('click', function()) = IdontWantAddMovie;
-});
+	//$('#close_add_movie_button').on('click', function()) = IdontWantAddMovie;
+	//$('#modal_overlay').on('click', function()) = IdontWantAddMovie;
+}); 
