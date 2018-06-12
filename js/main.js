@@ -25,7 +25,7 @@ function checkForm(event)
 
     for(let i = 0; i < fields.length; i++)
     {
-        if(fields[i].value == "")
+        if(fields[i].value === '')
         {
             fields[i].classList.add("red_border");
         }
@@ -77,92 +77,75 @@ window.onload = function()
 $(window).on('load', function ()
 {
     //----------smoothScroll----------\\
-    $('#about_me_button').on('click', function()
-    {
-        $.smoothScroll(
-            {
-                scrollTarget: '#name'
-            });
-        return false;
-    });
+    let smoothScrollElements = [['#about_me_button', '#name'], ['#my_hobby_button', '#hobby'], ['#favorite_films_button', '#my_movies']];
+    for (let i = 0; i < smoothScrollElements.length; i++) {
+        let buttonId = smoothScrollElements[i][0];
+        let targetElement = smoothScrollElements[i][1];
 
-    $('#my_hobby_button').on('click', function()
-    {
-        $.smoothScroll(
-            {
-                scrollTarget: '#hobby'
-            });
-        return false;
-    });
-
-    $('#favorite_films_button').on('click', function()
-    {
-        $.smoothScroll(
-            {
-                scrollTarget: '#my_movies'
-            });
-        return false;
-    });
+        $(buttonId).click(function() {
+            $.smoothScroll({ scrollTarget: $(targetElement) });
+        });
+        if ($(buttonId).click) { return false; }
+    }
 
     //----------Open mobile menu ----------\\
-    let top_menu = [$('#close_mobile_menu'), $('#about_me_button'), $('#my_hobby_button'), $('#favorite_films_button'), $('#add_film_button')];
+    let topMenuButtons = ['#close_mobile_menu', '#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
+    let mobileMenu = $('#mobile_menu');
+    let topMenu = $('#top_menu');
 
-    $('#mobile_menu').on('click', function()
-    {
-        $('#mobile_menu').css('display', 'none');
-        $('#top_menu').addClass('background_top_menu');
-        for (let i = 0; i < top_menu.length; i++)
-        {
-            top_menu[i].css('display', 'block');
-            top_menu[i].animate({ "opacity": "1" }, 1000 );
+	mobileMenu.click(function() {
+		mobileMenu.css('display', 'none');
+		topMenu.addClass('background_top_menu');
+        for (let i = 0; i < topMenuButtons.length; i++) {
+            $(topMenuButtons[i]).css('display', 'block');
+            $(topMenuButtons[i]).animate({ "opacity": "1" }, 1000 );
         }
 
     });
 
     //----------Close mobile menu ----------\\
-    $('#close_mobile_menu').on('click', function()
-    {
-        for (let i = 0; i < top_menu.length; i++)
-        {
-            setTimeout(function () {
-                top_menu[i].css('display', 'none');
+
+    $('#close_mobile_menu').click(function() {
+        for (let i = 0; i < topMenu.length; i++) {
+            setTimeout(function() {
+                topMenu[i].css('display', 'none');
             }, 1000);
-            top_menu[i].animate({ "opacity": "0" }, 1000 );
+            topMenu[i].animate({ "opacity": "0" }, 1000 );
         }
 
         setTimeout(function () {
             $('#mobile_menu').css('display', 'block');
         }, 1000);
+
+        $('#top_menu').removeClass('background_top_menu');
     });
 
 //------------------------------Add movie------------------------------\\
-	$('#add_film_button').on('click', function()
-    {
+	$('#add_film_button').click(function() {
 		$('#add_movie_form').css('display', 'block');
 		$('#modal_overlay').css('display', 'block');
-	});
+    });
 
-	//-------Проверка формы  на пустые поля-------\\
-    let add_movie_fields = [$('#url'), $('#movie_name'), $('#movie_description')];
-	$('#form_add_movie_button').on('click', function()
-    {
-		for(let i = 0; i < add_movie_fields.length; i++)
-		{
-			if(add_movie_fields[i].value == "")
-			{
-				add_movie_fields[i].css('border-color', 'red'); //---------------недоработано!!!!!!!!!!!!
-			}
-		}
-	})
-
-//------------------------------Close Add movie------------------------------\\
-    function IdontWantAddMovie(event)
-    {
-		event.preventDefault();
-		$('#add_movie_form').css('display', 'none'); //---------------------недораотано!!!!!!!!!!!!ы
-		$('#modal_overlay').css('display', 'none');
+    //------------------------------Close------------------------------\\
+    let closeAddMovieForm = ['#modal_overlay', '#close_add_movie_button'];
+    for (let i = 0; i < closeAddMovieForm.length; i++) {
+        $(closeAddMovieForm[i]).click(function() {
+            $('#add_movie_form').css('display', 'none');
+		    $('#modal_overlay').css('display', 'none');
+        });
     }
 
-	//$('#close_add_movie_button').on('click', function()) = IdontWantAddMovie;
-	//$('#modal_overlay').on('click', function()) = IdontWantAddMovie;
+    //-------Проверка формы на пустые поля-------\\
+    let addMovieFields = ['#url', '#movie_name', '#movie_description'];
+
+    $('#send_add_movie').click(function(event) {
+        event.preventDefault();
+		for(let i = 0; i < addMovieFields.length; i++) {
+			if(addMovieFields[i].value === "") {
+				addMovieFields[i].addClass('red_border');
+			} else {
+                console.log("1");
+            }
+		}
+	});
 }); 
