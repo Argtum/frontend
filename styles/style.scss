@@ -180,7 +180,7 @@
         margin: 45px auto 50px;
         padding: 45px 0 50px;
 
-        .my_movies_container_one, .my_movies_container_two
+        .my_movies_container_one, .my_movies_container_two, .my_movies_container_three
         {
             max-width: 1200px;
             margin: 0 auto;
@@ -223,7 +223,7 @@
             }
         }
 
-        .my_movies_container_two
+        .my_movies_container_two, .my_movies_container_three
         {
             display: none;
             opacity: 0;

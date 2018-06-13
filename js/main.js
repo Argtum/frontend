@@ -137,14 +137,40 @@ $(window).on('load', function ()
 
     $('#send_add_movie').click(function() {
         event.preventDefault();
-		for(let i = 0; i < addMovieFields.length; i++) {
-			if($(addMovieFields[i]).value === '') {
-				$(addMovieFields[i]).addClass('red_border');
-			} else {
-                console.log("1");
+        function isEmptyFields() {
+            let isEmpty = false;
+			for(let i = 0; i < addMovieFields.length; i++) {
+				if($(addMovieFields[i]).value === '') {
+					$(addMovieFields[i]).addClass('red_border');
+					isEmpty = true;
+				} else {
+				    console.log('1');
+                }
+			}
+			return isEmpty;
+        }
 
-                $('#my_movies').append('<div class="my_movies_container"> sdf</div>');
+        if (!isEmptyFields()) {
+            let newMovie = document.createElement('div');
+			newMovie.classList.add('movie');
+
+			let movieImg = document.createElement('img');
+			movieImg.classList.add('movie_image');
+			movieImg.src = $(addMovieFields[0]).value;
+
+			let movieName = document.createElement('h4');
+			movieName.classList.add('movie_name');
+			movieName.value = $(addMovieFields[1]).value;
+
+			let movieBrief = document.createElement('p');
+			movieBrief.classList.add('movie_brief');
+			movieBrief.value = $(addMovieFields[2]).value;
+
+			let movie = [movieImg, movieName, movieBrief];
+
+			for (let i = 0; i < movie.length; i++) {
+				newMovie.appendChild(movie[i]);
             }
-		}
+        }
 	});
 }); 
