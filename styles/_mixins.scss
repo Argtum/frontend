@@ -9,21 +9,19 @@ $text_color: rgb(85,85,85);
 	color: $color;
 }
 
-@mixin top_menu_button($icon_name, $color, $hover_color, $background_color, $fonts...)
+@mixin top_menu_button
 {
 	display: block;
 	float: left;
 	height: 50px;
 	padding: 0 20px 0 45px;
 	border: none;
-	background: url(../images/#{$icon_name}_icon.png) no-repeat 20px 17px;
 	cursor: pointer;
-	@include font_style($color, $fonts);
+	@include font_style($headline_color, 19px/32px 'Georgia', sans-serif);
 
 	&:hover
 	{
-		background: url(../images/#{$icon_name}_icon_white.png) no-repeat 20px 17px, $background_color;
-    	@include font_style($hover_color, $fonts);
+    	color: $white-font-color;
 	}
 }
 
@@ -43,15 +41,4 @@ $text_color: rgb(85,85,85);
 		outline: none;
 		border: 2px solid $base_color;
 	}
-}
-
-@mixin mobile_menu_settings($icon_name)
-{
-    display: none;
-    margin-left: 10px;
-    height: 50px;
-    width: 30px;
-    border: none;
-  	cursor: pointer;
-  	background: url(../images/#{$icon_name}_menu.svg) no-repeat center center;
 }

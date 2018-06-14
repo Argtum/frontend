@@ -73,104 +73,102 @@ window.onload = function()
     document.getElementById("close_write_me_button").onclick = closeModal;
 };
 
+////////// ---------- JQUERY --------- \\\\\\\\\\
+
+//---------- Open mobile menu ----------\\
+let topMenuButtons = ['#close_mobile_menu', '#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
+let topMenuButtonsMobile = ['#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
+
+function openMobileMenu() {
+	$('#mobile_menu').css('display', 'none');
+	for (let i = 0; i < topMenuButtonsMobile.length; i++) {
+		$(topMenuButtonsMobile[i]).addClass('top_menu_button_mobile');
+	}
+	//$('#top_menu').addClass('background_top_menu');
+	for (let i = 0; i < topMenuButtons.length; i++) {
+		$(topMenuButtons[i]).css('display', 'block');
+		$(topMenuButtons[i]).animate({ "opacity": "1" }, 1000 );
+	}
+}
+
+//---------- Close mobile menu ----------\\
+function closeMobileMenu() {
+	for (let i = 0; i < topMenuButtons.length; i++) {
+		setTimeout(function() {
+			$(topMenuButtons[i]).css('display', 'none');
+		}, 1000);
+		$(topMenuButtons[i]).animate({ "opacity": "0" }, 1000 );
+	}
+	setTimeout(function () {
+		$('#mobile_menu').css('display', 'block');
+	}, 1000);
+	for (let i = 0; i < topMenuButtonsMobile.length; i++) {
+		$(topMenuButtonsMobile[i]).removeClass('top_menu_button_mobile');
+	}
+	//$('#top_menu').removeClass('background_top_menu');
+}
+
+//------------------------------Add movie------------------------------\\
+function openAddMovieMenu() {
+	$('#add_movie_form').css('display', 'block');
+	$('#modal_overlay').css('display', 'block');
+}
+
+//---------- Close Add movie ----------\\
+function closeAddMovieMenu() {
+	$('#add_movie_form').css('display', 'none');
+	$('#modal_overlay').css('display', 'none');
+}
+
+//----------- обработка формы добавления фильма ----------\\
+let movieFields = ['#url', '#movie_name', '#movie_description'];
+
+function MovieMenu() {
+	event.preventDefault();
+	let empty = true;
+	for (let i = 0; i < movieFields.length; i++) {
+		if($(movieFields[i]).val() === '') {
+			$(movieFields[i]).addClass('red_border');
+			empty = false;
+		}
+	}
+	if (empty) {
+		let newMovie = (
+			'<div class="movie">' +
+			'<img class="movie_image" src="'+ $(movieFields[0]).val() +'" alt="movie picture">' +
+			'<h4 class="movie_name revealator-slideup revealator-delay3">'+ $(movieFields[1]).val() +'</h4>' +
+			'<p class="movie_brief revealator-slideup revealator-delay3">'+ $(movieFields[2]).val() +'</p>' +
+			'</div>'
+		);
+		$('#hidden_movie_container').append(newMovie);
+		closeAddMovieMenu();
+	}
+}
 
 $(window).on('load', function ()
 {
-    //----------smoothScroll----------\\
-    let smoothScrollElements = [['#about_me_button', '#name'], ['#my_hobby_button', '#hobby'], ['#favorite_films_button', '#my_movies']];
+	//---------- smoothScroll ----------\\
+	let smoothScrollElements = [['#about_me_button', '#name'], ['#my_hobby_button', '#hobby'], ['#favorite_films_button', '#my_movies']];
 
-    for (let i = 0; i < smoothScrollElements.length; i++) {
-        let buttonId = smoothScrollElements[i][0];
-        let targetElement = smoothScrollElements[i][1];
+	for (let i = 0; i < smoothScrollElements.length; i++) {
+		let buttonId = smoothScrollElements[i][0];
+		let targetElement = smoothScrollElements[i][1];
 
-        $(buttonId).click(function() {
-            $.smoothScroll({ scrollTarget: $(targetElement) });
-        });
-    }
+		$(buttonId).click(function() {
+			$.smoothScroll({ scrollTarget: $(targetElement) });
+		});
+	}
 
-    //----------Open mobile menu ----------\\
-    let topMenuButtons = ['#close_mobile_menu', '#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
+	//---------- отмена крассных границ ----------\\
+	for (let i = 0; i < movieFields.length; i++) {
+		$(movieFields[i]).click(function() {
+			$(movieFields[i]).removeClass('red_border');
+		});
+	}
 
-	$('#mobile_menu').click(function() {
-		$('#mobile_menu').css('display', 'none');
-		$('#top_menu').addClass('background_top_menu');
-        for (let i = 0; i < topMenuButtons.length; i++) {
-            $(topMenuButtons[i]).css('display', 'block');
-            $(topMenuButtons[i]).animate({ "opacity": "1" }, 1000 );
-        }
-    });
-
-    //----------Close mobile menu ----------\\
-    $('#close_mobile_menu').click(function() {
-        for (let i = 0; i < topMenuButtons.length; i++) {
-            setTimeout(function() {
-				$(topMenuButtons[i]).css('display', 'none');
-            }, 1000);
-			$(topMenuButtons[i]).animate({ "opacity": "0" }, 1000 );
-        }
-
-        setTimeout(function () {
-            $('#mobile_menu').css('display', 'block');
-        }, 1000);
-
-        $('#top_menu').removeClass('background_top_menu');
-    });
-
-//------------------------------Add movie------------------------------\\
-	$('#add_film_button').click(function() {
-		$('#add_movie_form').css('display', 'block');
-		$('#modal_overlay').css('display', 'block');
-    });
-
-    //------------------------------Close------------------------------\\
-    let closeAddMovieForm = ['#modal_overlay', '#close_add_movie_button'];
-
-    for (let i = 0; i < closeAddMovieForm.length; i++) {
-        $(closeAddMovieForm[i]).click(function() {
-            $('#add_movie_form').css('display', 'none');
-		    $('#modal_overlay').css('display', 'none');
-        });
-    }
-
-    //-------Проверка формы на пустые поля-------\\
-    let addMovieFields = ['#url', '#movie_name', '#movie_description'];
-
-    $('#send_add_movie').click(function() {
-        event.preventDefault();
-        function isEmptyFields() {
-            let isEmpty = false;
-			for(let i = 0; i < addMovieFields.length; i++) {
-				if($(addMovieFields[i]).value === '') {
-					$(addMovieFields[i]).addClass('red_border');
-					isEmpty = true;
-				} else {
-				    console.log('1');
-                }
-			}
-			return isEmpty;
-        }
-
-        if (!isEmptyFields()) {
-            let newMovie = document.createElement('div');
-			newMovie.classList.add('movie');
-
-			let movieImg = document.createElement('img');
-			movieImg.classList.add('movie_image');
-			movieImg.src = $(addMovieFields[0]).value;
-
-			let movieName = document.createElement('h4');
-			movieName.classList.add('movie_name');
-			movieName.value = $(addMovieFields[1]).value;
-
-			let movieBrief = document.createElement('p');
-			movieBrief.classList.add('movie_brief');
-			movieBrief.value = $(addMovieFields[2]).value;
-
-			let movie = [movieImg, movieName, movieBrief];
-
-			for (let i = 0; i < movie.length; i++) {
-				newMovie.appendChild(movie[i]);
-            }
-        }
-	});
+	$('#close_mobile_menu').click(closeMobileMenu);
+	$('#mobile_menu').click(openMobileMenu);
+	$('#add_film_button').click(openAddMovieMenu);
+	$(['#modal_overlay', '#close_add_movie_button'].join()).click(closeAddMovieMenu);
+	$('#send_add_movie').click(MovieMenu);
 }); 

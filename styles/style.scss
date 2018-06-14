@@ -19,44 +19,82 @@
 
     .about_me_button
     {
-        @include top_menu_button(about_me, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+        background: url(../images/about_me_icon.png) no-repeat 20px 17px;
+        @include top_menu_button;
+
+        &:hover
+        {
+            background: url(../images/about_me_icon_white.png) no-repeat 20px 17px, $base_color;
+        }
     }
 
     .my_hobby_button
     {
-        @include top_menu_button(hobby, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+        background: url(../images/hobby_icon.png) no-repeat 20px 17px;
+        @include top_menu_button;
+
+        &:hover
+        {
+            background: url(../images/hobby_icon_white.png) no-repeat 20px 17px, $base_color;
+        }
     }
 
     .favorite_films_button
     {
-        @include top_menu_button(favorite_films, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+        background: url(../images/favorite_films_icon.png) no-repeat 20px 17px;
+        @include top_menu_button;
+
+        &:hover
+        {
+            background: url(../images/favorite_films_icon_white.png) no-repeat 20px 17px, $base_color;
+        }
     }
 
     .add_film_button
     {
-        @include top_menu_button(add_film, $headline_color, $white-font-color, $base_color, 19px/32px 'Georgia', sans-serif);
+        background: url(../images/add_film_icon.png) no-repeat 20px 17px;
+        @include top_menu_button;
+
+        &:hover
+        {
+            background: url(../images/add_film_icon_white.png) no-repeat 20px 17px, $base_color;
+        }
     }
 
     .mobile_menu
     {
-        @include mobile_menu_settings(hamburger);
+        display: none;
+        margin-left: 10px;
+        height: 50px;
+        width: 30px;
+        border: none;
+        cursor: pointer;
+        background: url(../images/hamburger_menu.svg) no-repeat center center;
     }
 
     .close_mobile_menu
     {
-        @include mobile_menu_settings(cross);
-        width: 150px;
+        display: none;
+        margin-left: 10px;
+        height: 50px;
+        width: 30px;
+        border: none;
+        cursor: pointer;
+        background: url(../images/cross_menu.svg) no-repeat center center;
+        //width: 150px;
         padding: 0 0 15px 10px;
         @include font_style($headline_color, 19px/32px 'Georgia', sans-serif);
     }
-}
 
-.mobile_top_menu
-{
-    margin: auto;
-    max-width: 600px;
-    max-height: 800px;
-    background-color: rgb(255,255,255);
+    .top_menu_button_mobile
+	{
+		max-width: 600px;
+
+	  	&:hover
+		{
+		  background-color: rgb(240, 240, 240);
+		}
+	}
 }
 
 .content
@@ -180,7 +218,7 @@
         margin: 45px auto 50px;
         padding: 45px 0 50px;
 
-        .my_movies_container_one, .my_movies_container_two, .my_movies_container_three
+        .my_movies_container_one, .my_movies_container_two
         {
             max-width: 1200px;
             margin: 0 auto;
@@ -216,14 +254,22 @@
                     margin-top: 15px;
                 }
             }
-    
-            .fourth_movie, .eighth_movie
-            {
-                margin-right: 0;
-            }
+
+		  	.fourth_movie
+			{
+			  margin-right: 0;
+			}
         }
 
-        .my_movies_container_two, .my_movies_container_three
+	  	.my_movies_container_two
+		{
+			&:nth-child(4n)
+			{
+			  margin-right: 0;
+			}
+		}
+
+        .my_movies_container_two
         {
             display: none;
             opacity: 0;
@@ -588,13 +634,18 @@
         {
             .my_movies
             {
-                .my_movies_container_one, .my_movies_container_two
+                .my_movies_container_one
                 {
-                    .second_movie, .sixth_movie
-                    {
-                        margin-right: 0;
-                    }
+				  	.second_movie
+					{
+					  margin-right: 0;
+					}
                 }
+
+			  	.my_movies_container_two:nth-child(2n)
+				{
+					margin-right: 0;
+				}
             }
         }
     }
