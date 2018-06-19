@@ -77,17 +77,13 @@ window.onload = function()
 
 //---------- Open mobile menu ----------\\
 let topMenuButtons = ['#close_mobile_menu', '#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
-let topMenuButtonsMobile = ['#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
 
 function openMobileMenu() {
 	$('#mobile_menu').css('display', 'none');
-	for (let i = 0; i < topMenuButtonsMobile.length; i++) {
-		$(topMenuButtonsMobile[i]).addClass('top_menu_button_mobile');
-	}
-	//$('#top_menu').addClass('background_top_menu');
+    $('#content').css('margin-top', '600px');
+	$('#top_menu').addClass('mobile_top_menu');
 	for (let i = 0; i < topMenuButtons.length; i++) {
-		$(topMenuButtons[i]).css('display', 'block');
-		$(topMenuButtons[i]).animate({ "opacity": "1" }, 1000 );
+		$(topMenuButtons[i]).css('display', 'block').animate({ "opacity": "1" }, 1000 );
 	}
 }
 
@@ -101,11 +97,9 @@ function closeMobileMenu() {
 	}
 	setTimeout(function () {
 		$('#mobile_menu').css('display', 'block');
+        $('#content').css('margin-top', '0');
 	}, 1000);
-	for (let i = 0; i < topMenuButtonsMobile.length; i++) {
-		$(topMenuButtonsMobile[i]).removeClass('top_menu_button_mobile');
-	}
-	//$('#top_menu').removeClass('background_top_menu');
+	$('#top_menu').removeClass('mobile_top_menu');
 }
 
 //------------------------------Add movie------------------------------\\

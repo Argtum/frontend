@@ -9,22 +9,6 @@ $text_color: rgb(85,85,85);
 	color: $color;
 }
 
-@mixin top_menu_button
-{
-	display: block;
-	float: left;
-	height: 50px;
-	padding: 0 20px 0 45px;
-	border: none;
-	cursor: pointer;
-	@include font_style($headline_color, 19px/32px 'Georgia', sans-serif);
-
-	&:hover
-	{
-    	color: $white-font-color;
-	}
-}
-
 @mixin form_style
 {
 	width: 100%;

@@ -9,15 +9,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div id="mobile_menu" class="mobile_menu"></div>
+        <div id="close_mobile_menu" class="close_mobile_menu">МЕНЮ</div>
         <header class="top_menu" id="top_menu">
-            <input id="mobile_menu" class="mobile_menu" type="submit" value="">
-            <input id="close_mobile_menu" class="close_mobile_menu" type="submit" value="МЕНЮ">
-            <input id="about_me_button" class="about_me_button top_menu_button" type="submit" value="Обо мне">
-            <input id="my_hobby_button" class="my_hobby_button top_menu_button" type="submit" value="Мое хобби">
-            <input id="favorite_films_button" class="favorite_films_button top_menu_button" type="submit" value="Любимые фильмы">
-            <input id="add_film_button" class="add_film_button top_menu_button" type="submit" value="Добавить фильм">
+            <div id="about_me_button" class="about_me_button top_menu_button">Обо мне</div>
+            <div id="my_hobby_button" class="my_hobby_button top_menu_button">Мое хобби</div>
+            <div id="favorite_films_button" class="favorite_films_button top_menu_button">Любимые фильмы</div>
+            <div id="add_film_button" class="add_film_button top_menu_button">Добавить фильм</div>
         </header>
-        <div class="content">
+        <div class="content" id="content">
             <div class="main">
                 <div class="column_one">
                     <img class="picture" src="images/my_photo.jpg" alt="My photo">
@@ -175,7 +175,6 @@
                         </p>
                     </div> <!--movie eighth_movie-->
                 </div> <!--my_movies_container_two-->
-                <!--<div class="my_movies_container_three" id="new_movie_container"></div>-->
                 <div class="clear"></div>
                 <div class="all_movies" id="all_movies"><input type="submit" id="all_movies_button" class="all_movies_button" value="Все фильмы"></div>
             </div> <!--my_movies-->

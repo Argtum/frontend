@@ -1,5 +1,10 @@
 @import 'reset';
 @import 'mixins';
+@font-face
+{
+  font-family: 'sans-serif';
+  src: url('../fonts/georgia.ttf');
+}
 
 .clear
 {
@@ -11,16 +16,64 @@
     opacity: 0;
 }
 
+.mobile_menu
+{
+    display: none;
+    margin: 10px 0 0 10px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    background: url(../images/hamburger_menu.svg) no-repeat center center;
+}
+
+.close_mobile_menu
+{
+    display: none;
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    background: url(../images/cross_menu.svg) no-repeat 10px 10px;
+    padding: 10px 0 10px 50px;
+    @include font_style($headline_color, 19px/32px 'Georgia', sans-serif);
+}
+
+
 .top_menu
 {
     margin: 0 auto;
     max-width: 960px;
     height: 50px;
 
+    .top_menu_button
+    {
+        display: block;
+        float: left;
+        height: 50px;
+        padding: 0 20px 0 45px;
+        border: none;
+        cursor: pointer;
+        @include font_style($headline_color, 19px/32px 'Georgia', sans-serif);
+        line-height: 50px;
+
+        &:hover
+        {
+            color: $white-font-color;
+        }
+    }
+
+    .mobile_top_menu
+    {
+        height: 800px;
+        max-width: 600px;
+        overflow-y: auto;
+        z-index: 2;
+    }
+
     .about_me_button
     {
         background: url(../images/about_me_icon.png) no-repeat 20px 17px;
-        @include top_menu_button;
 
         &:hover
         {
@@ -31,7 +84,6 @@
     .my_hobby_button
     {
         background: url(../images/hobby_icon.png) no-repeat 20px 17px;
-        @include top_menu_button;
 
         &:hover
         {
@@ -41,8 +93,7 @@
 
     .favorite_films_button
     {
-        background: url(../images/favorite_films_icon.png) no-repeat 20px 17px;
-        @include top_menu_button;
+        background: url(../images/favorite_films_icon.png) no-repeat 20px 17px;;
 
         &:hover
         {
@@ -53,48 +104,12 @@
     .add_film_button
     {
         background: url(../images/add_film_icon.png) no-repeat 20px 17px;
-        @include top_menu_button;
 
         &:hover
         {
             background: url(../images/add_film_icon_white.png) no-repeat 20px 17px, $base_color;
         }
     }
-
-    .mobile_menu
-    {
-        display: none;
-        margin-left: 10px;
-        height: 50px;
-        width: 30px;
-        border: none;
-        cursor: pointer;
-        background: url(../images/hamburger_menu.svg) no-repeat center center;
-    }
-
-    .close_mobile_menu
-    {
-        display: none;
-        margin-left: 10px;
-        height: 50px;
-        width: 30px;
-        border: none;
-        cursor: pointer;
-        background: url(../images/cross_menu.svg) no-repeat center center;
-        //width: 150px;
-        padding: 0 0 15px 10px;
-        @include font_style($headline_color, 19px/32px 'Georgia', sans-serif);
-    }
-
-    .top_menu_button_mobile
-	{
-		max-width: 600px;
-
-	  	&:hover
-		{
-		  background-color: rgb(240, 240, 240);
-		}
-	}
 }
 
 .content
@@ -263,7 +278,7 @@
 
 	  	.my_movies_container_two
 		{
-			&:nth-child(4n)
+            .eighth_movie
 			{
 			  margin-right: 0;
 			}
@@ -645,9 +660,12 @@
 					}
                 }
 
-			  	.my_movies_container_two:nth-child(2n)
+			  	.my_movies_container_two
 				{
-					margin-right: 0;
+                    .sixth_movie
+                    {
+                        margin-right: 0;
+                    }
 				}
             }
         }
@@ -655,18 +673,31 @@
 
     @media (max-width: 768px)
     {
+        .mobile_menu
+        {
+            display: block;
+        }
+
         .top_menu
         {
-            .about_me_button, .my_hobby_button, .favorite_films_button, .add_film_button
+            .top_menu_button
             {
                 float: none;
                 display: none;
                 opacity: 0;
-            }
+                padding: 0 auto;
+                margin: 0 auto;
+                background: none;
+                text-align: center;
+                @include font_style($text-color, 19px/32px 'Georgia', sans-serif);
+                line-height: 50px;
 
-            .mobile_menu
-            {
-                display: block;
+                &:hover
+                {
+                    color: $headline_color;
+                    background: none;
+                    background-color: #EFEFF0;
+                }
             }
         }
     }
