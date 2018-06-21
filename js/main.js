@@ -92,10 +92,10 @@ function closeMobileMenu() {
 		setTimeout(function() {
 			$(topMenuButtons[i]).css('display', 'none').removeAttr('style');
 		}, 1000);
-		$(topMenuButtons[i]).animate({ "opacity": "0" }, 1000 ).removeAttr('style');
-        setTimeout(function() {
+		$(topMenuButtons[i]).animate({ "opacity": "0" }, 1000 );
+        if( $(topMenuButtons[i]).css('opacity') === "0"){
             $(topMenuButtons[i]).removeAttr('style');
-        }, 1000);
+        }
 	}
 	setTimeout(function () {
 		$('#mobile_menu').css('display', 'block').removeAttr('style');
