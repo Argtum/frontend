@@ -80,7 +80,6 @@ let topMenuButtons = ['#close_mobile_menu', '#about_me_button', '#my_hobby_butto
 
 function openMobileMenu() {
 	$('#mobile_menu').css('display', 'none');
-    $('#content').css('margin-top', '600px');
 	$('#top_menu').addClass('mobile_top_menu');
 	for (let i = 0; i < topMenuButtons.length; i++) {
 		$(topMenuButtons[i]).css('display', 'block').animate({ "opacity": "1" }, 1000 );
@@ -91,15 +90,17 @@ function openMobileMenu() {
 function closeMobileMenu() {
 	for (let i = 0; i < topMenuButtons.length; i++) {
 		setTimeout(function() {
-			$(topMenuButtons[i]).css('display', 'none');
+			$(topMenuButtons[i]).css('display', 'none').removeAttr('style');
 		}, 1000);
-		$(topMenuButtons[i]).animate({ "opacity": "0" }, 1000 );
+		$(topMenuButtons[i]).animate({ "opacity": "0" }, 1000 ).removeAttr('style');
+        setTimeout(function() {
+            $(topMenuButtons[i]).removeAttr('style');
+        }, 1000);
 	}
 	setTimeout(function () {
-		$('#mobile_menu').css('display', 'block');
-        $('#content').css('margin-top', '0');
+		$('#mobile_menu').css('display', 'block').removeAttr('style');
+        $('#top_menu').removeClass('mobile_top_menu');
 	}, 1000);
-	$('#top_menu').removeClass('mobile_top_menu');
 }
 
 //------------------------------Add movie------------------------------\\

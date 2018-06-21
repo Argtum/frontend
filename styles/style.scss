@@ -63,14 +63,6 @@
         }
     }
 
-    .mobile_top_menu
-    {
-        height: 800px;
-        max-width: 600px;
-        overflow-y: auto;
-        z-index: 2;
-    }
-
     .about_me_button
     {
         background: url(../images/about_me_icon.png) no-repeat 20px 17px;
@@ -110,6 +102,12 @@
             background: url(../images/add_film_icon_white.png) no-repeat 20px 17px, $base_color;
         }
     }
+}
+
+.mobile_top_menu
+{
+    height: 800px;
+    max-width: 600px;
 }
 
 .content
@@ -270,10 +268,10 @@
                 }
             }
 
-		  	.fourth_movie
-			{
-			  margin-right: 0;
-			}
+            :nth-of-type(4n)
+            {
+                margin-right: 0;
+            }
         }
 
 	  	.my_movies_container_two
@@ -662,7 +660,7 @@
 
 			  	.my_movies_container_two
 				{
-                    .sixth_movie
+                    :nth-of-type(2n)
                     {
                         margin-right: 0;
                     }

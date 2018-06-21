@@ -94,11 +94,6 @@ input:focus {
     line-height: 50px; }
     .top_menu .top_menu_button:hover {
       color: whitesmoke; }
-  .top_menu .mobile_top_menu {
-    height: 800px;
-    max-width: 600px;
-    overflow-y: auto;
-    z-index: 2; }
   .top_menu .about_me_button {
     background: url(../images/about_me_icon.png) no-repeat 20px 17px; }
     .top_menu .about_me_button:hover {
@@ -115,6 +110,10 @@ input:focus {
     background: url(../images/add_film_icon.png) no-repeat 20px 17px; }
     .top_menu .add_film_button:hover {
       background: url(../images/add_film_icon_white.png) no-repeat 20px 17px, #15a98b; }
+
+.mobile_top_menu {
+  height: 800px;
+  max-width: 600px; }
 
 .content {
   margin: 0 auto;
@@ -214,7 +213,7 @@ input:focus {
           font: 16px/28px "Georgia", sans-serif;
           color: #555555;
           margin-top: 15px; }
-      .content .my_movies .my_movies_container_one .fourth_movie, .content .my_movies .my_movies_container_two .fourth_movie {
+      .content .my_movies .my_movies_container_one :nth-of-type(4n), .content .my_movies .my_movies_container_two :nth-of-type(4n) {
         margin-right: 0; }
     .content .my_movies .my_movies_container_two .eighth_movie {
       margin-right: 0; }
@@ -469,7 +468,7 @@ input:focus {
 @media screen and (max-width: 1279px) {
   .content .my_movies .my_movies_container_one .second_movie {
     margin-right: 0; }
-  .content .my_movies .my_movies_container_two .sixth_movie {
+  .content .my_movies .my_movies_container_two :nth-of-type(2n) {
     margin-right: 0; } }
 
 @media screen and (max-width: 768px) {
