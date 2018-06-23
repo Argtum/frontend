@@ -17,7 +17,6 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline; }
 
@@ -29,16 +28,12 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
-  /*list-style: none;*/ }
-
 blockquote, q {
   quotes: none; }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none; }
+  content: ''; }
 
 table {
   border-collapse: collapse;
@@ -48,8 +43,7 @@ input:focus {
   outline: none !important; }
 
 @font-face {
-  font-family: 'sans-serif';
-  src: url("../fonts/georgia.ttf"); }
+  font-family: 'sans-serif'; }
 
 .clear {
   clear: both; }
@@ -58,190 +52,184 @@ input:focus {
   transform: translate(0, 100px);
   opacity: 0; }
 
-.mobile_menu {
+.header .mobile_menu {
   display: none;
   margin: 10px 0 0 10px;
   height: 30px;
   width: 30px;
   border: none;
   cursor: pointer;
-  background: url(../images/hamburger_menu.svg) no-repeat center center; }
+  background: url("../images/hamburger_menu.svg") no-repeat center center; }
 
-.close_mobile_menu {
+.header .close_mobile_menu {
   display: none;
   height: 30px;
   width: 30px;
   border: none;
   cursor: pointer;
-  background: url(../images/cross_menu.svg) no-repeat 10px 10px;
+  background: url("../images/cross_menu.svg") no-repeat 10px 10px;
   padding: 10px 0 10px 50px;
-  font: 19px/32px "Georgia", sans-serif;
+  font: 19px/32px 'Georgia', sans-serif;
   color: #333333; }
 
-.top_menu {
+.header .top_menu {
   margin: 0 auto;
   max-width: 960px;
   height: 50px; }
-  .top_menu .top_menu_button {
+  .header .top_menu .top_menu_button {
     display: block;
     float: left;
     height: 50px;
     padding: 0 20px 0 45px;
     border: none;
     cursor: pointer;
-    font: 19px/32px "Georgia", sans-serif;
-    color: #333333;
-    line-height: 50px; }
-    .top_menu .top_menu_button:hover {
-      color: whitesmoke; }
-  .top_menu .about_me_button {
-    background: url(../images/about_me_icon.png) no-repeat 20px 17px; }
-    .top_menu .about_me_button:hover {
-      background: url(../images/about_me_icon_white.png) no-repeat 20px 17px, #15a98b; }
-  .top_menu .my_hobby_button {
-    background: url(../images/hobby_icon.png) no-repeat 20px 17px; }
-    .top_menu .my_hobby_button:hover {
-      background: url(../images/hobby_icon_white.png) no-repeat 20px 17px, #15a98b; }
-  .top_menu .favorite_films_button {
-    background: url(../images/favorite_films_icon.png) no-repeat 20px 17px; }
-    .top_menu .favorite_films_button:hover {
-      background: url(../images/favorite_films_icon_white.png) no-repeat 20px 17px, #15a98b; }
-  .top_menu .add_film_button {
-    background: url(../images/add_film_icon.png) no-repeat 20px 17px; }
-    .top_menu .add_film_button:hover {
-      background: url(../images/add_film_icon_white.png) no-repeat 20px 17px, #15a98b; }
+    font: 19px/50px 'Georgia', sans-serif;
+    color: #333333; }
+    .header .top_menu .top_menu_button:hover {
+      color: #F5F5F5; }
+  .header .top_menu .about_me_button {
+    background: url("../images/about_me_icon.png") no-repeat 20px 17px; }
+    .header .top_menu .about_me_button:hover {
+      background: url("../images/about_me_icon_white.png") no-repeat 20px 17px, #15A98B; }
+  .header .top_menu .my_hobby_button {
+    background: url("../images/hobby_icon.png") no-repeat 20px 17px; }
+    .header .top_menu .my_hobby_button:hover {
+      background: url("../images/hobby_icon_white.png") no-repeat 20px 17px, #15A98B; }
+  .header .top_menu .favorite_films_button {
+    background: url("../images/favorite_films_icon.png") no-repeat 20px 17px; }
+    .header .top_menu .favorite_films_button:hover {
+      background: url("../images/favorite_films_icon_white.png") no-repeat 20px 17px, #15A98B; }
+  .header .top_menu .add_film_button {
+    background: url("../images/add_film_icon.png") no-repeat 20px 17px; }
+    .header .top_menu .add_film_button:hover {
+      background: url("../images/add_film_icon_white.png") no-repeat 20px 17px, #15A98B; }
 
-.mobile_top_menu {
-  height: 800px;
-  max-width: 600px; }
-
-.content {
+.article .content {
   margin: 0 auto;
-  background: url(../images/background.png) no-repeat 50% 0; }
-  .content .main {
+  background: url("../images/background.png") no-repeat 50% 0; }
+  .article .content .main {
     max-width: 960px;
     margin: 0 auto; }
-    .content .main .column_one {
+    .article .content .main .column_one {
       float: left;
       max-width: 330px;
       margin: 210px 60px 0 0; }
-      .content .main .column_one .picture {
+      .article .content .main .column_one .picture {
         width: 100%;
         height: auto;
         border-radius: 5px;
         display: block; }
-      .content .main .column_one .my_books {
+      .article .content .main .column_one .my_books {
         margin-top: 45px; }
-        .content .main .column_one .my_books .books_hedline {
-          font: 700 24px/32px "Open Sans", sans-serif;
-          color: #15a98b;
+        .article .content .main .column_one .my_books .books_hedline {
+          font: 700 24px/32px 'Open Sans', sans-serif;
+          color: #15A98B;
           margin-top: 45px; }
-        .content .main .column_one .my_books .books_list {
+        .article .content .main .column_one .my_books .books_list {
           list-style-position: inside; }
-          .content .main .column_one .my_books .books_list .book {
-            font: 19px/31px "Georgia", sans-serif;
+          .article .content .main .column_one .my_books .books_list .book {
+            font: 19px/31px 'Georgia', sans-serif;
             color: #555555;
             margin-top: 15px; }
-    .content .main .column_two {
+    .article .content .main .column_two {
       float: left;
       max-width: 570px;
       margin-top: 210px; }
-      .content .main .column_two .quote {
+      .article .content .main .column_two .quote {
         height: 210px;
         padding-top: 25px;
-        font: italic 28px/42px "Georgia", sans-serif;
-        color: whitesmoke; }
-        .content .main .column_two .quote .author {
-          font: 700 16px/42px "Open Sans", sans-serif;
-          color: whitesmoke; }
-      .content .main .column_two .name {
-        font: 700 48px/42px "Open Sans", sans-serif;
+        font: italic 28px/42px 'Georgia', sans-serif;
+        color: #F5F5F5; }
+        .article .content .main .column_two .quote .author {
+          font: 700 16px/42px 'Open Sans', sans-serif;
+          color: #F5F5F5; }
+      .article .content .main .column_two .name {
+        font: 700 48px/42px 'Open Sans', sans-serif;
         color: #333333; }
-        .content .main .column_two .name:after {
+        .article .content .main .column_two .name:after {
           content: "";
           display: block;
           height: 5px;
           width: 60px;
-          background-color: #15a98b;
+          background-color: #15A98B;
           border-radius: 5px;
           margin-top: 30px; }
-      .content .main .column_two .info_about_me {
-        font: 19px/32px "Georgia", sans-serif;
+      .article .content .main .column_two .info_about_me {
+        font: 19px/32px 'Georgia', sans-serif;
         color: #555555;
         margin-top: 45px; }
-      .content .main .column_two .hobby {
-        font: 600 36px/42px "Open Sans", sans-serif;
+      .article .content .main .column_two .hobby {
+        font: 600 36px/42px 'Open Sans', sans-serif;
         color: #333333;
         margin-top: 45px; }
-      .content .main .column_two .info_my_hobby {
-        font: 19px/32px "Georgia", sans-serif;
+      .article .content .main .column_two .info_my_hobby {
+        font: 19px/32px 'Georgia', sans-serif;
         color: #555555;
         margin-top: 15px; }
-      .content .main .column_two .write_me_link {
+      .article .content .main .column_two .write_me_link {
         display: inline-block;
-        font: 19px/32px "Georgia", sans-serif;
-        color: #15a98b;
+        font: 19px/32px 'Georgia', sans-serif;
+        color: #15A98B;
         margin-top: 40px;
         text-decoration: none;
         cursor: pointer; }
-        .content .main .column_two .write_me_link .link_without_arrow {
+        .article .content .main .column_two .write_me_link .link_without_arrow {
           text-decoration: underline; }
-  .content .my_movies {
+  .article .content .my_movies {
     height: auto;
     margin: 45px auto 50px;
     padding: 45px 0 50px; }
-    .content .my_movies .my_movies_container_one, .content .my_movies .my_movies_container_two {
+    .article .content .my_movies .my_movies_container_one, .article .content .my_movies .my_movies_container_two {
       max-width: 1200px;
       margin: 0 auto; }
-      .content .my_movies .my_movies_container_one .favorite_movies, .content .my_movies .my_movies_container_two .favorite_movies {
-        font: 600 36px/42px "Open Sans", sans-serif;
+      .article .content .my_movies .my_movies_container_one .favorite_movies, .article .content .my_movies .my_movies_container_two .favorite_movies {
+        font: 600 36px/42px 'Open Sans', sans-serif;
         color: #333333; }
-      .content .my_movies .my_movies_container_one .movie, .content .my_movies .my_movies_container_two .movie {
+      .article .content .my_movies .my_movies_container_one .movie, .article .content .my_movies .my_movies_container_two .movie {
         width: 285px;
         float: left;
         margin: 5px 20px 0 0; }
-        .content .my_movies .my_movies_container_one .movie .movie_image, .content .my_movies .my_movies_container_two .movie .movie_image {
+        .article .content .my_movies .my_movies_container_one .movie .movie_image, .article .content .my_movies .my_movies_container_two .movie .movie_image {
           width: 285px;
           height: 190px;
           margin: 30px 0 25px;
           border-radius: 5px;
           display: block; }
-        .content .my_movies .my_movies_container_one .movie .movie_name, .content .my_movies .my_movies_container_two .movie .movie_name {
-          font: 700 22px/32px "Open Sans", sans-serif;
+        .article .content .my_movies .my_movies_container_one .movie .movie_name, .article .content .my_movies .my_movies_container_two .movie .movie_name {
+          font: 700 22px/32px 'Open Sans', sans-serif;
           color: #333333; }
-        .content .my_movies .my_movies_container_one .movie .movie_brief, .content .my_movies .my_movies_container_two .movie .movie_brief {
-          font: 16px/28px "Georgia", sans-serif;
+        .article .content .my_movies .my_movies_container_one .movie .movie_brief, .article .content .my_movies .my_movies_container_two .movie .movie_brief {
+          font: 16px/28px 'Georgia', sans-serif;
           color: #555555;
           margin-top: 15px; }
-      .content .my_movies .my_movies_container_one :nth-of-type(4n), .content .my_movies .my_movies_container_two :nth-of-type(4n) {
+      .article .content .my_movies .my_movies_container_one :nth-of-type(4n), .article .content .my_movies .my_movies_container_two :nth-of-type(4n) {
         margin-right: 0; }
-    .content .my_movies .my_movies_container_two .eighth_movie {
+    .article .content .my_movies .my_movies_container_two :nth-of-type(4n) {
       margin-right: 0; }
-    .content .my_movies .my_movies_container_two {
+    .article .content .my_movies .my_movies_container_two {
       display: none;
       opacity: 0;
       transition: 1.5s;
       -webkit-transition: 1.5s;
       -moz-transition: 1.5s;
       -o-transition: 1.5s; }
-    .content .my_movies .display_movie_container {
+    .article .content .my_movies .display_movie_container {
       display: block; }
-    .content .my_movies .opacity_movie_container {
+    .article .content .my_movies .opacity_movie_container {
       opacity: 1; }
-    .content .my_movies .all_movies {
+    .article .content .my_movies .all_movies {
+      display: block;
       margin: 55px auto 0;
-      width: 220px; }
-      .content .my_movies .all_movies .all_movies_button {
-        width: 100%;
-        height: 50px;
-        border-radius: 5px;
-        font: 19px/32px "Georgia", sans-serif;
-        color: whitesmoke;
-        background-color: #15a98b;
-        border: none;
-        cursor: pointer; }
+      width: 220px;
+      height: 50px;
+      border-radius: 5px;
+      text-align: center;
+      background-color: #15A98B;
+      cursor: pointer;
+      font: 19px/50px 'Georgia', sans-serif;
+      color: #F5F5F5; }
 
-.write_me_form {
+.article .write_me_form {
   margin: auto;
   top: 0;
   right: 0;
@@ -254,47 +242,46 @@ input:focus {
   display: none;
   z-index: 1010;
   border-radius: 10px;
-  background-color: white; }
-  .write_me_form .cross_write_me_form .close_write_me_button {
+  background-color: #FFFFFF; }
+  .article .write_me_form .close_write_me_form {
+    display: block;
     margin: 20px 0 0 93%;
-    width: 24px;
-    height: 24px;
-    background: url(../images/cross.png) no-repeat 0 0;
-    border: none;
-    cursor: pointer; }
-  .write_me_form .write_me_form_title {
-    font: 36px/42px "Open Sans", sans-serif;
+    cursor: pointer;
+    width: 26px;
+    height: 26px; }
+  .article .write_me_form .write_me_form_title {
+    font: 36px/42px 'Open Sans', sans-serif;
     color: #333333;
     margin-left: 60px; }
-  .write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_gender, .write_me_form .write_me .form_message, .write_me_form .write_me .form_write_me_button {
+  .article .write_me_form .write_me .form_name, .article .write_me_form .write_me .form_email, .article .write_me_form .write_me .form_country, .article .write_me_form .write_me .form_gender, .article .write_me_form .write_me .form_message, .article .write_me_form .write_me .form_write_me_button {
     margin: 0 auto;
     max-width: 540px; }
-    .write_me_form .write_me .form_name .form_headline, .write_me_form .write_me .form_email .form_headline, .write_me_form .write_me .form_country .form_headline, .write_me_form .write_me .form_gender .form_headline, .write_me_form .write_me .form_message .form_headline, .write_me_form .write_me .form_write_me_button .form_headline {
-      font: 20px/32px "Open Sans", sans-serif;
+    .article .write_me_form .write_me .form_name .form_headline, .article .write_me_form .write_me .form_email .form_headline, .article .write_me_form .write_me .form_country .form_headline, .article .write_me_form .write_me .form_gender .form_headline, .article .write_me_form .write_me .form_message .form_headline, .article .write_me_form .write_me .form_write_me_button .form_headline {
+      font: 20px/32px 'Open Sans', sans-serif;
       color: #333333; }
-  .write_me_form .write_me .form_name, .write_me_form .write_me .form_email {
+  .article .write_me_form .write_me .form_name, .article .write_me_form .write_me .form_email {
     margin-top: 20px; }
-    .write_me_form .write_me .form_name .form_headline:after, .write_me_form .write_me .form_email .form_headline:after {
+    .article .write_me_form .write_me .form_name .form_headline:after, .article .write_me_form .write_me .form_email .form_headline:after {
       content: " *";
       color: red; }
-    .write_me_form .write_me .form_name .username, .write_me_form .write_me .form_name .email, .write_me_form .write_me .form_email .username, .write_me_form .write_me .form_email .email {
+    .article .write_me_form .write_me .form_name .username, .article .write_me_form .write_me .form_name .email, .article .write_me_form .write_me .form_email .username, .article .write_me_form .write_me .form_email .email {
       height: 50px;
       width: 100%;
       border-radius: 3px;
       border: 2px solid #c9c9c9; }
-      .write_me_form .write_me .form_name .username:hover, .write_me_form .write_me .form_name .email:hover, .write_me_form .write_me .form_email .username:hover, .write_me_form .write_me .form_email .email:hover {
+      .article .write_me_form .write_me .form_name .username:hover, .article .write_me_form .write_me .form_name .email:hover, .article .write_me_form .write_me .form_email .username:hover, .article .write_me_form .write_me .form_email .email:hover {
         border: 2px solid #a6a6a6; }
-      .write_me_form .write_me .form_name .username:focus, .write_me_form .write_me .form_name .email:focus, .write_me_form .write_me .form_email .username:focus, .write_me_form .write_me .form_email .email:focus {
+      .article .write_me_form .write_me .form_name .username:focus, .article .write_me_form .write_me .form_name .email:focus, .article .write_me_form .write_me .form_email .username:focus, .article .write_me_form .write_me .form_email .email:focus {
         outline: none;
-        border: 2px solid #15a98b; }
-    .write_me_form .write_me .form_name .red_border, .write_me_form .write_me .form_email .red_border {
+        border: 2px solid #15A98B; }
+    .article .write_me_form .write_me .form_name .red_border, .article .write_me_form .write_me .form_email .red_border {
       border-color: red; }
-  .write_me_form .write_me .form_country {
+  .article .write_me_form .write_me .form_country {
     margin-top: 25px; }
-    .write_me_form .write_me .form_country .country {
+    .article .write_me_form .write_me .form_country .country {
       height: 50px;
       text-indent: 15px;
-      font: 18px/32px "Open Sans", sans-serif;
+      font: 18px/32px 'Open Sans', sans-serif;
       color: #555555;
       width: 100%;
       border-radius: 3px;
@@ -304,50 +291,50 @@ input:focus {
       box-sizing: unset;
       -webkit-appearance: none;
       -moz-appearance: none;
-      background: url(../images/arrow_down.png) no-repeat 97% 20px; }
-      .write_me_form .write_me .form_country .country:hover {
+      background: url("../images/arrow_down.png") no-repeat 97% 20px; }
+      .article .write_me_form .write_me .form_country .country:hover {
         border: 2px solid #a6a6a6; }
-      .write_me_form .write_me .form_country .country:focus {
+      .article .write_me_form .write_me .form_country .country:focus {
         outline: none;
-        border: 2px solid #15a98b; }
-  .write_me_form .write_me .form_gender {
+        border: 2px solid #15A98B; }
+  .article .write_me_form .write_me .form_gender {
     margin-top: 45px;
-    font: 18px/32px "Open Sans", sans-serif;
+    font: 18px/32px 'Open Sans', sans-serif;
     color: #333333; }
-    .write_me_form .write_me .form_gender .gender_name {
+    .article .write_me_form .write_me .form_gender .gender_name {
       margin-right: 20px; }
-  .write_me_form .write_me .form_message {
+  .article .write_me_form .write_me .form_message {
     margin-top: 40px; }
-    .write_me_form .write_me .form_message .form_headline:after {
+    .article .write_me_form .write_me .form_message .form_headline:after {
       content: " *";
       color: red; }
-    .write_me_form .write_me .form_message .message {
+    .article .write_me_form .write_me .form_message .message {
       height: 140px;
       width: 100%;
       border-radius: 3px;
       border: 2px solid #c9c9c9;
       resize: none;
       padding: 0; }
-      .write_me_form .write_me .form_message .message:hover {
+      .article .write_me_form .write_me .form_message .message:hover {
         border: 2px solid #a6a6a6; }
-      .write_me_form .write_me .form_message .message:focus {
+      .article .write_me_form .write_me .form_message .message:focus {
         outline: none;
-        border: 2px solid #15a98b; }
-    .write_me_form .write_me .form_message .red_border {
+        border: 2px solid #15A98B; }
+    .article .write_me_form .write_me .form_message .red_border {
       border-color: red; }
-  .write_me_form .write_me .form_write_me_button {
+  .article .write_me_form .write_me .form_write_me_button {
     margin-top: 50px; }
-    .write_me_form .write_me .form_write_me_button .send_write_me {
+    .article .write_me_form .write_me .form_write_me_button .send_write_me {
       width: 220px;
       height: 50px;
       border-radius: 5px;
-      font: 19px/32px "Georgia", sans-serif;
-      color: whitesmoke;
-      background-color: #15a98b;
+      font: 19px/32px 'Georgia', sans-serif;
+      color: #F5F5F5;
+      background-color: #15A98B;
       border: none;
       cursor: pointer; }
 
-.add_movie_form {
+.article .add_movie_form {
   margin: auto;
   top: 0;
   right: 0;
@@ -360,74 +347,73 @@ input:focus {
   display: none;
   z-index: 1010;
   border-radius: 10px;
-  background-color: white; }
-  .add_movie_form .cross_add_movie_form .close_add_movie_button {
+  background-color: #FFFFFF; }
+  .article .add_movie_form .close_add_movie_button {
+    display: block;
     margin: 20px 0 0 93%;
-    width: 24px;
-    height: 24px;
-    background: url(../images/cross.png) no-repeat 0 0;
-    border: none;
+    width: 26px;
+    height: 26px;
     cursor: pointer; }
-  .add_movie_form .add_movie_form_title {
-    font: 36px/42px "Open Sans", sans-serif;
+  .article .add_movie_form .add_movie_form_title {
+    font: 36px/42px 'Open Sans', sans-serif;
     color: #333333;
     margin-left: 60px; }
-  .add_movie_form .add_movie .form_url, .add_movie_form .add_movie .form_movie_name, .add_movie_form .add_movie .form_movie_description, .add_movie_form .add_movie .form_add_movie_button {
+  .article .add_movie_form .add_movie .form_url, .article .add_movie_form .add_movie .form_movie_name, .article .add_movie_form .add_movie .form_movie_description, .article .add_movie_form .add_movie .form_add_movie_button {
     margin: 0 auto;
     max-width: 540px; }
-    .add_movie_form .add_movie .form_url .form_headline, .add_movie_form .add_movie .form_movie_name .form_headline, .add_movie_form .add_movie .form_movie_description .form_headline, .add_movie_form .add_movie .form_add_movie_button .form_headline {
-      font: 20px/32px "Open Sans", sans-serif;
+    .article .add_movie_form .add_movie .form_url .form_headline, .article .add_movie_form .add_movie .form_movie_name .form_headline, .article .add_movie_form .add_movie .form_movie_description .form_headline, .article .add_movie_form .add_movie .form_add_movie_button .form_headline {
+      font: 20px/32px 'Open Sans', sans-serif;
       color: #333333; }
-  .add_movie_form .add_movie .form_url, .add_movie_form .add_movie .form_movie_name {
+  .article .add_movie_form .add_movie .form_url, .article .add_movie_form .add_movie .form_movie_name {
     margin-top: 20px; }
-    .add_movie_form .add_movie .form_url .form_headline:after, .add_movie_form .add_movie .form_movie_name .form_headline:after {
+    .article .add_movie_form .add_movie .form_url .form_headline:after, .article .add_movie_form .add_movie .form_movie_name .form_headline:after {
       content: " *";
       color: red; }
-    .add_movie_form .add_movie .form_url .url, .add_movie_form .add_movie .form_url .movie_name, .add_movie_form .add_movie .form_movie_name .url, .add_movie_form .add_movie .form_movie_name .movie_name {
+    .article .add_movie_form .add_movie .form_url .url, .article .add_movie_form .add_movie .form_url .movie_name, .article .add_movie_form .add_movie .form_movie_name .url, .article .add_movie_form .add_movie .form_movie_name .movie_name {
       height: 50px;
       width: 100%;
       border-radius: 3px;
       border: 2px solid #c9c9c9; }
-      .add_movie_form .add_movie .form_url .url:hover, .add_movie_form .add_movie .form_url .movie_name:hover, .add_movie_form .add_movie .form_movie_name .url:hover, .add_movie_form .add_movie .form_movie_name .movie_name:hover {
+      .article .add_movie_form .add_movie .form_url .url:hover, .article .add_movie_form .add_movie .form_url .movie_name:hover, .article .add_movie_form .add_movie .form_movie_name .url:hover, .article .add_movie_form .add_movie .form_movie_name .movie_name:hover {
         border: 2px solid #a6a6a6; }
-      .add_movie_form .add_movie .form_url .url:focus, .add_movie_form .add_movie .form_url .movie_name:focus, .add_movie_form .add_movie .form_movie_name .url:focus, .add_movie_form .add_movie .form_movie_name .movie_name:focus {
+      .article .add_movie_form .add_movie .form_url .url:focus, .article .add_movie_form .add_movie .form_url .movie_name:focus, .article .add_movie_form .add_movie .form_movie_name .url:focus, .article .add_movie_form .add_movie .form_movie_name .movie_name:focus {
         outline: none;
-        border: 2px solid #15a98b; }
-    .add_movie_form .add_movie .form_url .red_border, .add_movie_form .add_movie .form_movie_name .red_border {
+        border: 2px solid #15A98B; }
+    .article .add_movie_form .add_movie .form_url .red_border, .article .add_movie_form .add_movie .form_movie_name .red_border {
       border-color: red; }
-  .add_movie_form .add_movie .form_movie_description {
+  .article .add_movie_form .add_movie .form_movie_description {
     margin-top: 40px; }
-    .add_movie_form .add_movie .form_movie_description .form_headline:after {
+    .article .add_movie_form .add_movie .form_movie_description .form_headline:after {
       content: " *";
       color: red; }
-    .add_movie_form .add_movie .form_movie_description .movie_description {
+    .article .add_movie_form .add_movie .form_movie_description .movie_description {
       height: 140px;
       width: 100%;
       border-radius: 3px;
       border: 2px solid #c9c9c9;
       resize: none;
       padding: 0; }
-      .add_movie_form .add_movie .form_movie_description .movie_description:hover {
+      .article .add_movie_form .add_movie .form_movie_description .movie_description:hover {
         border: 2px solid #a6a6a6; }
-      .add_movie_form .add_movie .form_movie_description .movie_description:focus {
+      .article .add_movie_form .add_movie .form_movie_description .movie_description:focus {
         outline: none;
-        border: 2px solid #15a98b; }
-    .add_movie_form .add_movie .form_movie_description .red_border {
+        border: 2px solid #15A98B; }
+    .article .add_movie_form .add_movie .form_movie_description .red_border {
       border-color: red; }
-  .add_movie_form .add_movie .form_add_movie_button {
+  .article .add_movie_form .add_movie .form_add_movie_button {
     margin-top: 50px;
     margin-bottom: 30px; }
-    .add_movie_form .add_movie .form_add_movie_button .send_add_movie {
+    .article .add_movie_form .add_movie .form_add_movie_button .send_add_movie {
       width: 220px;
       height: 50px;
       border-radius: 5px;
-      font: 19px/32px "Georgia", sans-serif;
-      color: whitesmoke;
-      background-color: #15a98b;
+      font: 19px/32px 'Georgia', sans-serif;
+      color: #F5F5F5;
+      background-color: #15A98B;
       border: none;
       cursor: pointer; }
 
-.modal_overlay {
+.article .modal_overlay {
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -439,42 +425,45 @@ input:focus {
   cursor: pointer;
   display: none; }
 
-.view_modal {
+.article .view_modal {
   display: block; }
 
 .footer {
   height: 70px;
   margin: 50px auto 0;
   padding-top: 20px;
-  font: 16px/32px "Georgia", sans-serif;
+  font: 16px/32px 'Georgia', sans-serif;
   color: #555555;
   text-align: center;
-  background-color: whitesmoke; }
-
-@media screen and (max-width: 1023px) {
-  .content {
-    background-image: none; }
-    .content .main .column_one {
-      margin: 10px auto 0;
-      float: none; }
-    .content .main .column_two {
-      margin: 30px auto 0;
-      float: none; }
-      .content .main .column_two .quote {
-        color: #333333; }
-        .content .main .column_two .quote .author {
-          color: #333333; } }
+  background-color: #F5F5F5; }
 
 @media screen and (max-width: 1279px) {
-  .content .my_movies .my_movies_container_one .second_movie {
-    margin-right: 0; }
-  .content .my_movies .my_movies_container_two :nth-of-type(2n) {
-    margin-right: 0; } }
+  .article .content .my_movies .my_movies_container_one, .article .content .my_movies .my_movies_container_two {
+    max-width: 600px;
+    margin: 0 auto; }
+    .article .content .my_movies .my_movies_container_one :nth-of-type(2n), .article .content .my_movies .my_movies_container_two :nth-of-type(2n) {
+      margin-right: 0; } }
+
+@media screen and (max-width: 1023px) {
+  .article .content {
+    background-image: none; }
+    .article .content .main .column_one {
+      margin: 10px auto 0;
+      float: none; }
+    .article .content .main .column_two {
+      margin: 30px auto 0;
+      float: none; }
+      .article .content .main .column_two .quote {
+        color: #333333; }
+        .article .content .main .column_two .quote .author {
+          color: #333333; } }
 
 @media screen and (max-width: 768px) {
-  .mobile_menu {
+  .header .mobile_menu {
     display: block; }
-  .top_menu .top_menu_button {
+  .header .open_mm {
+    display: none; }
+  .header .top_menu .top_menu_button {
     float: none;
     display: none;
     opacity: 0;
@@ -482,59 +471,56 @@ input:focus {
     margin: 0 auto;
     background: none;
     text-align: center;
-    font: 19px/32px "Georgia", sans-serif;
     color: #555555;
     line-height: 50px; }
-    .top_menu .top_menu_button:hover {
+    .header .top_menu .top_menu_button:hover {
       color: #333333;
       background: none;
-      background-color: #EFEFF0; } }
+      background-color: #EFEFF0; }
+  .header .mobile_top_menu {
+    height: 800px;
+    max-width: 600px; } }
 
 @media screen and (max-width: 700px) {
-  .write_me_form {
+  .article .write_me_form {
     margin: auto 10px;
     overflow: auto; }
-    .write_me_form .write_me .form_write_me_button {
+    .article .write_me_form .write_me .form_write_me_button {
       margin-bottom: 20px; }
-  .add_movie_form {
+  .article .add_movie_form {
     margin: auto 10px;
     overflow: auto; }
-    .add_movie_form .add_movie .form_add_movie_button {
+    .article .add_movie_form .add_movie .form_add_movie_button {
       margin-bottom: 20px; } }
 
-@media screen and (min-width: 641px) and (max-width: 1279px) {
-  .content .my_movies .my_movies_container_one, .content .my_movies .my_movies_container_two {
-    max-width: 600px;
-    margin: 0 auto; } }
-
 @media screen and (max-width: 640px) {
-  .content {
+  .article .content {
     margin: 10px; }
-    .content .my_movies .my_movies_container_one, .content .my_movies .my_movies_container_two {
+    .article .content .my_movies .my_movies_container_one, .article .content .my_movies .my_movies_container_two {
       max-width: 320px;
       margin: 0 auto; }
-      .content .my_movies .my_movies_container_one .movie, .content .my_movies .my_movies_container_two .movie {
+      .article .content .my_movies .my_movies_container_one .movie, .article .content .my_movies .my_movies_container_two .movie {
         float: none;
         margin: 5px auto 0; } }
 
 @media screen and (max-width: 600px) {
-  .write_me_form {
+  .article .write_me_form {
     margin: auto 10px; }
-    .write_me_form .cross_write_me_form .close_write_me_button {
+    .article .write_me_form .cross_write_me_form .close_write_me_button {
       margin: 20px 0 0 90%; }
-    .write_me_form .write_me .form_name, .write_me_form .write_me .form_email, .write_me_form .write_me .form_country, .write_me_form .write_me .form_message, .write_me_form .write_me .form_gender {
+    .article .write_me_form .write_me .form_name, .article .write_me_form .write_me .form_email, .article .write_me_form .write_me .form_country, .article .write_me_form .write_me .form_message, .article .write_me_form .write_me .form_gender {
       margin-left: 10px;
       margin-right: 10px; }
-    .write_me_form .write_me_form_title, .write_me_form .form_write_me_button {
+    .article .write_me_form .write_me_form_title, .article .write_me_form .form_write_me_button {
       margin-left: 0;
       text-align: center; }
-  .add_movie_form {
+  .article .add_movie_form {
     margin: auto 10px; }
-    .add_movie_form .cross_add_movie_form .close_add_movie_button {
+    .article .add_movie_form .cross_add_movie_form .close_add_movie_button {
       margin: 20px 0 0 90%; }
-    .add_movie_form .add_movie .form_url, .add_movie_form .add_movie .form_movie_name, .add_movie_form .add_movie .form_movie_description {
+    .article .add_movie_form .add_movie .form_url, .article .add_movie_form .add_movie .form_movie_name, .article .add_movie_form .add_movie .form_movie_description {
       margin-left: 10px;
       margin-right: 10px; }
-    .add_movie_form .add_movie .add_movie_form_title, .add_movie_form .add_movie .form_add_movie_button {
+    .article .add_movie_form .add_movie .add_movie_form_title, .article .add_movie_form .add_movie .form_add_movie_button {
       margin-left: 0;
       text-align: center; } }

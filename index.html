@@ -9,243 +9,246 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div id="mobile_menu" class="mobile_menu display"></div>
-        <div id="close_mobile_menu" class="close_mobile_menu">МЕНЮ</div>
-        <header class="top_menu" id="top_menu">
-            <div id="about_me_button" class="about_me_button top_menu_button">Обо мне</div>
-            <div id="my_hobby_button" class="my_hobby_button top_menu_button">Мое хобби</div>
-            <div id="favorite_films_button" class="favorite_films_button top_menu_button">Любимые фильмы</div>
-            <div id="add_film_button" class="add_film_button top_menu_button">Добавить фильм</div>
+        <header class="header">
+            <div id="mobile_menu" class="mobile_menu display"></div>
+            <div id="close_mobile_menu" class="close_mobile_menu">МЕНЮ</div>
+            <nav class="top_menu" id="top_menu">
+                <a id="about_me_button" class="about_me_button top_menu_button">Обо мне</a>
+                <a id="my_hobby_button" class="my_hobby_button top_menu_button">Мое хобби</a>
+                <a id="favorite_films_button" class="favorite_films_button top_menu_button">Любимые фильмы</a>
+                <a id="add_film_button" class="add_film_button top_menu_button">Добавить фильм</a>
+            </nav>
         </header>
-        <div class="content" id="content">
-            <div class="main">
-                <div class="column_one">
-                    <img class="picture" src="images/my_photo.jpg" alt="My photo">
-                    <div class="my_books">
-                        <h3 class="books_hedline revealator-slideup">Прочитанные книги:</h3>
-                        <ul class="books_list">
-                            <li class="book revealator-slideup">"Жемчужины программирования" Джон Бентли</li>
-                            <li class="book revealator-slideup">"Мифический человеко-месяц" Фредерик Брукс</li>
-                        </ul>
-                        <h3 class="books_hedline revealator-slideup">Собираюсь прочитать:</h3>
-                        <ol class="books_list">
-                            <li class="book revealator-slideup">"Выразительный Javascript" Марейн Хавербек</li>
-                            <li class="book revealator-slideup">"Тестирование программного обеспечения" Святослав Куликов</li>
-                        </ol>
-                    </div> <!--my_books-->
-                </div> <!--colon_one-->
-                <div class="column_two">
-                    <blockquote class="quote revealator-slideup">
-                        Всё, что ни делается, – к лучшему.<br>
-                        <cite class="author revealator-slideup">— Конфуций</cite>
-                    </blockquote> <!--quote-->
-                    <h1 id="name" class="name revealator-slideup">Alex Silver</h1>
-                    <p class="info_about_me revealator-slideup">
-                        Меня зовут Алексей и это моя первая веб-страница. 
-                        В будущем я собираюсь написать много веб-страниц и сайтов 
-                        и планирую серьёзно углубиться в эту тему. Источником моих знаний служат книги.
-                        Книги которые я прочитал и 
-                        собираюсь прочитать вы можете увидеть на этой странице. Помимо книг 
-                        читаю статьи на темы связанные с IT.
-                    </p> <!--info_about_me-->
-                    <h2 id="hobby" class="hobby revealator-slideup">Мое хобби</h2>
-                    <p class="info_my_hobby revealator-slideup">
-                        Люблю футбол. Болею за Лондонский Арсенал.  
-                        На моей работе проводится ежегодный турнир по футболу и 
-                        моя команда на прошлом турнире заняла 2-е место. 
-                        Сейчас работаем над тем что бы превзойти свой результат.
-                        Так же люблю компьютерные игры, правда сейчас на них совсем нет времени. 
-                        Люблю читать.
-                    </p> <!--info_my_hobby-->
-                    <a id="write_me_link" class="write_me_link" href="#"><span class="link_without_arrow">Напиши мне</span> →</a>
-                </div> <!--colon_two-->
-            </div> <!--main-->
-            <div class="clear"></div>
-            <div id="my_movies" class="my_movies">
-                <div class="my_movies_container_one">
-                    <h2 class="favorite_movies revealator-slideup">Любимые фильмы</h2>
-                    <div class="movie first_movie">
-                        <img class="movie_image" src="images/fight_club.jpg" alt="Fight club picture">
-                        <h4 class="movie_name revealator-slideup">Бойцовский клуб</h4>
-                        <p class="movie_brief revealator-slideup">
-                            Терзаемый хронической бессонницей и отчаянно пытающийся вырваться 
-                            из мучительно скучной жизни, клерк встречает некоего Тайлера Дардена, 
-                            харизматического торговца мылом с извращенной философией. 
-                            Тайлер уверен, что самосовершенствование — удел слабых, 
-                            а саморазрушение — единственное, ради чего стоит жить. Пройдет немного 
-                            времени, и вот уже главные герои лупят друг друга почем зря на стоянке 
-                            перед баром, и очищающий мордобой доставляет им высшее блаженство. 
-                            Приобщая других мужчин к простым радостям физической жестокости, 
-                            они основывают тайный Бойцовский Клуб.
-                        </p>
-                    </div> <!--movie first_movie-->
-                    <div class="movie second_movie">
-                        <img class="movie_image" src="images/forrest_gump.jpg" alt="Forrest gump picture">
-                        <h4 class="movie_name revealator-slideup revealator-delay1">Форрест Гамп</h4>
-                        <p class="movie_brief revealator-slideup revealator-delay1">
-                            От лица главного героя Форреста Гампа, слабоумного безобидного 
-                            человека с благородным и открытым сердцем, рассказывается история 
-                            его необыкновенной жизни. Фантастическим образом 
-                            превращается он в известного футболиста, героя войны, 
-                            преуспевающего бизнесмена. Он становится миллиардером, 
-                            но остается таким же бесхитростным, глупым и добрым. 
-                            Форреста ждет постоянный успех во всем, а он любит девочку, 
-                            с которой дружил в детстве, но взаимность приходит слишком поздно.
-                        </p>
-                    </div> <!--movie second_movie-->
-                    <div class="movie third_movie">
-                        <img class="movie_image" src="images/pulp_fiction.jpg" alt="Pulp fiction picture">
-                        <h4 class="movie_name revealator-slideup revealator-delay2">Криминальное чтиво</h4>
-                        <p class="movie_brief revealator-slideup revealator-delay2">
-                            Двое бандитов Винсент Вега и Джулс Винфилд проводят время в 
-                            философских беседах в перерыве между разборками и «решением 
-                            проблем» с должниками своего криминального босса Марселласа Уоллеса. 
-                            Параллельно разворачиваются три истории. В первой из них Винсент 
-                            присматривает за женой Марселласа Мией и спасает ее от передозировки 
-                            наркотиков. Во второй рассказывается о Бутче Кулидже, боксере, 
-                            нанятом Уоллесом, чтобы сдать бой, но обманувшим его. Третья история 
-                            объединяет первые две.
-                        </p>
-                    </div> <!--movie third_movie-->
-                    <div class="movie fourth_movie">
-                        <img class="movie_image" src="images/gravity.jpg" alt="Gravity picture">
-                        <h4 class="movie_name revealator-slideup revealator-delay3">Гравитация</h4>
-                        <p class="movie_brief revealator-slideup revealator-delay3">
-                            Доктор Райан Стоун, блестящий специалист в области медицинского 
-                            инжиниринга, отправляется в свою первую космическую миссию под 
-                            командованием ветерана астронавтики Мэтта Ковальски, для которого 
-                            этот полет — последний перед отставкой. Но во время, казалось бы, 
-                            рутинной работы за бортом случается катастрофа. Шаттл уничтожен, 
-                            а Стоун и Ковальски остаются совершенно одни; они находятся в 
-                            связке друг с другом, и все, что они могут, — это двигаться по 
-                            орбите в абсолютно черном пространстве без всякой связи с Землей 
-                            и какой-либо надежды на спасение.
-                        </p>
-                    </div> <!--movie fourth_movie-->
-                </div> <!--my_movies_container_one-->
-                <div class="my_movies_container_two" id="hidden_movie_container">
-                    <div class="movie fifth_movie">
-                        <img class="movie_image" src="images/Intouchables.jpg" alt="1+1 picture">
-                        <h4 class="movie_name revealator-slideup">1+1</h4>
-                        <p class="movie_brief revealator-slideup">
-                            Пострадав в результате несчастного случая, богатый аристократ
-                            Филипп нанимает в помощники человека, который менее всего подходит
-                            для этой работы, — молодого жителя предместья Дрисса, только что
-                            освободившегося из тюрьмы. Несмотря на то, что Филипп прикован
-                            к инвалидному креслу, Дриссу удается привнести в размеренную жизнь
-                            аристократа дух приключений.
-                        </p>
-                    </div> <!--movie fifth_movie-->
-                    <div class="movie sixth_movie">
-                        <img class="movie_image" src="images/Interstellar.jpg" alt="Interstellar picture">
-                        <h4 class="movie_name revealator-slideup revealator-delay1">Интерстеллар</h4>
-                        <p class="movie_brief revealator-slideup revealator-delay1">
-                            Когда засуха приводит человечество к продовольственному кризису,
-                            коллектив исследователей и учёных отправляется сквозь червоточину
-                            (которая предположительно соединяет области пространства-времени
-                            через большое расстояние) в путешествие, чтобы превзойти прежние
-                            ограничения для космических путешествий человека и переселить
-                            человечество на другую планету.
-                        </p>
-                    </div> <!--movie sixth_movie-->
-                    <div class="movie seventh_movie">
-                        <img class="movie_image" src="images/prestige.jpg" alt="The Prestige picture">
-                        <h4 class="movie_name revealator-slideup revealator-delay2">Престиж</h4>
-                        <p class="movie_brief revealator-slideup revealator-delay2">
-                            Роберт и Альфред — фокусники-иллюзионисты, которые на рубеже XIX
-                            и XX веков соперничали друг с другом в Лондоне. С годами их дружеская
-                            конкуренция на профессиональной почве перерастает в настоящую войну.
-                            Они готовы на все, чтобы выведать друг у друга секреты фантастических
-                            трюков и сорвать их исполнение. Непримиримая вражда, вспыхнувшая между
-                            ними, начинает угрожать жизни окружающих их людей…
-                        </p>
-                    </div> <!--movie seventh_movie-->
-                    <div class="movie eighth_movie">
-                        <img class="movie_image" src="images/matrix.jpg" alt="The Matrix picture">
-                        <h4 class="movie_name revealator-slideup revealator-delay3">Матрица</h4>
-                        <p class="movie_brief revealator-slideup revealator-delay3">
-                            Жизнь Томаса Андерсона разделена на две части: днём он самый обычный
-                            офисный работник, получающий нагоняи от начальства, а ночью
-                            превращается в хакера по имени Нео, и нет места в сети, куда он
-                            не смог бы дотянуться. Но однажды всё меняется — герой, сам того
-                            не желая, узнаёт страшную правду: всё, что его окружает — не более,
-                            чем иллюзия, Матрица, а люди — всего лишь источник питания для
-                            искусственного интеллекта, поработившего человечество. И только Нео
-                            под силу изменить расстановку сил в этом ставшем вдруг чужим и страшным мире.
-                        </p>
-                    </div> <!--movie eighth_movie-->
-                </div> <!--my_movies_container_two-->
+        <article class="article">
+            <div class="content">
+                <div class="main">
+                    <div class="column_one">
+                        <img class="picture" src="images/my_photo.jpg" alt="My photo">
+                        <div class="my_books">
+                            <h3 class="books_hedline revealator-slideup">Прочитанные книги:</h3>
+                            <ul class="books_list">
+                                <li class="book revealator-slideup">"Жемчужины программирования" Джон Бентли</li>
+                                <li class="book revealator-slideup">"Мифический человеко-месяц" Фредерик Брукс</li>
+                            </ul>
+                            <h3 class="books_hedline revealator-slideup">Собираюсь прочитать:</h3>
+                            <ol class="books_list">
+                                <li class="book revealator-slideup">"Выразительный Javascript" Марейн Хавербек</li>
+                                <li class="book revealator-slideup">"Тестирование программного обеспечения" Святослав Куликов</li>
+                            </ol>
+                        </div> <!--my_books-->
+                    </div> <!--colon_one-->
+                    <div class="column_two">
+                        <blockquote class="quote revealator-slideup">
+                            Всё, что ни делается, – к лучшему.<br>
+                            <cite class="author revealator-slideup">— Конфуций</cite>
+                        </blockquote> <!--quote-->
+                        <h1 id="name" class="name revealator-slideup">Alex Silver</h1>
+                        <p class="info_about_me revealator-slideup">
+                            Меня зовут Алексей и это моя первая веб-страница.
+                            В будущем я собираюсь написать много веб-страниц и сайтов
+                            и планирую серьёзно углубиться в эту тему. Источником моих знаний служат книги.
+                            Книги которые я прочитал и
+                            собираюсь прочитать вы можете увидеть на этой странице. Помимо книг
+                            читаю статьи на темы связанные с IT.
+                        </p> <!--info_about_me-->
+                        <h2 id="hobby" class="hobby revealator-slideup">Мое хобби</h2>
+                        <p class="info_my_hobby revealator-slideup">
+                            Люблю футбол. Болею за Лондонский Арсенал.
+                            На моей работе проводится ежегодный турнир по футболу и
+                            моя команда на прошлом турнире заняла 2-е место.
+                            Сейчас работаем над тем что бы превзойти свой результат.
+                            Так же люблю компьютерные игры, правда сейчас на них совсем нет времени.
+                            Люблю читать.
+                        </p> <!--info_my_hobby-->
+                        <a id="write_me_link" class="write_me_link" href="#"><span class="link_without_arrow">Напиши мне</span> →</a>
+                    </div> <!--colon_two-->
+                </div> <!--main-->
                 <div class="clear"></div>
-                <div class="all_movies" id="all_movies"><input type="submit" id="all_movies_button" class="all_movies_button" value="Все фильмы"></div>
-            </div> <!--my_movies-->
-        </div> <!--content-->
-        <div id="write_me_form" class="write_me_form">
-            <div class="cross_write_me_form"><input type="submit" id="close_write_me_button" class="close_write_me_button" value=""></div>
-            <h2 class="write_me_form_title">НАПИШИ МНЕ</h2>
-            <form class="write_me" method="POST">
-                <div class="form_name">
-                    <label class="form_headline" for="username">Ваше имя</label><br>
-                    <input id="username" class="username" type="text">
-                </div>
-                <div class="form_email">
-                    <label class="form_headline" for="email">Ваш email</label><br>
-                    <input id="email" class="email" type="text">
-                </div>
-                <div class="form_country">
-                    <label class="form_headline" for="country">Откуда вы?</label><br>
-                    <select id="country" class="country" size="1">
-                        <option value="Россия">Россия</option>
-                        <option value="Украина">Украина</option>
-                        <option value="Белорусия">Белорусия</option>
-                        <option value="Казахстан">Казахстан</option>
-                        <option value="Против всех">Против всех</option>
-                    </select>
-                </div>
-                <div class="form_gender">
-                    <p class="form_headline">Ваш пол</p>
-                    <input name="gender" id="gender_man" type="radio" value="man" checked>
-                    <label class="gender_name" for="gender_man">Мужской</label>
-                    <input name="gender" id="gender_women" type="radio" value="woman">
-                    <label class="gender_name" for="gender_women">Женский</label>
-                </div>
-                <div class="form_message">
-                    <label class="form_headline" for="message">Ваше сообщение</label><br>
-                    <textarea id="message" class="message"></textarea>
-                </div>
-                <div class="form_write_me_button">
-                    <input class="send_write_me" id="send_write_me" type="submit" value="Отправить">
-                </div>
-            </form> <!--write_me-->   
-        </div> <!--write_me_form-->
-		<div id="add_movie_form" class="add_movie_form">
-			<div class="cross_add_movie_form">
-				<input type="submit" id="close_add_movie_button" class="close_add_movie_button" value="">
-			</div>
-			<h2 class="add_movie_form_title">Добавить фильм</h2>
-			<form class="add_movie" method="POST">
-				<div class="form_url">
-					<label class="form_headline" for="url">URL артинки</label><br>
-					<input id="url" class="url" type="text">
-				</div>
-				<div class="form_movie_name">
-					<label class="form_headline" for="movie_name">Название фильма</label><br>
-					<input id="movie_name" class="movie_name" type="text">
-				</div>
-				<div class="form_movie_description">
-					<label class="form_headline" for="movie_description">Описание фильма</label><br>
-					<textarea id="movie_description" class="movie_description"></textarea>
-				</div>
-				<div class="form_add_movie_button">
-					<input class="send_add_movie" id="send_add_movie" type="submit" value="Добавить">
-				</div>
-			</form> <!--add_movie-->
-		</div> <!--add_movie_form-->
-        <div class="modal_overlay" id="modal_overlay"></div>
+                <div id="my_movies" class="my_movies">
+                    <div class="my_movies_container_one">
+                        <h2 class="favorite_movies revealator-slideup">Любимые фильмы</h2>
+                        <div class="movie">
+                            <img class="movie_image" src="images/fight_club.jpg" alt="Fight club picture">
+                            <h4 class="movie_name revealator-slideup">Бойцовский клуб</h4>
+                            <p class="movie_brief revealator-slideup">
+                                Терзаемый хронической бессонницей и отчаянно пытающийся вырваться
+                                из мучительно скучной жизни, клерк встречает некоего Тайлера Дардена,
+                                харизматического торговца мылом с извращенной философией.
+                                Тайлер уверен, что самосовершенствование — удел слабых,
+                                а саморазрушение — единственное, ради чего стоит жить. Пройдет немного
+                                времени, и вот уже главные герои лупят друг друга почем зря на стоянке
+                                перед баром, и очищающий мордобой доставляет им высшее блаженство.
+                                Приобщая других мужчин к простым радостям физической жестокости,
+                                они основывают тайный Бойцовский Клуб.
+                            </p>
+                        </div> <!--movie first_movie-->
+                        <div class="movie">
+                            <img class="movie_image" src="images/forrest_gump.jpg" alt="Forrest gump picture">
+                            <h4 class="movie_name revealator-slideup revealator-delay1">Форрест Гамп</h4>
+                            <p class="movie_brief revealator-slideup revealator-delay1">
+                                От лица главного героя Форреста Гампа, слабоумного безобидного
+                                человека с благородным и открытым сердцем, рассказывается история
+                                его необыкновенной жизни. Фантастическим образом
+                                превращается он в известного футболиста, героя войны,
+                                преуспевающего бизнесмена. Он становится миллиардером,
+                                но остается таким же бесхитростным, глупым и добрым.
+                                Форреста ждет постоянный успех во всем, а он любит девочку,
+                                с которой дружил в детстве, но взаимность приходит слишком поздно.
+                            </p>
+                        </div> <!--movie second_movie-->
+                        <div class="movie">
+                            <img class="movie_image" src="images/pulp_fiction.jpg" alt="Pulp fiction picture">
+                            <h4 class="movie_name revealator-slideup revealator-delay2">Криминальное чтиво</h4>
+                            <p class="movie_brief revealator-slideup revealator-delay2">
+                                Двое бандитов Винсент Вега и Джулс Винфилд проводят время в
+                                философских беседах в перерыве между разборками и «решением
+                                проблем» с должниками своего криминального босса Марселласа Уоллеса.
+                                Параллельно разворачиваются три истории. В первой из них Винсент
+                                присматривает за женой Марселласа Мией и спасает ее от передозировки
+                                наркотиков. Во второй рассказывается о Бутче Кулидже, боксере,
+                                нанятом Уоллесом, чтобы сдать бой, но обманувшим его. Третья история
+                                объединяет первые две.
+                            </p>
+                        </div> <!--movie third_movie-->
+                        <div class="movie">
+                            <img class="movie_image" src="images/gravity.jpg" alt="Gravity picture">
+                            <h4 class="movie_name revealator-slideup revealator-delay3">Гравитация</h4>
+                            <p class="movie_brief revealator-slideup revealator-delay3">
+                                Доктор Райан Стоун, блестящий специалист в области медицинского
+                                инжиниринга, отправляется в свою первую космическую миссию под
+                                командованием ветерана астронавтики Мэтта Ковальски, для которого
+                                этот полет — последний перед отставкой. Но во время, казалось бы,
+                                рутинной работы за бортом случается катастрофа. Шаттл уничтожен,
+                                а Стоун и Ковальски остаются совершенно одни; они находятся в
+                                связке друг с другом, и все, что они могут, — это двигаться по
+                                орбите в абсолютно черном пространстве без всякой связи с Землей
+                                и какой-либо надежды на спасение.
+                            </p>
+                        </div> <!--movie fourth_movie-->
+                    </div> <!--my_movies_container_one-->
+                    <div class="my_movies_container_two" id="hidden_movie_container">
+                        <div class="movie">
+                            <img class="movie_image" src="images/intouchables.jpg" alt="1+1 picture">
+                            <h4 class="movie_name revealator-slideup">1+1</h4>
+                            <p class="movie_brief revealator-slideup">
+                                Пострадав в результате несчастного случая, богатый аристократ
+                                Филипп нанимает в помощники человека, который менее всего подходит
+                                для этой работы, — молодого жителя предместья Дрисса, только что
+                                освободившегося из тюрьмы. Несмотря на то, что Филипп прикован
+                                к инвалидному креслу, Дриссу удается привнести в размеренную жизнь
+                                аристократа дух приключений.
+                            </p>
+                        </div> <!--movie fifth_movie-->
+                        <div class="movie">
+                            <img class="movie_image" src="images/interstellar.jpg" alt="Interstellar picture">
+                            <h4 class="movie_name revealator-slideup revealator-delay1">Интерстеллар</h4>
+                            <p class="movie_brief revealator-slideup revealator-delay1">
+                                Когда засуха приводит человечество к продовольственному кризису,
+                                коллектив исследователей и учёных отправляется сквозь червоточину
+                                (которая предположительно соединяет области пространства-времени
+                                через большое расстояние) в путешествие, чтобы превзойти прежние
+                                ограничения для космических путешествий человека и переселить
+                                человечество на другую планету.
+                            </p>
+                        </div> <!--movie sixth_movie-->
+                        <div class="movie">
+                            <img class="movie_image" src="images/prestige.jpg" alt="The Prestige picture">
+                            <h4 class="movie_name revealator-slideup revealator-delay2">Престиж</h4>
+                            <p class="movie_brief revealator-slideup revealator-delay2">
+                                Роберт и Альфред — фокусники-иллюзионисты, которые на рубеже XIX
+                                и XX веков соперничали друг с другом в Лондоне. С годами их дружеская
+                                конкуренция на профессиональной почве перерастает в настоящую войну.
+                                Они готовы на все, чтобы выведать друг у друга секреты фантастических
+                                трюков и сорвать их исполнение. Непримиримая вражда, вспыхнувшая между
+                                ними, начинает угрожать жизни окружающих их людей…
+                            </p>
+                        </div> <!--movie seventh_movie-->
+                        <div class="movie">
+                            <img class="movie_image" src="images/matrix.jpg" alt="The Matrix picture">
+                            <h4 class="movie_name revealator-slideup revealator-delay3">Матрица</h4>
+                            <p class="movie_brief revealator-slideup revealator-delay3">
+                                Жизнь Томаса Андерсона разделена на две части: днём он самый обычный
+                                офисный работник, получающий нагоняи от начальства, а ночью
+                                превращается в хакера по имени Нео, и нет места в сети, куда он
+                                не смог бы дотянуться. Но однажды всё меняется — герой, сам того
+                                не желая, узнаёт страшную правду: всё, что его окружает — не более,
+                                чем иллюзия, Матрица, а люди — всего лишь источник питания для
+                                искусственного интеллекта, поработившего человечество. И только Нео
+                                под силу изменить расстановку сил в этом ставшем вдруг чужим и страшным мире.
+                            </p>
+                        </div> <!--movie eighth_movie-->
+                    </div> <!--my_movies_container_two-->
+                    <div class="clear"></div>
+                    <a class="all_movies" id="all_movies">Все фильмы</a>
+                </div> <!--my_movies-->
+            </div> <!--content-->
+            <div id="write_me_form" class="write_me_form">
+                <a id="close_write_me_form" class="close_write_me_form"><img src="images/cross.png" alt="cross"></a>
+                <h5 class="write_me_form_title">НАПИШИ МНЕ</h5>
+                <form class="write_me" method="POST">
+                    <div class="form_name">
+                        <label class="form_headline" for="username">Ваше имя</label><br>
+                        <input id="username" class="username" type="text">
+                    </div>
+                    <div class="form_email">
+                        <label class="form_headline" for="email">Ваш email</label><br>
+                        <input id="email" class="email" type="text">
+                    </div>
+                    <div class="form_country">
+                        <label class="form_headline" for="country">Откуда вы?</label><br>
+                        <select id="country" class="country" size="1">
+                            <option value="Россия">Россия</option>
+                            <option value="Украина">Украина</option>
+                            <option value="Белорусия">Белорусия</option>
+                            <option value="Казахстан">Казахстан</option>
+                            <option value="Против всех">Против всех</option>
+                        </select>
+                    </div>
+                    <div class="form_gender">
+                        <div class="form_headline">Ваш пол</div>
+                        <input name="gender" id="gender_man" type="radio" value="man" checked>
+                        <label class="gender_name" for="gender_man">Мужской</label>
+                        <input name="gender" id="gender_women" type="radio" value="woman">
+                        <label class="gender_name" for="gender_women">Женский</label>
+                    </div>
+                    <div class="form_message">
+                        <label class="form_headline" for="message">Ваше сообщение</label><br>
+                        <textarea id="message" class="message"></textarea>
+                    </div>
+                    <div class="form_write_me_button">
+                        <input class="send_write_me" id="send_write_me" type="submit" value="Отправить">
+                    </div>
+                </form> <!--write_me-->
+            </div> <!--write_me_form-->
+            <div id="add_movie_form" class="add_movie_form">
+                <a id="close_add_movie_button" class="close_add_movie_button"><img src="images/cross.png" alt="cross"></a>
+                <h5 class="add_movie_form_title">Добавить фильм</h5>
+                <form class="add_movie" method="POST">
+                    <div class="form_url">
+                        <label class="form_headline" for="url">URL артинки</label><br>
+                        <input id="url" class="url" type="text">
+                    </div>
+                    <div class="form_movie_name">
+                        <label class="form_headline" for="movie_name">Название фильма</label><br>
+                        <input id="movie_name" class="movie_name" type="text">
+                    </div>
+                    <div class="form_movie_description">
+                        <label class="form_headline" for="movie_description">Описание фильма</label><br>
+                        <textarea id="movie_description" class="movie_description"></textarea>
+                    </div>
+                    <div class="form_add_movie_button">
+                        <input class="send_add_movie" id="send_add_movie" type="submit" value="Добавить">
+                    </div>
+                </form> <!--add_movie-->
+            </div> <!--add_movie_form-->
+            <div class="modal_overlay" id="modal_overlay"></div>
+        </article>
         <footer class="footer">© 1986-2018 Все права защищены</footer>
 
         <script src="js/jquery-3.3.1.js"></script>
         <script src="js/fm.revealator.jquery.min.js"></script>
         <script src="js/jquery-smooth-scroll.js"></script>
+        <script src="js/jqueryPart.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

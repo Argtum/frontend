@@ -1,28 +1,22 @@
-$white-font-color: rgb(245,245,245);
-$headline_color: rgb(51,51,51);
-$base_color: rgb(21,169,139);
-$text_color: rgb(85,85,85);
-
-@mixin font_style($color, $fonts...)
-{
-	font: $fonts;
-	color: $color;
-}
+$white-font-color: #F5F5F5;
+$headline_color: #333333;
+$base_color: #15A98B;
+$text_color: #555555;
 
 @mixin form_style
 {
-	width: 100%;
-	border-radius: 3px;
-	border: 2px solid rgb(201, 201, 201);
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid rgb(201, 201, 201);
 
-	&:hover
-	{
-		border: 2px solid rgb(166, 166, 166);
-	}
+    &:hover
+    {
+        border: 2px solid rgb(166, 166, 166);
+    }
 
-	&:focus
-	{
-		outline: none;
-		border: 2px solid $base_color;
-	}
+    &:focus
+    {
+        outline: none;
+        border: 2px solid $base_color;
+    }
 }
