@@ -13,10 +13,10 @@
             <div id="mobile_menu" class="mobile_menu display"></div>
             <div id="close_mobile_menu" class="close_mobile_menu">МЕНЮ</div>
             <nav class="top_menu" id="top_menu">
-                <a id="about_me_button" class="about_me_button top_menu_button">Обо мне</a>
-                <a id="my_hobby_button" class="my_hobby_button top_menu_button">Мое хобби</a>
-                <a id="favorite_films_button" class="favorite_films_button top_menu_button">Любимые фильмы</a>
-                <a id="add_film_button" class="add_film_button top_menu_button">Добавить фильм</a>
+                <div id="about_me_button" class="about_me_button top_menu_button">Обо мне</div>
+                <div id="my_hobby_button" class="my_hobby_button top_menu_button">Мое хобби</div>
+                <div id="favorite_films_button" class="favorite_films_button top_menu_button">Любимые фильмы</div>
+                <div id="add_film_button" class="add_film_button top_menu_button">Добавить фильм</div>
             </nav>
         </header>
         <article class="article">
@@ -188,11 +188,11 @@
                 <form class="write_me" method="POST">
                     <div class="form_name">
                         <label class="form_headline" for="username">Ваше имя</label><br>
-                        <input id="username" class="username" type="text">
+                        <input id="username" class="username write_me_field" type="text">
                     </div>
                     <div class="form_email">
                         <label class="form_headline" for="email">Ваш email</label><br>
-                        <input id="email" class="email" type="text">
+                        <input id="email" class="email write_me_field" type="text">
                     </div>
                     <div class="form_country">
                         <label class="form_headline" for="country">Откуда вы?</label><br>
@@ -213,7 +213,7 @@
                     </div>
                     <div class="form_message">
                         <label class="form_headline" for="message">Ваше сообщение</label><br>
-                        <textarea id="message" class="message"></textarea>
+                        <textarea id="message" class="message write_me_field"></textarea>
                     </div>
                     <div class="form_write_me_button">
                         <input class="send_write_me" id="send_write_me" type="submit" value="Отправить">
@@ -226,15 +226,15 @@
                 <form class="add_movie" method="POST">
                     <div class="form_url">
                         <label class="form_headline" for="url">URL артинки</label><br>
-                        <input id="url" class="url" type="text">
+                        <input id="url" class="url movie_form_field" type="text">
                     </div>
                     <div class="form_movie_name">
                         <label class="form_headline" for="movie_name">Название фильма</label><br>
-                        <input id="movie_name" class="movie_name" type="text">
+                        <input id="movie_name" class="movie_name movie_form_field" type="text">
                     </div>
                     <div class="form_movie_description">
                         <label class="form_headline" for="movie_description">Описание фильма</label><br>
-                        <textarea id="movie_description" class="movie_description"></textarea>
+                        <textarea id="movie_description" class="movie_description movie_form_field"></textarea>
                     </div>
                     <div class="form_add_movie_button">
                         <input class="send_add_movie" id="send_add_movie" type="submit" value="Добавить">

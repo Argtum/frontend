@@ -1,47 +1,35 @@
-//-------SHOW MORE-------\\
-function showMoreFilms()
-{
+//----------------- SHOW MORE -----------------\\
+function showMoreFilms() {
     event.preventDefault();
     let hiddenMovieContainer = document.getElementById("hidden_movie_container");
-    
-    document.getElementById("all_movies").style.display = "none";
-    document.getElementById("all_movies").style.height = "0";
-    document.getElementById("all_movies").style.margin = "0";
+
+    this.style.display = "none";
+    this.style.height = "0";
+    this.style.margin = "0";
     hiddenMovieContainer.classList.add("display_movie_container");
-    setTimeout(function()
-    {
+    setTimeout(function() {
         hiddenMovieContainer.classList.add("opacity_movie_container");
     }, 0);
 }
 
-//-------check form-------\\
-function checkForm()
-{
-    event.preventDefault();
-    let name = document.getElementById("username");
-    let email = document.getElementById("email");
-    let message = document.getElementById("message");
-    let fields = [name, email, message];
+//----------------- check form -----------------\\
+let fields = document.getElementsByClassName("write_me_field");
 
-    for(let i = 0; i < fields.length; i++)
-    {
-        if(fields[i].value === '')
-        {
+function checkForm() {
+    event.preventDefault();
+    for(let i = 0; i < fields.length; i++) {
+        if(fields[i].value === '') {
             fields[i].classList.add("red_border");
         }
     }
 }
 
 //-------no red border-------\\
-function getNormal()
-{
-    event.target.classList.remove("red_border");
-}
+function getNormal() { event.target.classList.remove("red_border"); }
 
-//-------open modal-------\\
+//----------------- open modal -----------------\\
 
-function writeMe()
-{
+function writeMe() {
     event.preventDefault();
     let modal = document.getElementById("write_me_form");
     let modalOverlay = document.getElementById("modal_overlay");
@@ -50,8 +38,7 @@ function writeMe()
 }
 
 //-------close modal-------\\
-function closeModal()
-{
+function closeModal() {
     event.preventDefault();
     let modal = document.getElementById("write_me_form");
     let modalOverlay = document.getElementById("modal_overlay");
@@ -59,16 +46,13 @@ function closeModal()
     modalOverlay.classList.remove("view_modal");
 }
 
-window.onload = function()
-{
-    document.getElementById("all_movies").onclick = showMoreFilms;
-
-    document.getElementById("send_write_me").onclick = checkForm;
-    document.getElementById("username").onclick = getNormal;
-    document.getElementById("email").onclick = getNormal;
-    document.getElementById("message").onclick = getNormal;
-
-    document.getElementById("write_me_link").onclick = writeMe;
-    document.getElementById("modal_overlay").onclick = closeModal;
-    document.getElementById("close_write_me_form").onclick = closeModal;
+window.onload = function() {
+    document.getElementById("all_movies").addEventListener("click", showMoreFilms);
+    for(let i = 0; i < fields.length; i++) {
+        fields[i].addEventListener("click", getNormal);
+    }
+    document.getElementById("send_write_me").addEventListener("click", checkForm);
+    document.getElementById("write_me_link").addEventListener("click", writeMe);
+    document.getElementById("modal_overlay").addEventListener("click", closeModal);
+    document.getElementById("close_write_me_form").addEventListener("click", closeModal);
 };
