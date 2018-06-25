@@ -1,9 +1,10 @@
 @import 'reset';
 @import 'mixins';
+
 @font-face
 {
-    font-family: 'sans-serif';
-    //src: url('../fonts/georgia.ttf')
+    font-family: 'georgia';
+    src: url('../fonts/georgia.ttf');
 }
 
 .clear
@@ -281,14 +282,6 @@
                     }
                 }
 
-                :nth-of-type(4n)
-                {
-                    margin-right: 0;
-                }
-            }
-
-            .my_movies_container_two
-            {
                 :nth-of-type(4n)
                 {
                     margin-right: 0;
@@ -630,8 +623,19 @@
                 {
                     .my_movies_container_one, .my_movies_container_two
                     {
-                        max-width: 600px;
-                        margin: 0 auto;
+                        max-width: 900px;
+
+                        .movie
+                        {
+                            width: 400px;
+                            margin: 5px 100px 0 0;
+
+                            .movie_image
+                            {
+                                width: 400px;
+                                height: 100%;
+                            }
+                        }
 
                         :nth-of-type(2n)
                         {
@@ -657,6 +661,14 @@
                     {
                         margin: 10px auto 0;
                         float: none;
+                        max-width: 600px;
+
+                        .picture
+                        {
+                            max-width: 330px;
+                            height: auto;
+                            margin: 0 auto;
+                        }
                     }
 
                     .column_two
@@ -672,6 +684,31 @@
                             {
                                 color: $headline_color;
                             }
+                        }
+                    }
+                }
+
+                .my_movies
+                {
+                    .my_movies_container_one, .my_movies_container_two
+                    {
+                        max-width: 600px;
+
+                        .movie
+                        {
+                            width: 285px;
+                            margin: 5px 20px 0 0;
+
+                            .movie_image
+                            {
+                                width: 285px;
+                                height: 190px;
+                            }
+                        }
+
+                        :nth-of-type(2n)
+                        {
+                            margin-right: 0;
                         }
                     }
                 }
@@ -765,13 +802,22 @@
                 {
                     .my_movies_container_one, .my_movies_container_two
                     {
-                        max-width: 320px;
+                        max-width: 550px;
                         margin: 0 auto;
 
                         .movie
                         {
-                            float: none;
-                            margin: 5px auto 0;
+                            max-width: 550px;
+                            width: 100%;
+                            margin-top: 70px;
+
+                            .movie_image
+                            {
+                                max-width: 400px;
+                                width: 100%;
+                                height: 100%;
+                                margin: 30px auto 25px;
+                            }
                         }
                     }
                 }
