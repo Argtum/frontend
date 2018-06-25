@@ -24,34 +24,32 @@ function closeMobileMenu() {
 }
 
 //------------------------------Add movie form------------------------------\\
-let movieFields = ".movie_form_field";  //['#url', '#movie_name', '#movie_description'];
-let newMovie = (
-    '<div class="movie">' +
-        '<img class="movie_image" src="'+ $(movieFields[1]).val() +'" alt="movie picture">' +
-        '<h4 class="movie_name revealator-slideup revealator-delay3">'+ $(movieFields[2]).val() +'</h4>' +
-        '<p class="movie_brief revealator-slideup revealator-delay3">'+ $(movieFields[3]).val() +'</p>' +
-    '</div>'
-);
+let movieFields = $(".movie_form_field");
 
-//---------- open-close add movie form ----------\\
-function toggleAddMovieMenu() { $(['#add_movie_form', '#modal_overlay'].join()).toggleClass('view_modal'); }
-
-//---------- No red border ----------\\
+function openAddMovieForm() { $(['#add_movie_form', '#modal_overlay'].join()).addClass('view_modal'); }
+function closeAddMovieForm() { $(['#add_movie_form', '#modal_overlay'].join()).removeClass('view_modal'); }
 function getNormalBorder() { $(this).removeClass('red_border'); }
 
 //----------- Add movie processing ----------\\
 function MovieMenu() {
     event.preventDefault();
     let empty = true;
-    for (let i = 1; i <= movieFields.length; i++) {
+    for (let i = 0; i < movieFields.length; i++) {
         if($(movieFields[i]).val() === '') {
             $(movieFields[i]).addClass('red_border');
             empty = false;
         }
     }
     if (empty) {
+        let newMovie = (
+            '<div class="movie">' +
+            '<img class="movie_image" src="'+ $(movieFields[0]).val() +'" alt="movie picture">' +
+            '<h4 class="movie_name revealator-slideup revealator-delay3">'+ $(movieFields[1]).val() +'</h4>' +
+            '<p class="movie_brief revealator-slideup revealator-delay3">'+ $(movieFields[2]).val() +'</p>' +
+            '</div>'
+        );
         $('#hidden_movie_container').append(newMovie);
-        toggleAddMovieMenu();
+        closeAddMovieForm();
     }
 }
 
@@ -70,9 +68,10 @@ $(window).on('load', function ()
 
     $('#close_mobile_menu').click(closeMobileMenu);
     $('#mobile_menu').click(openMobileMenu);
-    $(['#add_film_button', '#modal_overlay', '#close_add_movie_button'].join()).click(toggleAddMovieMenu);
+    $('#add_film_button').click(openAddMovieForm);
+    $(['#modal_overlay', '#close_add_movie_button'].join()).click(closeAddMovieForm);
     $('#send_add_movie').click(MovieMenu);
-    for (let i = 1; i <= movieFields.length; i++) {
+    for (let i = 0; i < movieFields.length; i++) {
         $(movieFields[i]).click(getNormalBorder);
     }
 });

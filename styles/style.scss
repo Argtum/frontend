@@ -44,7 +44,6 @@
         color: $headline_color;
     }
 
-
     .top_menu
     {
         margin: 0 auto;
@@ -140,7 +139,7 @@
                 {
                     margin-top: 45px;
 
-                    .books_hedline
+                    .books_headline
                     {
                         font: 700 24px/32px 'Open Sans', sans-serif;
                         color: $base_color;
@@ -742,8 +741,7 @@
                     &:hover
                     {
                         color: $headline_color;
-                        background: none;
-                        background-color: #EFEFF0;
+                        background: none,  #EFEFF0;
                     }
                 }
             }
