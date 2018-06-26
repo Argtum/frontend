@@ -1,10 +1,16 @@
-@import 'reset';
 @import 'mixins';
 
 @font-face
 {
     font-family: 'georgia';
     src: url('../fonts/georgia.ttf');
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .clear
@@ -337,7 +343,7 @@
         display: none;
         z-index: 1010;
         border-radius: 10px;
-        background-color: #FFFFFF;
+        background-color: #fff;
 
         .close_write_me_form
         {
@@ -481,7 +487,7 @@
         display: none;
         z-index: 1010;
         border-radius: 10px;
-        background-color: #FFFFFF;
+        background-color: #fff;
 
         .close_add_movie_button
         {
@@ -607,7 +613,7 @@
     font: 16px/32px 'Georgia', sans-serif;
     color: $text-color;
     text-align: center;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
 }
 
 @media screen
@@ -622,7 +628,7 @@
                 {
                     .my_movies_container_one, .my_movies_container_two
                     {
-                        max-width: 900px;
+                        max-width: 960px;
 
                         .movie
                         {
@@ -741,7 +747,7 @@
                     &:hover
                     {
                         color: $headline_color;
-                        background: none,  #EFEFF0;
+                        background: none,  #efeff0;
                     }
                 }
             }
@@ -798,7 +804,8 @@
 
                 .my_movies
                 {
-                    .my_movies_container_one, .my_movies_container_two
+                    .my_movies_container_one,
+                    .my_movies_container_two
                     {
                         max-width: 550px;
                         margin: 0 auto;
@@ -841,7 +848,11 @@
 
                 .write_me
                 {
-                    .form_name, .form_email, .form_country, .form_message, .form_gender
+                    .form_name,
+                    .form_email,
+                    .form_country,
+                    .form_message,
+                    .form_gender
                     {
                         margin-left: 10px;
                         margin-right: 10px;

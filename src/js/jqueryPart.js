@@ -14,7 +14,7 @@ function closeMobileMenu() {
     for (let i = 0; i < topMenuButtons.length; i++) {
         $(topMenuButtons[i]).fadeOut(1000);
         setTimeout(function() {
-            $(topMenuButtons[i]).removeAttr('style');
+            //$(topMenuButtons[i]).removeAttr('style');
         }, 1011);
     }
     setTimeout(function () {

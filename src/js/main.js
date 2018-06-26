@@ -1,5 +1,5 @@
 //----------------- SHOW MORE -----------------\\
-function showMoreFilms() {
+function showMoreFilms(event) {
     event.preventDefault();
     let hiddenMovieContainer = document.getElementById("hidden_movie_container");
 
@@ -25,7 +25,9 @@ function checkForm() {
 }
 
 //-------no red border-------\\
-function getNormal() { event.target.classList.remove("red_border"); }
+function getNormal() {
+    event.target.classList.remove("red_border");
+}
 
 //----------------- open modal -----------------\\
 
@@ -37,6 +39,11 @@ function writeMe() {
     modalOverlay.classList.add("view_modal");
 }
 
+function SetElementVisible(element)
+{
+    element.classList.add();
+}
+
 //-------close modal-------\\
 function closeModal() {
     event.preventDefault();
@@ -46,7 +53,7 @@ function closeModal() {
     modalOverlay.classList.remove("view_modal");
 }
 
-window.onload = function() {
+window.addEventListener = function() {
     document.getElementById("all_movies").addEventListener("click", showMoreFilms);
     for(let i = 0; i < fields.length; i++) {
         fields[i].addEventListener("click", getNormal);
