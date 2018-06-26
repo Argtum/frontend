@@ -1,50 +1,11 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0 | 20110126
-License: none (public domain) */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: ''; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-input:focus {
-  outline: none !important; }
-
 @font-face {
   font-family: 'georgia';
   src: url("../fonts/georgia.ttf"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
 
 .clear {
   clear: both; }
@@ -55,23 +16,20 @@ input:focus {
 
 .header .mobile_menu {
   display: none;
-  margin: 10px 0 0 10px;
-  height: 30px;
-  width: 30px;
-  border: none;
-  cursor: pointer;
-  background: url("../images/hamburger_menu.svg") no-repeat center center; }
-
-.header .close_mobile_menu {
-  display: none;
-  height: 30px;
-  width: 30px;
-  border: none;
-  cursor: pointer;
-  background: url("../images/cross_menu.svg") no-repeat 10px 10px;
-  padding: 10px 0 10px 50px;
-  font: 19px/32px 'Georgia', sans-serif;
-  color: #333333; }
+  max-width: 600px;
+  margin: 10px auto 0; }
+  .header .mobile_menu .open_mobile_menu, .header .mobile_menu .close_mobile_menu {
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    background: url("../images/hamburger_menu.svg") no-repeat 0 center; }
+  .header .mobile_menu .close_mobile_menu {
+    display: none;
+    background: url("../images/cross_menu.svg") no-repeat 0 center;
+    padding-left: 40px;
+    font: 19px/32px 'Georgia', sans-serif;
+    color: #333333; }
 
 .header .top_menu {
   margin: 0 auto;
@@ -87,23 +45,23 @@ input:focus {
     font: 19px/50px 'Georgia', sans-serif;
     color: #333333; }
     .header .top_menu .top_menu_button:hover {
-      color: #F5F5F5; }
+      color: #f5f5f5; }
   .header .top_menu .about_me_button {
     background: url("../images/about_me_icon.png") no-repeat 20px 17px; }
     .header .top_menu .about_me_button:hover {
-      background: url("../images/about_me_icon_white.png") no-repeat 20px 17px, #15A98B; }
+      background: url("../images/about_me_icon_white.png") no-repeat 20px 17px, #15a98b; }
   .header .top_menu .my_hobby_button {
     background: url("../images/hobby_icon.png") no-repeat 20px 17px; }
     .header .top_menu .my_hobby_button:hover {
-      background: url("../images/hobby_icon_white.png") no-repeat 20px 17px, #15A98B; }
+      background: url("../images/hobby_icon_white.png") no-repeat 20px 17px, #15a98b; }
   .header .top_menu .favorite_films_button {
     background: url("../images/favorite_films_icon.png") no-repeat 20px 17px; }
     .header .top_menu .favorite_films_button:hover {
-      background: url("../images/favorite_films_icon_white.png") no-repeat 20px 17px, #15A98B; }
+      background: url("../images/favorite_films_icon_white.png") no-repeat 20px 17px, #15a98b; }
   .header .top_menu .add_film_button {
     background: url("../images/add_film_icon.png") no-repeat 20px 17px; }
     .header .top_menu .add_film_button:hover {
-      background: url("../images/add_film_icon_white.png") no-repeat 20px 17px, #15A98B; }
+      background: url("../images/add_film_icon_white.png") no-repeat 20px 17px, #15a98b; }
 
 .article .content {
   margin: 0 auto;
@@ -124,7 +82,7 @@ input:focus {
         margin-top: 45px; }
         .article .content .main .column_one .my_books .books_headline {
           font: 700 24px/32px 'Open Sans', sans-serif;
-          color: #15A98B;
+          color: #15a98b;
           margin-top: 45px; }
         .article .content .main .column_one .my_books .books_list {
           list-style-position: inside; }
@@ -140,10 +98,10 @@ input:focus {
         height: 210px;
         padding-top: 25px;
         font: italic 28px/42px 'Georgia', sans-serif;
-        color: #F5F5F5; }
+        color: #f5f5f5; }
         .article .content .main .column_two .quote .author {
           font: 700 16px/42px 'Open Sans', sans-serif;
-          color: #F5F5F5; }
+          color: #f5f5f5; }
       .article .content .main .column_two .name {
         font: 700 48px/42px 'Open Sans', sans-serif;
         color: #333333; }
@@ -152,10 +110,10 @@ input:focus {
           display: block;
           height: 5px;
           width: 60px;
-          background-color: #15A98B;
+          background-color: #15a98b;
           border-radius: 5px;
           margin-top: 30px; }
-      .article .content .main .column_two .info_about_me {
+      .article .content .main .column_two .info {
         font: 19px/32px 'Georgia', sans-serif;
         color: #555555;
         margin-top: 45px; }
@@ -163,48 +121,40 @@ input:focus {
         font: 600 36px/42px 'Open Sans', sans-serif;
         color: #333333;
         margin-top: 45px; }
-      .article .content .main .column_two .info_my_hobby {
-        font: 19px/32px 'Georgia', sans-serif;
-        color: #555555;
-        margin-top: 15px; }
       .article .content .main .column_two .write_me_link {
         display: inline-block;
         font: 19px/32px 'Georgia', sans-serif;
-        color: #15A98B;
+        color: #15a98b;
         margin-top: 40px;
         text-decoration: none;
         cursor: pointer; }
         .article .content .main .column_two .write_me_link .link_without_arrow {
           text-decoration: underline; }
   .article .content .my_movies {
-    height: auto;
-    margin: 45px auto 50px;
-    padding: 45px 0 50px; }
-    .article .content .my_movies .my_movies_container_one, .article .content .my_movies .my_movies_container_two {
-      max-width: 1200px;
-      margin: 0 auto; }
-      .article .content .my_movies .my_movies_container_one .favorite_movies, .article .content .my_movies .my_movies_container_two .favorite_movies {
-        font: 600 36px/42px 'Open Sans', sans-serif;
-        color: #333333; }
-      .article .content .my_movies .my_movies_container_one .movie, .article .content .my_movies .my_movies_container_two .movie {
+    max-width: 1200px;
+    margin: 50px auto; }
+    .article .content .my_movies .my_movies_container .favorite_movies {
+      font: 600 36px/42px 'Open Sans', sans-serif;
+      color: #333333; }
+    .article .content .my_movies .my_movies_container .movie {
+      width: 285px;
+      float: left;
+      margin: 5px 20px 0 0; }
+      .article .content .my_movies .my_movies_container .movie .movie_image {
         width: 285px;
-        float: left;
-        margin: 5px 20px 0 0; }
-        .article .content .my_movies .my_movies_container_one .movie .movie_image, .article .content .my_movies .my_movies_container_two .movie .movie_image {
-          width: 285px;
-          height: 190px;
-          margin: 30px 0 25px;
-          border-radius: 5px;
-          display: block; }
-        .article .content .my_movies .my_movies_container_one .movie .movie_name, .article .content .my_movies .my_movies_container_two .movie .movie_name {
-          font: 700 22px/32px 'Open Sans', sans-serif;
-          color: #333333; }
-        .article .content .my_movies .my_movies_container_one .movie .movie_brief, .article .content .my_movies .my_movies_container_two .movie .movie_brief {
-          font: 16px/28px 'Georgia', sans-serif;
-          color: #555555;
-          margin-top: 15px; }
-      .article .content .my_movies .my_movies_container_one :nth-of-type(4n), .article .content .my_movies .my_movies_container_two :nth-of-type(4n) {
-        margin-right: 0; }
+        height: 190px;
+        margin: 30px 0 25px;
+        border-radius: 5px;
+        display: block; }
+      .article .content .my_movies .my_movies_container .movie .movie_name {
+        font: 700 22px/32px 'Open Sans', sans-serif;
+        color: #333333; }
+      .article .content .my_movies .my_movies_container .movie .movie_brief {
+        font: 16px/28px 'Georgia', sans-serif;
+        color: #555555;
+        margin-top: 15px; }
+    .article .content .my_movies .my_movies_container :nth-of-type(4n) {
+      margin-right: 0; }
     .article .content .my_movies .my_movies_container_two {
       display: none;
       opacity: 0;
@@ -223,12 +173,12 @@ input:focus {
       height: 50px;
       border-radius: 5px;
       text-align: center;
-      background-color: #15A98B;
+      background-color: #15a98b;
       cursor: pointer;
       font: 19px/50px 'Georgia', sans-serif;
-      color: #F5F5F5; }
+      color: #f5f5f5; }
 
-.article .write_me_form {
+.article .modal {
   margin: auto;
   top: 0;
   right: 0;
@@ -241,174 +191,89 @@ input:focus {
   display: none;
   z-index: 1010;
   border-radius: 10px;
-  background-color: #FFFFFF; }
-  .article .write_me_form .close_write_me_form {
+  background-color: #fff; }
+  .article .modal .close_modal {
     display: block;
     margin: 20px 0 0 93%;
-    cursor: pointer;
     width: 26px;
-    height: 26px; }
-  .article .write_me_form .write_me_form_title {
+    height: 26px;
+    cursor: pointer; }
+  .article .modal .modal_title {
     font: 36px/42px 'Open Sans', sans-serif;
     color: #333333;
     margin-left: 60px; }
-  .article .write_me_form .write_me .form_name, .article .write_me_form .write_me .form_email, .article .write_me_form .write_me .form_country, .article .write_me_form .write_me .form_gender, .article .write_me_form .write_me .form_message, .article .write_me_form .write_me .form_write_me_button {
+  .article .modal .modal_object {
     margin: 0 auto;
     max-width: 540px; }
-    .article .write_me_form .write_me .form_name .form_headline, .article .write_me_form .write_me .form_email .form_headline, .article .write_me_form .write_me .form_country .form_headline, .article .write_me_form .write_me .form_gender .form_headline, .article .write_me_form .write_me .form_message .form_headline, .article .write_me_form .write_me .form_write_me_button .form_headline {
+    .article .modal .modal_object .object_title {
       font: 20px/32px 'Open Sans', sans-serif;
       color: #333333; }
-  .article .write_me_form .write_me .form_name, .article .write_me_form .write_me .form_email {
-    margin-top: 20px; }
-    .article .write_me_form .write_me .form_name .form_headline:after, .article .write_me_form .write_me .form_email .form_headline:after {
+    .article .modal .modal_object .need_to_fill:after {
       content: " *";
       color: red; }
-    .article .write_me_form .write_me .form_name .username, .article .write_me_form .write_me .form_name .email, .article .write_me_form .write_me .form_email .username, .article .write_me_form .write_me .form_email .email {
+    .article .modal .modal_object .simple_field {
       height: 50px;
       width: 100%;
       border-radius: 3px;
-      border: 2px solid #C9C9C9; }
-      .article .write_me_form .write_me .form_name .username:hover, .article .write_me_form .write_me .form_name .email:hover, .article .write_me_form .write_me .form_email .username:hover, .article .write_me_form .write_me .form_email .email:hover {
-        border: 2px solid #A6A6A6; }
-      .article .write_me_form .write_me .form_name .username:focus, .article .write_me_form .write_me .form_name .email:focus, .article .write_me_form .write_me .form_email .username:focus, .article .write_me_form .write_me .form_email .email:focus {
+      border: 2px solid #c9c9c9; }
+      .article .modal .modal_object .simple_field:hover {
+        border: 2px solid #a6a6a6; }
+      .article .modal .modal_object .simple_field:focus {
         outline: none;
-        border: 2px solid #15A98B; }
-    .article .write_me_form .write_me .form_name .red_border, .article .write_me_form .write_me .form_email .red_border {
-      border-color: red; }
-  .article .write_me_form .write_me .form_country {
-    margin-top: 25px; }
-    .article .write_me_form .write_me .form_country .country {
+        border: 2px solid #15a98b; }
+    .article .modal .modal_object .textarea_field {
+      height: 140px;
+      width: 100%;
+      border-radius: 3px;
+      border: 2px solid #c9c9c9;
+      resize: none;
+      padding: 0; }
+      .article .modal .modal_object .textarea_field:hover {
+        border: 2px solid #a6a6a6; }
+      .article .modal .modal_object .textarea_field:focus {
+        outline: none;
+        border: 2px solid #15a98b; }
+    .article .modal .modal_object .radio {
+      margin-top: 45px;
+      font: 18px/32px 'Open Sans', sans-serif;
+      color: #333333; }
+    .article .modal .modal_object .drop-down {
       height: 50px;
       text-indent: 15px;
       font: 18px/32px 'Open Sans', sans-serif;
       color: #555555;
       width: 100%;
       border-radius: 3px;
-      border: 2px solid #C9C9C9;
+      border: 2px solid #c9c9c9;
       -webkit-box-sizing: unset;
       -moz-box-sizing: unset;
       box-sizing: unset;
       -webkit-appearance: none;
       -moz-appearance: none;
       background: url("../images/arrow_down.png") no-repeat 97% 20px; }
-      .article .write_me_form .write_me .form_country .country:hover {
-        border: 2px solid #A6A6A6; }
-      .article .write_me_form .write_me .form_country .country:focus {
+      .article .modal .modal_object .drop-down:hover {
+        border: 2px solid #a6a6a6; }
+      .article .modal .modal_object .drop-down:focus {
         outline: none;
-        border: 2px solid #15A98B; }
-  .article .write_me_form .write_me .form_gender {
-    margin-top: 45px;
-    font: 18px/32px 'Open Sans', sans-serif;
-    color: #333333; }
-    .article .write_me_form .write_me .form_gender .gender_name {
+        border: 2px solid #15a98b; }
+    .article .modal .modal_object .radio_name {
       margin-right: 20px; }
-  .article .write_me_form .write_me .form_message {
-    margin-top: 40px; }
-    .article .write_me_form .write_me .form_message .form_headline:after {
-      content: " *";
-      color: red; }
-    .article .write_me_form .write_me .form_message .message {
-      height: 140px;
-      width: 100%;
-      border-radius: 3px;
-      border: 2px solid #C9C9C9;
-      resize: none;
-      padding: 0; }
-      .article .write_me_form .write_me .form_message .message:hover {
-        border: 2px solid #A6A6A6; }
-      .article .write_me_form .write_me .form_message .message:focus {
-        outline: none;
-        border: 2px solid #15A98B; }
-    .article .write_me_form .write_me .form_message .red_border {
-      border-color: red; }
-  .article .write_me_form .write_me .form_write_me_button {
-    margin-top: 50px; }
-    .article .write_me_form .write_me .form_write_me_button .send_write_me {
-      width: 220px;
-      height: 50px;
-      border-radius: 5px;
-      font: 19px/32px 'Georgia', sans-serif;
-      color: #F5F5F5;
-      background-color: #15A98B;
-      border: none;
-      cursor: pointer; }
-
-.article .add_movie_form {
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  max-width: 660px;
-  max-height: 670px;
-  overflow-y: auto;
-  position: fixed;
-  display: none;
-  z-index: 1010;
-  border-radius: 10px;
-  background-color: #FFFFFF; }
-  .article .add_movie_form .close_add_movie_button {
-    display: block;
-    margin: 20px 0 0 93%;
-    width: 26px;
-    height: 26px;
-    cursor: pointer; }
-  .article .add_movie_form .add_movie_form_title {
-    font: 36px/42px 'Open Sans', sans-serif;
-    color: #333333;
-    margin-left: 60px; }
-  .article .add_movie_form .add_movie .form_url, .article .add_movie_form .add_movie .form_movie_name, .article .add_movie_form .add_movie .form_movie_description, .article .add_movie_form .add_movie .form_add_movie_button {
-    margin: 0 auto;
-    max-width: 540px; }
-    .article .add_movie_form .add_movie .form_url .form_headline, .article .add_movie_form .add_movie .form_movie_name .form_headline, .article .add_movie_form .add_movie .form_movie_description .form_headline, .article .add_movie_form .add_movie .form_add_movie_button .form_headline {
-      font: 20px/32px 'Open Sans', sans-serif;
-      color: #333333; }
-  .article .add_movie_form .add_movie .form_url, .article .add_movie_form .add_movie .form_movie_name {
+  .article .modal .field_small_margin {
     margin-top: 20px; }
-    .article .add_movie_form .add_movie .form_url .form_headline:after, .article .add_movie_form .add_movie .form_movie_name .form_headline:after {
-      content: " *";
-      color: red; }
-    .article .add_movie_form .add_movie .form_url .url, .article .add_movie_form .add_movie .form_url .movie_name, .article .add_movie_form .add_movie .form_movie_name .url, .article .add_movie_form .add_movie .form_movie_name .movie_name {
-      height: 50px;
-      width: 100%;
-      border-radius: 3px;
-      border: 2px solid #C9C9C9; }
-      .article .add_movie_form .add_movie .form_url .url:hover, .article .add_movie_form .add_movie .form_url .movie_name:hover, .article .add_movie_form .add_movie .form_movie_name .url:hover, .article .add_movie_form .add_movie .form_movie_name .movie_name:hover {
-        border: 2px solid #A6A6A6; }
-      .article .add_movie_form .add_movie .form_url .url:focus, .article .add_movie_form .add_movie .form_url .movie_name:focus, .article .add_movie_form .add_movie .form_movie_name .url:focus, .article .add_movie_form .add_movie .form_movie_name .movie_name:focus {
-        outline: none;
-        border: 2px solid #15A98B; }
-    .article .add_movie_form .add_movie .form_url .red_border, .article .add_movie_form .add_movie .form_movie_name .red_border {
-      border-color: red; }
-  .article .add_movie_form .add_movie .form_movie_description {
+  .article .modal .field_large_margin {
     margin-top: 40px; }
-    .article .add_movie_form .add_movie .form_movie_description .form_headline:after {
-      content: " *";
-      color: red; }
-    .article .add_movie_form .add_movie .form_movie_description .movie_description {
-      height: 140px;
-      width: 100%;
-      border-radius: 3px;
-      border: 2px solid #C9C9C9;
-      resize: none;
-      padding: 0; }
-      .article .add_movie_form .add_movie .form_movie_description .movie_description:hover {
-        border: 2px solid #A6A6A6; }
-      .article .add_movie_form .add_movie .form_movie_description .movie_description:focus {
-        outline: none;
-        border: 2px solid #15A98B; }
-    .article .add_movie_form .add_movie .form_movie_description .red_border {
-      border-color: red; }
-  .article .add_movie_form .add_movie .form_add_movie_button {
+  .article .modal .red_border {
+    border-color: red; }
+  .article .modal .modal_button {
     margin-top: 50px;
     margin-bottom: 30px; }
-    .article .add_movie_form .add_movie .form_add_movie_button .send_add_movie {
+    .article .modal .modal_button .form_submit {
       width: 220px;
       height: 50px;
       border-radius: 5px;
       font: 19px/32px 'Georgia', sans-serif;
-      color: #F5F5F5;
-      background-color: #15A98B;
+      color: #f5f5f5;
+      background-color: #15a98b;
       border: none;
       cursor: pointer; }
 
@@ -424,7 +289,7 @@ input:focus {
   cursor: pointer;
   display: none; }
 
-.article .view_modal {
+.article .overlay_visible {
   display: block; }
 
 .footer {
@@ -434,25 +299,48 @@ input:focus {
   font: 16px/32px 'Georgia', sans-serif;
   color: #555555;
   text-align: center;
-  background-color: #F5F5F5; }
+  background-color: #f5f5f5; }
 
 @media screen and (max-width: 1279px) {
-  .article .content .my_movies .my_movies_container_one, .article .content .my_movies .my_movies_container_two {
-    max-width: 900px; }
-    .article .content .my_movies .my_movies_container_one .movie, .article .content .my_movies .my_movies_container_two .movie {
-      width: 400px;
-      margin: 5px 100px 0 0; }
-      .article .content .my_movies .my_movies_container_one .movie .movie_image, .article .content .my_movies .my_movies_container_two .movie .movie_image {
-        width: 400px;
-        height: 100%; }
-    .article .content .my_movies .my_movies_container_one :nth-of-type(2n), .article .content .my_movies .my_movies_container_two :nth-of-type(2n) {
-      margin-right: 0; } }
+  .article .content .main .column_two .info {
+    text-align: justify; }
+  .article .content .my_movies {
+    max-width: 960px; }
+    .article .content .my_movies .my_movies_container .movie {
+      width: 450px; }
+      .article .content .my_movies .my_movies_container .movie .movie_image {
+        width: 450px;
+        height: 100%;
+        margin: 30px auto; }
+      .article .content .my_movies .my_movies_container .movie .movie_brief {
+        text-align: justify; }
+    .article .content .my_movies .my_movies_container .odd_movie {
+      margin: 5px 60px 0 0; }
+    .article .content .my_movies .my_movies_container .even_movie {
+      margin: 5px 0 0 auto; } }
 
 @media screen and (max-width: 1023px) {
+  .header .mobile_menu {
+    display: block; }
+    .header .mobile_menu .invisible_hamburger {
+      display: none; }
+  .header .top_menu {
+    height: 0; }
+    .header .top_menu .top_menu_button {
+      float: none;
+      display: none;
+      background: none;
+      text-align: center; }
+      .header .top_menu .top_menu_button:hover {
+        color: #333333;
+        background: none,  #efeff0; }
+  .header .mobile_menu_background {
+    height: 200px;
+    max-width: 600px; }
   .article .content {
     background-image: none; }
     .article .content .main .column_one {
-      margin: 10px auto 0;
+      margin: 20px auto 0;
       float: none;
       max-width: 600px; }
       .article .content .main .column_one .picture {
@@ -461,85 +349,47 @@ input:focus {
         margin: 0 auto; }
     .article .content .main .column_two {
       margin: 30px auto 0;
-      float: none; }
+      float: none;
+      max-width: 600px; }
       .article .content .main .column_two .quote {
         color: #333333; }
         .article .content .main .column_two .quote .author {
           color: #333333; }
-    .article .content .my_movies .my_movies_container_one, .article .content .my_movies .my_movies_container_two {
+    .article .content .my_movies {
       max-width: 600px; }
-      .article .content .my_movies .my_movies_container_one .movie, .article .content .my_movies .my_movies_container_two .movie {
+      .article .content .my_movies .my_movies_container .movie {
         width: 285px;
         margin: 5px 20px 0 0; }
-        .article .content .my_movies .my_movies_container_one .movie .movie_image, .article .content .my_movies .my_movies_container_two .movie .movie_image {
+        .article .content .my_movies .my_movies_container .movie .movie_image {
           width: 285px;
           height: 190px; }
-      .article .content .my_movies .my_movies_container_one :nth-of-type(2n), .article .content .my_movies .my_movies_container_two :nth-of-type(2n) {
+      .article .content .my_movies .my_movies_container .even_movie {
         margin-right: 0; } }
 
-@media screen and (max-width: 768px) {
-  .header .mobile_menu {
-    display: block; }
-  .header .open_mm {
-    display: none; }
-  .header .top_menu .top_menu_button {
-    float: none;
-    display: none;
-    background: none;
-    text-align: center; }
-    .header .top_menu .top_menu_button:hover {
-      color: #333333;
-      background: none,  #EFEFF0; }
-  .header .mobile_top_menu {
-    height: 800px;
-    max-width: 600px; } }
-
-@media screen and (max-width: 700px) {
-  .article .write_me_form {
-    margin: auto 10px;
-    overflow: auto; }
-    .article .write_me_form .write_me .form_write_me_button {
-      margin-bottom: 20px; }
-  .article .add_movie_form {
-    margin: auto 10px;
-    overflow: auto; }
-    .article .add_movie_form .add_movie .form_add_movie_button {
-      margin-bottom: 20px; } }
-
 @media screen and (max-width: 640px) {
+  .header .mobile_menu {
+    margin-left: 10px; }
   .article .content {
     margin: 10px; }
-    .article .content .my_movies .my_movies_container_one, .article .content .my_movies .my_movies_container_two {
-      max-width: 550px;
-      margin: 0 auto; }
-      .article .content .my_movies .my_movies_container_one .movie, .article .content .my_movies .my_movies_container_two .movie {
-        max-width: 550px;
+    .article .content .my_movies .my_movies_container .movie {
+      max-width: 600px;
+      width: 100%;
+      margin-top: 50px; }
+      .article .content .my_movies .my_movies_container .movie .movie_image {
+        max-width: 400px;
         width: 100%;
-        margin-top: 70px; }
-        .article .content .my_movies .my_movies_container_one .movie .movie_image, .article .content .my_movies .my_movies_container_two .movie .movie_image {
-          max-width: 400px;
-          width: 100%;
-          height: 100%;
-          margin: 30px auto 25px; } }
+        height: 100%;
+        margin: 30px auto; } }
 
 @media screen and (max-width: 600px) {
-  .article .write_me_form {
-    margin: auto 10px; }
-    .article .write_me_form .cross_write_me_form .close_write_me_button {
-      margin: 20px 0 0 90%; }
-    .article .write_me_form .write_me .form_name, .article .write_me_form .write_me .form_email, .article .write_me_form .write_me .form_country, .article .write_me_form .write_me .form_message, .article .write_me_form .write_me .form_gender {
-      margin-left: 10px;
-      margin-right: 10px; }
-    .article .write_me_form .write_me_form_title, .article .write_me_form .form_write_me_button {
-      margin-left: 0;
-      text-align: center; }
-  .article .add_movie_form {
-    margin: auto 10px; }
-    .article .add_movie_form .cross_add_movie_form .close_add_movie_button {
-      margin: 20px 0 0 90%; }
-    .article .add_movie_form .add_movie .form_url, .article .add_movie_form .add_movie .form_movie_name, .article .add_movie_form .add_movie .form_movie_description {
-      margin-left: 10px;
-      margin-right: 10px; }
-    .article .add_movie_form .add_movie .add_movie_form_title, .article .add_movie_form .add_movie .form_add_movie_button {
-      margin-left: 0;
-      text-align: center; } }
+  .article .modal .close_modal {
+    margin: 20px 0 0 90%; }
+  .article .modal .modal_form .modal_object {
+    margin-left: 10px;
+    margin-right: 10px; }
+  .article .modal .modal_form .modal_button {
+    margin-left: 0;
+    text-align: center; }
+  .article .modal .modal_title {
+    margin-left: 0;
+    text-align: center; } }

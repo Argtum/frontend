@@ -1,10 +1,16 @@
-@import 'reset';
 @import 'mixins';
 
 @font-face
 {
     font-family: 'georgia';
-    src: url('../fonts/georgia.ttf');
+    src: url("../fonts/georgia.ttf");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .clear
@@ -23,25 +29,27 @@
     .mobile_menu
     {
         display: none;
-        margin: 10px 0 0 10px;
-        height: 30px;
-        width: 30px;
-        border: none;
-        cursor: pointer;
-        background: url("../images/hamburger_menu.svg") no-repeat center center;
-    }
+        max-width: 600px;
+        margin: 10px auto 0;
 
-    .close_mobile_menu
-    {
-        display: none;
-        height: 30px;
-        width: 30px;
-        border: none;
-        cursor: pointer;
-        background: url("../images/cross_menu.svg") no-repeat 10px 10px;
-        padding: 10px 0 10px 50px;
-        font: 19px/32px 'Georgia', sans-serif;
-        color: $headline_color;
+        .open_mobile_menu
+        {
+            height: 30px;
+            width: 30px;
+            border: none;
+            cursor: pointer;
+            background: url("../images/hamburger_menu.svg") no-repeat 0 center;
+        }
+
+        .close_mobile_menu
+        {
+            @extend .open_mobile_menu;
+            display: none;
+            background: url("../images/cross_menu.svg") no-repeat 0 center;
+            padding-left: 40px;
+            font: 19px/32px 'Georgia', sans-serif;
+            color: $headline_color;
+        }
     }
 
     .top_menu
@@ -197,7 +205,7 @@
                     }
                 }
 
-                .info_about_me
+                .info
                 {
                     font: 19px/32px 'Georgia', sans-serif;
                     color: $text-color;
@@ -209,13 +217,6 @@
                     font: 600 36px/42px 'Open Sans', sans-serif;
                     color: $headline_color;
                     margin-top: 45px;
-                }
-
-                .info_my_hobby
-                {
-                    font: 19px/32px 'Georgia', sans-serif;
-                    color: $text-color;
-                    margin-top: 15px;
                 }
 
                 .write_me_link
@@ -237,15 +238,11 @@
 
         .my_movies
         {
-            height: auto;
-            margin: 45px auto 50px;
-            padding: 45px 0 50px;
+            max-width: 1200px;
+            margin: 50px auto;
 
-            .my_movies_container_one, .my_movies_container_two
+            .my_movies_container
             {
-                max-width: 1200px;
-                margin: 0 auto;
-
                 .favorite_movies
                 {
                     font: 600 36px/42px 'Open Sans', sans-serif;
@@ -323,7 +320,7 @@
         }
     }
 
-    .write_me_form
+    .modal
     {
         margin: auto;
         top: 0;
@@ -337,244 +334,117 @@
         display: none;
         z-index: 1010;
         border-radius: 10px;
-        background-color: #FFFFFF;
+        background-color: #fff;
 
-        .close_write_me_form
+        .close_modal
         {
             display: block;
             margin: 20px 0 0 93%;
-            cursor: pointer;
             width: 26px;
             height: 26px;
+            cursor: pointer;
         }
 
-        .write_me_form_title
+        .modal_title
         {
             font: 36px/42px 'Open Sans', sans-serif;
             color: $headline-color;
             margin-left: 60px;
         }
 
-        .write_me
+        .modal_object
         {
-            .form_name, .form_email, .form_country, .form_gender, .form_message, .form_write_me_button
-            {
-                margin: 0 auto;
-                max-width: 540px;
+            margin: 0 auto;
+            max-width: 540px;
 
-                .form_headline
-                {
-                    font: 20px/32px 'Open Sans', sans-serif;
-                    color: $headline-color;
-                }
+            .object_title
+            {
+                font: 20px/32px 'Open Sans', sans-serif;
+                color: $headline-color;
             }
 
-            .form_name, .form_email
+            .need_to_fill
             {
-                margin-top: 20px;
-
-                .form_headline:after
+                &:after
                 {
                     content: " *";
                     color: red;
                 }
-
-                .username, .email
-                {
-                    height: 50px;
-                    @include form_style;
-                }
-
-                .red_border
-                {
-                    border-color: red;
-                }
             }
 
-            .form_country
+            .simple_field
             {
-                margin-top: 25px;
-
-                .country
-                {
-                    height: 50px;
-                    text-indent: 15px;
-                    font: 18px/32px 'Open Sans', sans-serif;
-                    color: $text_color;
-                    @include form_style;
-                    -webkit-box-sizing: unset;
-                    -moz-box-sizing: unset;
-                    box-sizing: unset;
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    //appearance: none;
-                    background: url("../images/arrow_down.png") no-repeat 97% 20px;
-                }
+                height: 50px;
+                @include form_style;
             }
 
-            .form_gender
+            .textarea_field
+            {
+                height: 140px;
+                @include form_style;
+                resize: none;
+                padding: 0;
+            }
+
+            .radio
             {
                 margin-top: 45px;
                 font: 18px/32px 'Open Sans', sans-serif;
                 color: $headline_color;
-
-                .gender_name
-                {
-                    margin-right: 20px;
-                }
             }
 
-            .form_message
+            .drop-down
             {
-                margin-top: 40px;
-
-                .form_headline:after
-                {
-                    content: " *";
-                    color: red;
-                }
-
-                .message
-                {
-                    height: 140px;
-                    @include form_style;
-                    resize: none;
-                    padding: 0;
-                }
-
-                .red_border
-                {
-                    border-color: red;
-                }
+                height: 50px;
+                text-indent: 15px;
+                font: 18px/32px 'Open Sans', sans-serif;
+                color: $text_color;
+                @include form_style;
+                -webkit-box-sizing: unset;
+                -moz-box-sizing: unset;
+                box-sizing: unset;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                //appearance: none;
+                background: url("../images/arrow_down.png") no-repeat 97% 20px;
             }
 
-            .form_write_me_button
+            .radio_name
             {
-                margin-top: 50px;
-
-                .send_write_me
-                {
-                    width: 220px;
-                    height: 50px;
-                    border-radius: 5px;
-                    font: 19px/32px 'Georgia', sans-serif;
-                    color: $white-font-color;
-                    background-color: $base_color;
-                    border: none;
-                    cursor: pointer;
-                }
+                margin-right: 20px;
             }
         }
-    }
 
-    .add_movie_form
-    {
-        margin: auto;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        max-width: 660px;
-        max-height: 670px;
-        overflow-y: auto;
-        position: fixed;
-        display: none;
-        z-index: 1010;
-        border-radius: 10px;
-        background-color: #FFFFFF;
-
-        .close_add_movie_button
+        .field_small_margin
         {
-            display: block;
-            margin: 20px 0 0 93%;
-            width: 26px;
-            height: 26px;
-            cursor: pointer;
+            margin-top: 20px;
         }
 
-        .add_movie_form_title
+        .field_large_margin
         {
-            font: 36px/42px 'Open Sans', sans-serif;
-            color: $headline-color;
-            margin-left: 60px;
+            margin-top: 40px;
         }
 
-        .add_movie
+        .red_border
         {
-            .form_url, .form_movie_name, .form_movie_description, .form_add_movie_button
+            border-color: red;
+        }
+
+        .modal_button
+        {
+            margin-top: 50px;
+            margin-bottom: 30px;
+
+            .form_submit
             {
-                margin: 0 auto;
-                max-width: 540px;
-
-                .form_headline
-                {
-                    font: 20px/32px 'Open Sans', sans-serif;
-                    color: $headline-color;
-                }
-            }
-
-            .form_url, .form_movie_name
-            {
-                margin-top: 20px;
-
-                .form_headline:after
-                {
-                    content: " *";
-                    color: red;
-                }
-
-                .url, .movie_name
-                {
-                    height: 50px;
-                    @include form_style;
-                }
-
-                .red_border
-                {
-                    border-color: red;
-                }
-            }
-
-            .form_movie_description
-            {
-                margin-top: 40px;
-
-                .form_headline:after
-                {
-                    content: " *";
-                    color: red;
-                }
-
-                .movie_description
-                {
-                    height: 140px;
-                    @include form_style;
-                    resize: none;
-                    padding: 0;
-                }
-
-                .red_border
-                {
-                    border-color: red;
-                }
-            }
-
-            .form_add_movie_button
-            {
-                margin-top: 50px;
-                margin-bottom: 30px;
-
-                .send_add_movie
-                {
-                    width: 220px;
-                    height: 50px;
-                    border-radius: 5px;
-                    font: 19px/32px 'Georgia', sans-serif;
-                    color: $white-font-color;
-                    background-color: $base_color;
-                    border: none;
-                    cursor: pointer;
-                }
+                width: 220px;
+                height: 50px;
+                border-radius: 5px;
+                font: 19px/32px 'Georgia', sans-serif;
+                color: $white-font-color;
+                background-color: $base_color;
+                border: none;
+                cursor: pointer;
             }
         }
     }
@@ -593,7 +463,7 @@
         display: none;
     }
 
-    .view_modal
+    .overlay_visible
     {
         display: block;
     }
@@ -607,280 +477,242 @@
     font: 16px/32px 'Georgia', sans-serif;
     color: $text-color;
     text-align: center;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
 }
 
-@media screen
+@media screen and (max-width: 1279px)
 {
-    @media (max-width: 1279px)
+    .article
     {
-        .article
+        .content
         {
-            .content
+            .main
             {
-                .my_movies
+                .column_two
                 {
-                    .my_movies_container_one, .my_movies_container_two
+                    .info
                     {
-                        max-width: 900px;
+                        text-align: justify;
+                    }
+                }
+            }
 
-                        .movie
+            .my_movies
+            {
+                max-width: 960px;
+
+                .my_movies_container
+                {
+                    .movie
+                    {
+                        width: 450px;
+
+                        .movie_image
                         {
-                            width: 400px;
-                            margin: 5px 100px 0 0;
-
-                            .movie_image
-                            {
-                                width: 400px;
-                                height: 100%;
-                            }
+                            width: 450px;
+                            height: 100%;
+                            margin: 30px auto;
                         }
 
-                        :nth-of-type(2n)
+                        .movie_brief
                         {
-                            margin-right: 0;
+                            text-align: justify;
                         }
+                    }
+
+                    .odd_movie
+                    {
+                        margin: 5px 60px 0 0;
+                    }
+
+                    .even_movie
+                    {
+                        margin: 5px 0 0 auto;
                     }
                 }
             }
         }
     }
+}
 
-    @media (max-width: 1023px)
+@media screen and (max-width: 1023px)
+{
+    .header
     {
-        .article
+        .mobile_menu
         {
-            .content
-            {
-                background-image: none;
+            display: block;
 
-                .main
-                {
-                    .column_one
-                    {
-                        margin: 10px auto 0;
-                        float: none;
-                        max-width: 600px;
-
-                        .picture
-                        {
-                            max-width: 330px;
-                            height: auto;
-                            margin: 0 auto;
-                        }
-                    }
-
-                    .column_two
-                    {
-                        margin: 30px auto 0;
-                        float: none;
-
-                        .quote
-                        {
-                            color: $headline_color;
-
-                            .author
-                            {
-                                color: $headline_color;
-                            }
-                        }
-                    }
-                }
-
-                .my_movies
-                {
-                    .my_movies_container_one, .my_movies_container_two
-                    {
-                        max-width: 600px;
-
-                        .movie
-                        {
-                            width: 285px;
-                            margin: 5px 20px 0 0;
-
-                            .movie_image
-                            {
-                                width: 285px;
-                                height: 190px;
-                            }
-                        }
-
-                        :nth-of-type(2n)
-                        {
-                            margin-right: 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media (max-width: 768px)
-    {
-        .header
-        {
-            .mobile_menu
-            {
-                display: block;
-            }
-
-            .open_mm
+            .invisible_hamburger
             {
                 display: none;
             }
+        }
 
-            .top_menu
+        .top_menu
+        {
+            height: 0;
+
+            .top_menu_button
             {
-                .top_menu_button
-                {
-                    float: none;
-                    display: none;
-                    background: none;
-                    text-align: center;
+                float: none;
+                display: none;
+                background: none;
+                text-align: center;
 
-                    &:hover
+                &:hover
+                {
+                    color: $headline_color;
+                    background: none,  #efeff0;
+                }
+            }
+        }
+
+        .mobile_menu_background
+        {
+            height: 200px;
+            max-width: 600px;
+        }
+    }
+
+    .article
+    {
+        .content
+        {
+            background-image: none;
+
+            .main
+            {
+                .column_one
+                {
+                    margin: 20px auto 0;
+                    float: none;
+                    max-width: 600px;
+
+                    .picture
+                    {
+                        max-width: 330px;
+                        height: auto;
+                        margin: 0 auto;
+                    }
+                }
+
+                .column_two
+                {
+                    margin: 30px auto 0;
+                    float: none;
+                    max-width: 600px;
+
+                    .quote
                     {
                         color: $headline_color;
-                        background: none,  #EFEFF0;
-                    }
-                }
-            }
 
-            .mobile_top_menu
-            {
-                height: 800px;
-                max-width: 600px;
-            }
-        }
-    }
-
-    @media (max-width: 700px)
-    {
-        .article
-        {
-            .write_me_form
-            {
-                margin: auto 10px;
-                overflow: auto;
-
-                .write_me
-                {
-                    .form_write_me_button
-                    {
-                        margin-bottom: 20px;
-                    }
-                }
-            }
-
-            .add_movie_form
-            {
-                margin: auto 10px;
-                overflow: auto;
-
-                .add_movie
-                {
-                    .form_add_movie_button
-                    {
-                        margin-bottom: 20px;
-                    }
-                }
-            }
-        }
-    }
-
-    @media (max-width: 640px)
-    {
-        .article
-        {
-            .content
-            {
-                margin: 10px;
-
-                .my_movies
-                {
-                    .my_movies_container_one, .my_movies_container_two
-                    {
-                        max-width: 550px;
-                        margin: 0 auto;
-
-                        .movie
+                        .author
                         {
-                            max-width: 550px;
-                            width: 100%;
-                            margin-top: 70px;
+                            color: $headline_color;
+                        }
+                    }
+                }
+            }
 
-                            .movie_image
-                            {
-                                max-width: 400px;
-                                width: 100%;
-                                height: 100%;
-                                margin: 30px auto 25px;
-                            }
+            .my_movies
+            {
+                max-width: 600px;
+
+                .my_movies_container
+                {
+                    .movie
+                    {
+                        width: 285px;
+                        margin: 5px 20px 0 0;
+
+                        .movie_image
+                        {
+                            width: 285px;
+                            height: 190px;
+                        }
+                    }
+
+                    .even_movie
+                    {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px)
+{
+    .header
+    {
+        .mobile_menu
+        {
+            margin-left: 10px;
+        }
+    }
+
+    .article
+    {
+        .content
+        {
+            margin: 10px;
+
+            .my_movies
+            {
+                .my_movies_container
+                {
+                     .movie
+                    {
+                        max-width: 600px;
+                        width: 100%;
+                        margin-top: 50px;
+
+                        .movie_image
+                        {
+                            max-width: 400px;
+                            width: 100%;
+                            height: 100%;
+                            margin: 30px auto;
                         }
                     }
                 }
             }
         }
     }
+}
 
-    @media (max-width: 600px)
+@media screen and (max-width: 600px)
+{
+    .article
     {
-        .article
+        .modal
         {
-            .write_me_form
+            .close_modal
             {
-                margin: auto 10px;
+                margin: 20px 0 0 90%;
+            }
 
-                .cross_write_me_form
+            .modal_form
+            {
+                .modal_object
                 {
-                    .close_write_me_button
-                    {
-                        margin: 20px 0 0 90%;
-                    }
+                    margin-left: 10px;
+                    margin-right: 10px;
                 }
 
-                .write_me
-                {
-                    .form_name, .form_email, .form_country, .form_message, .form_gender
-                    {
-                        margin-left: 10px;
-                        margin-right: 10px;
-                    }
-                }
-
-                .write_me_form_title, .form_write_me_button
+                .modal_button
                 {
                     margin-left: 0;
                     text-align: center;
                 }
             }
 
-            .add_movie_form
+            .modal_title
             {
-                margin: auto 10px;
-
-                .cross_add_movie_form
-                {
-                    .close_add_movie_button
-                    {
-                        margin: 20px 0 0 90%;
-                    }
-                }
-
-                .add_movie
-                {
-                    .form_url, .form_movie_name, .form_movie_description
-                    {
-                        margin-left: 10px;
-                        margin-right: 10px;
-                    }
-
-                    .add_movie_form_title, .form_add_movie_button
-                    {
-                        margin-left: 0;
-                        text-align: center;
-                    }
-                }
+                margin-left: 0;
+                text-align: center;
             }
         }
     }

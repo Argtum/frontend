@@ -1,5 +1,6 @@
 //----------------- SHOW MORE -----------------\\
-function showMoreFilms() {
+function showMoreFilms(event)
+{
     event.preventDefault();
     let hiddenMovieContainer = document.getElementById("hidden_movie_container");
 
@@ -15,21 +16,28 @@ function showMoreFilms() {
 //----------------- check form -----------------\\
 let fields = document.getElementsByClassName("write_me_field");
 
-function checkForm() {
+function checkForm(event)
+{
     event.preventDefault();
-    for(let i = 0; i < fields.length; i++) {
-        if(fields[i].value === '') {
+    for(let i = 0; i < fields.length; i++)
+    {
+        if(fields[i].value === '')
+        {
             fields[i].classList.add("red_border");
         }
     }
 }
 
 //-------no red border-------\\
-function getNormal() { event.target.classList.remove("red_border"); }
+function getNormal(event)
+{
+    event.target.classList.remove("red_border");
+}
 
 //----------------- open modal -----------------\\
 
-function writeMe() {
+function writeMe(event)
+{
     event.preventDefault();
     let modal = document.getElementById("write_me_form");
     let modalOverlay = document.getElementById("modal_overlay");
@@ -38,7 +46,8 @@ function writeMe() {
 }
 
 //-------close modal-------\\
-function closeModal() {
+function closeModal(event)
+{
     event.preventDefault();
     let modal = document.getElementById("write_me_form");
     let modalOverlay = document.getElementById("modal_overlay");
@@ -46,11 +55,14 @@ function closeModal() {
     modalOverlay.classList.remove("view_modal");
 }
 
-window.onload = function() {
+window.onload = function()
+{
     document.getElementById("all_movies").addEventListener("click", showMoreFilms);
-    for(let i = 0; i < fields.length; i++) {
+    for(let i = 0; i < fields.length; i++)
+    {
         fields[i].addEventListener("click", getNormal);
     }
+
     document.getElementById("send_write_me").addEventListener("click", checkForm);
     document.getElementById("write_me_link").addEventListener("click", writeMe);
     document.getElementById("modal_overlay").addEventListener("click", closeModal);
