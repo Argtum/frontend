@@ -69,6 +69,24 @@
   .article .content .main {
     max-width: 960px;
     margin: 0 auto; }
+    .article .content .main .top_menu_mobile {
+      margin: 0 auto;
+      width: 100%;
+      display: none;
+      height: 200px;
+      z-index: 2000;
+      position: absolute;
+      background-color: #fff; }
+      .article .content .main .top_menu_mobile .mobile_menu_button {
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        font: 19px/50px 'Georgia', sans-serif;
+        color: #333333;
+        text-align: center;
+        margin: 0 auto; }
+        .article .content .main .top_menu_mobile .mobile_menu_button:hover {
+          background: #efeff0; }
     .article .content .main .column_one {
       float: left;
       max-width: 330px;
@@ -177,6 +195,10 @@
       cursor: pointer;
       font: 19px/50px 'Georgia', sans-serif;
       color: #f5f5f5; }
+    .article .content .my_movies .hide_button {
+      display: none;
+      height: 0;
+      margin: 0; }
 
 .article .modal {
   margin: auto;
@@ -258,12 +280,12 @@
         border: 2px solid #15a98b; }
     .article .modal .modal_object .radio_name {
       margin-right: 20px; }
+    .article .modal .modal_object .red_border {
+      border-color: red; }
   .article .modal .field_small_margin {
     margin-top: 20px; }
   .article .modal .field_large_margin {
     margin-top: 40px; }
-  .article .modal .red_border {
-    border-color: red; }
   .article .modal .modal_button {
     margin-top: 50px;
     margin-bottom: 30px; }
@@ -289,7 +311,7 @@
   cursor: pointer;
   display: none; }
 
-.article .overlay_visible {
+.article .visible {
   display: block; }
 
 .footer {
@@ -325,18 +347,7 @@
     .header .mobile_menu .invisible_hamburger {
       display: none; }
   .header .top_menu {
-    height: 0; }
-    .header .top_menu .top_menu_button {
-      float: none;
-      display: none;
-      background: none;
-      text-align: center; }
-      .header .top_menu .top_menu_button:hover {
-        color: #333333;
-        background: none,  #efeff0; }
-  .header .mobile_menu_background {
-    height: 200px;
-    max-width: 600px; }
+    display: none; }
   .article .content {
     background-image: none; }
     .article .content .main .column_one {

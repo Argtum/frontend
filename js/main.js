@@ -1,70 +1,95 @@
-//----------------- SHOW MORE -----------------\\
+//---------- getElements ----------\\
+function getById(id)
+{
+    return document.getElementById(id);
+}
+
+function getByClass(className)
+{
+    return document.getElementsByClassName(className);
+}
+
+//---------- registrar ---------\\
+function registerEvent(id, eventName, func)
+{
+    let element = getById(id);
+    element.addEventListener(eventName, func);
+}
+
+function registerSetOfEvents(className, eventName, func)
+{
+    let elements = getByClass(className);
+    for(let i = 0; i < elements.length; i++)
+    {
+        elements[i].addEventListener(eventName, func);
+    }
+}
+
+//---------- secondary functions ----------\\
+function addClass(targetElem, addedClass)
+{
+    let target = getById(targetElem);
+    target.classList.add(addedClass);
+}
+
+function removeClass(targetElem, addedClass)
+{
+    let target = getById(targetElem);
+    target.classList.remove(addedClass);
+}
+
+//---------- start functions ----------\\
+function pageLoaded()
+{
+    registerEvent("write_me_link", "click", openModal);
+    registerEvent("send_write_me", "click", checkForm);
+    registerSetOfEvents("checked_write_me_field", "click", removeRedBorder);
+    registerEvent("modal_overlay", "click", closeModal);
+    registerEvent("close_write_me_form", "click", closeModal);
+    registerEvent("all_movies", "click", showMoreFilms);
+}
+
+window.onload = pageLoaded;
+
+//----------------- my functions -----------------\\
 function showMoreFilms(event)
 {
     event.preventDefault();
-    let hiddenMovieContainer = document.getElementById("hidden_movie_container");
-
-    this.style.display = "none";
-    this.style.height = "0";
-    this.style.margin = "0";
-    hiddenMovieContainer.classList.add("display_movie_container");
+    addClass("all_movies", "hide_button");
+    addClass("hidden_movie_container", "display_movie_container");
     setTimeout(function() {
-        hiddenMovieContainer.classList.add("opacity_movie_container");
+        addClass("hidden_movie_container", "opacity_movie_container");
     }, 0);
 }
-
-//----------------- check form -----------------\\
-let fields = document.getElementsByClassName("write_me_field");
 
 function checkForm(event)
 {
     event.preventDefault();
+    let fields = getByClass("checked_write_me_field");
     for(let i = 0; i < fields.length; i++)
     {
         if(fields[i].value === '')
         {
-            fields[i].classList.add("red_border");
+            addClass(fields[i].id, "red_border");
         }
     }
 }
 
-//-------no red border-------\\
-function getNormal(event)
+function removeRedBorder()
 {
-    event.target.classList.remove("red_border");
+    removeClass(this.id, "red_border");
 }
 
-//----------------- open modal -----------------\\
-
-function writeMe(event)
+function openModal(event)
 {
     event.preventDefault();
-    let modal = document.getElementById("write_me_form");
-    let modalOverlay = document.getElementById("modal_overlay");
-    modal.classList.add("view_modal");
-    modalOverlay.classList.add("view_modal");
+    addClass("write_me_form", "visible");
+    addClass("modal_overlay", "visible");
 }
 
-//-------close modal-------\\
 function closeModal(event)
 {
     event.preventDefault();
-    let modal = document.getElementById("write_me_form");
-    let modalOverlay = document.getElementById("modal_overlay");
-    modal.classList.remove("view_modal");
-    modalOverlay.classList.remove("view_modal");
+    removeClass("write_me_form", "visible");
+    removeClass("modal_overlay", "visible");
 }
-
-window.onload = function()
-{
-    document.getElementById("all_movies").addEventListener("click", showMoreFilms);
-    for(let i = 0; i < fields.length; i++)
-    {
-        fields[i].addEventListener("click", getNormal);
-    }
-
-    document.getElementById("send_write_me").addEventListener("click", checkForm);
-    document.getElementById("write_me_link").addEventListener("click", writeMe);
-    document.getElementById("modal_overlay").addEventListener("click", closeModal);
-    document.getElementById("close_write_me_form").addEventListener("click", closeModal);
-};

@@ -34,6 +34,20 @@
         <article class="article">
             <div class="content">
                 <div class="main">
+                    <nav class="top_menu_mobile" id="top_menu_mobile">
+                        <div id="about_me_button_mobile" class="about_me_button mobile_menu_button">
+                            Обо мне
+                        </div>
+                        <div id="my_hobby_button_mobile" class="my_hobby_button mobile_menu_button">
+                            Мое хобби
+                        </div>
+                        <div id="favorite_films_button_mobile" class="favorite_films_button mobile_menu_button">
+                            Любимые фильмы
+                        </div>
+                        <div id="add_film_button_mobile" class="add_film_button mobile_menu_button">
+                            Добавить фильм
+                        </div>
+                    </nav>
                     <div class="column_one">
                         <img class="picture" src="images/my_photo.jpg" alt="My photo">
                         <div class="my_books">
@@ -239,7 +253,7 @@
                 </div>
             </div>
             <div id="write_me_form" class="modal">
-                <a id="close_write_me_form" class="close_modal"><img src="images/cross.png" alt="cross"></a>
+                <a id="close_write_me_form" class="close_modal close_modal_window"><img src="images/cross.png" alt="cross"></a>
                 <h4 class="modal_title">
                     НАПИШИ МНЕ
                 </h4>
@@ -249,14 +263,14 @@
                             Ваше имя
                         </label>
                         <br>
-                        <input id="username" class="simple_field" type="text">
+                        <input id="username" class="simple_field checked_write_me_field" type="text">
                     </div>
                     <div class="modal_object field_small_margin">
                         <label class="object_title need_to_fill" for="email">
                             Ваш email
                         </label>
                         <br>
-                        <input id="email" class="simple_field" type="text">
+                        <input id="email" class="simple_field checked_write_me_field" type="text">
                     </div>
                     <div class="modal_object field_small_margin">
                         <label class="object_title" for="country">
@@ -298,15 +312,15 @@
                         <label class="object_title need_to_fill" for="message">
                             Ваше сообщение
                         </label><br>
-                        <textarea id="message" class="textarea_field"></textarea>
+                        <textarea id="message" class="textarea_field checked_write_me_field"></textarea>
                     </div>
                     <div class="modal_button modal_object">
                         <input class="form_submit" id="send_write_me" type="submit" value="Отправить">
                     </div>
                 </form>
             </div>
-            <div id="add_movie_form" class="modal">
-                <a id="close_add_movie_form" class="close_modal"><img src="images/cross.png" alt="cross"></a>
+            <div id="add_movie_form" class="modal add_movie_modal_part">
+                <a id="close_add_movie_form" class="close_modal close_modal_window"><img src="images/cross.png" alt="cross"></a>
                 <h4 class="modal_title">
                     Добавить фильм
                 </h4>
@@ -316,28 +330,28 @@
                             URL артинки
                         </label>
                         <br>
-                        <input id="url" name="url" class="simple_field" type="text">
+                        <input id="url" name="url" class="simple_field checked_movie_field" type="text">
                     </div>
                     <div class="modal_object field_small_margin">
                         <label class="object_title need_to_fill" for="movie_name">
                             Название фильма
                         </label>
                         <br>
-                        <input id="movie_name" name="movie_name" class="simple_field" type="text">
+                        <input id="movie_name" name="movie_name" class="simple_field checked_movie_field" type="text">
                     </div>
                     <div class="modal_object field_large_margin">
                         <label class="object_title need_to_fill" for="movie_description">
                             Описание фильма
                         </label>
                         <br>
-                        <textarea id="movie_description" name="movie_description" class="textarea_field"></textarea>
+                        <textarea id="movie_description" name="movie_description" class="textarea_field checked_movie_field"></textarea>
                     </div>
                     <div class="modal_button modal_object">
                         <input class="form_submit" id="send_add_movie" type="submit" value="Добавить">
                     </div>
                 </form>
             </div>
-            <div class="modal_overlay" id="modal_overlay"></div>
+            <div class="modal_overlay close_modal_window add_movie_modal_part" id="modal_overlay"></div>
         </article>
         <footer class="footer">
             © 1986-2018 Все права защищены

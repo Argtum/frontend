@@ -1,66 +1,74 @@
-//---------- Open mobile menu ----------\\
-let topMenuButtons = ['#close_mobile_menu', '#about_me_button', '#my_hobby_button', '#favorite_films_button', '#add_film_button'];
+function willFaded(elementId, dlay, duration)
+{
+    $(elementId).delay(dlay).fadeOut(duration);
+}
+
+function willUnFaded(elementId, dlay, duration)
+{
+    $(elementId).delay(dlay).fadeIn(duration);
+}
+
+function groupWillFaded(elementClassName, dlay, duration)
+{
+    $(elementClassName).each(function()
+    {
+        willFaded($(this), dlay, duration);
+    });
+}
+
+function groupWillUnFaded(elementClassName, dlay, duration)
+{
+    $(elementClassName).each(function()
+    {
+        willUnFaded($(this), dlay, duration);
+    });
+}
 
 function openMobileMenu()
 {
-    $(this).toggleClass('invisible_hamburger');
-    $('#top_menu').toggleClass('mobile_menu_background');
-    for (let i = 0; i < topMenuButtons.length; i++)
-    {
-        $(topMenuButtons[i]).fadeIn(1000);
-    }
+    willFaded("#open_mobile_menu", 0, 0);
+    willUnFaded("#top_menu_mobile", 0, 1000);
+    willUnFaded("#close_mobile_menu", 0, 1000);
 }
 
-//---------- Close mobile menu ----------\\
 function closeMobileMenu()
 {
-    for (let i = 0; i < topMenuButtons.length; i++)
-    {
-        $(topMenuButtons[i]).fadeOut(1000);
-        setTimeout(function()
-        {
-            $(topMenuButtons[i]).removeAttr('style');
-        }, 1011);
-    }
-    setTimeout(function ()
-    {
-        $('#open_mobile_menu').toggleClass('invisible_hamburger');
-        $('#top_menu').toggleClass('mobile_menu_background');
-    }, 1000);
+    willFaded("#close_mobile_menu", 0, 1000);
+    willFaded("#top_menu_mobile", 0, 1000);
+    willUnFaded("#open_mobile_menu", 1000, 0);
 }
-
-//------------------------------ Add movie form ------------------------------\\
-let movieFields = $(".movie_form_field");
 
 function openAddMovieForm()
 {
-    $(['#add_movie_form', '#modal_overlay'].join()).addClass('overlay_visible');
+    groupWillUnFaded(".add_movie_modal_part", 0, 0);
 }
 
 function closeAddMovieForm()
 {
-    $(['#add_movie_form', '#modal_overlay'].join()).removeClass('overlay_visible');
+    groupWillFaded(".add_movie_modal_part", 0, 0);
 }
 
-function getNormalBorder()
+function removeRedBorder()
 {
-    $(this).removeClass('red_border');
+    $(this).removeClass("red_border");
 }
 
 //----------- Add movie processing ----------\\
-function MovieMenu(event)
+let movieFields = $(".checked_movie_field");
+
+function processingMovieMenu(event)
 {
     event.preventDefault();
-    let empty = true;
+    let empty = false;
     for (let i = 0; i < movieFields.length; i++)
     {
-        if($(movieFields[i]).val() === '')
+        if ($(movieFields[i]).val() === '')
         {
-            $(movieFields[i]).addClass('red_border');
-            empty = false;
+            $(movieFields[i]).addClass("red_border");
+            empty = true;
         }
     }
-    if (empty)
+    if (!empty)
     {
         let newMovie = (
             '<div class="movie">' +
@@ -69,33 +77,49 @@ function MovieMenu(event)
             '<p class="movie_brief revealator-slideup revealator-delay3">'+ $(movieFields[2]).val() +'</p>' +
             '</div>'
         );
-        $('#hidden_movie_container').append(newMovie);
+        $("#hidden_movie_container").append(newMovie);
         closeAddMovieForm();
     }
 }
 
-$(window).on('load', function ()
+function smoothScroll(className, targetId)
 {
-//---------- smoothScroll ----------\\
-    let smoothScrollElements = [['#about_me_button', '#name'], ['#my_hobby_button', '#hobby'], ['#favorite_films_button', '#my_movies']];
-
-    for (let i = 0; i < smoothScrollElements.length; i++)
+    $(className).each(function()
     {
-        let buttonId = smoothScrollElements[i][0];
-        let targetElement = smoothScrollElements[i][1];
-        $(buttonId).click(function()
+        $(this).click(function()
         {
-            $.smoothScroll({ scrollTarget: $(targetElement) });
+            closeMobileMenu();
+            $.smoothScroll(
+            {
+                scrollTarget: $(targetId)
+            });
         });
-    }
+    });
+}
 
-    $('#close_mobile_menu').click(closeMobileMenu);
-    $('#open_mobile_menu').click(openMobileMenu);
-    $('#add_film_button').click(openAddMovieForm);
-    $(['#modal_overlay', '#close_add_movie_form'].join()).click(closeAddMovieForm);
-    $('#send_add_movie').click(MovieMenu);
-    for (let i = 0; i < movieFields.length; i++)
+function registerClickOnSet(className, func)
+{
+    $(className).each(function()
     {
-        $(movieFields[i]).click(getNormalBorder);
-    }
+        $(this).click(func);
+    });
+}
+
+function registerClick(id, func)
+{
+    $(id).click(func);
+}
+
+$(window).on("load", function ()
+{
+    registerClick("#open_mobile_menu", openMobileMenu);
+    registerClick("#close_mobile_menu", closeMobileMenu);
+    registerClickOnSet(".add_film_button", openAddMovieForm);
+    registerClickOnSet(".add_film_button", closeMobileMenu);
+    registerClick("#send_add_movie", processingMovieMenu);
+    registerClickOnSet(".checked_movie_field", removeRedBorder);
+    registerClickOnSet(".close_modal_window", closeAddMovieForm);
+    smoothScroll(".about_me_button", "#name");
+    smoothScroll(".my_hobby_button", "#hobby");
+    smoothScroll(".favorite_films_button", "#my_movies");
 });
