@@ -312,7 +312,8 @@
   display: none; }
 
 .article .visible {
-  display: block; }
+  display: block;
+  opacity: 1; }
 
 .footer {
   height: 70px;

@@ -1,3 +1,4 @@
+//---------- secondary function ----------\\
 function willFaded(elementId, dlay, duration)
 {
     $(elementId).delay(dlay).fadeOut(duration);
@@ -24,6 +25,7 @@ function groupWillUnFaded(elementClassName, dlay, duration)
     });
 }
 
+//----------------- my functions -----------------\\
 function openMobileMenu()
 {
     willFaded("#open_mobile_menu", 0, 0);
@@ -53,11 +55,9 @@ function removeRedBorder()
     $(this).removeClass("red_border");
 }
 
-//----------- Add movie processing ----------\\
-let movieFields = $(".checked_movie_field");
-
-function processingMovieMenu(event)
+function processingAddMovieForm(event)
 {
+    let movieFields = $(".checked_movie_field");
     event.preventDefault();
     let empty = false;
     for (let i = 0; i < movieFields.length; i++)
@@ -97,6 +97,7 @@ function smoothScroll(className, targetId)
     });
 }
 
+//---------- registrar ---------\\
 function registerClickOnSet(className, func)
 {
     $(className).each(function()
@@ -110,13 +111,14 @@ function registerClick(id, func)
     $(id).click(func);
 }
 
+//---------- start ----------\\
 $(window).on("load", function ()
 {
     registerClick("#open_mobile_menu", openMobileMenu);
     registerClick("#close_mobile_menu", closeMobileMenu);
     registerClickOnSet(".add_film_button", openAddMovieForm);
     registerClickOnSet(".add_film_button", closeMobileMenu);
-    registerClick("#send_add_movie", processingMovieMenu);
+    registerClick("#send_add_movie", processingAddMovieForm);
     registerClickOnSet(".checked_movie_field", removeRedBorder);
     registerClickOnSet(".close_modal_window", closeAddMovieForm);
     smoothScroll(".about_me_button", "#name");

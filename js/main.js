@@ -38,7 +38,7 @@ function removeClass(targetElem, addedClass)
     target.classList.remove(addedClass);
 }
 
-//---------- start functions ----------\\
+//---------- start ----------\\
 function pageLoaded()
 {
     registerEvent("write_me_link", "click", openModal);
@@ -73,6 +73,14 @@ function checkForm(event)
             addClass(fields[i].id, "red_border");
         }
     }
+
+    /*fields.forEach(function(item) {
+            if(item.value === '')
+            {
+                addClass(item.id, "red_border");
+            }
+        }
+    );*/
 }
 
 function removeRedBorder()
