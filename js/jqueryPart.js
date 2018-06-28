@@ -1,70 +1,83 @@
+const animationTime = 1000;
+const withoutAnimation = 0;
+const delayTime = 1000;
+const withoutDelay = 0;
+
 //---------- secondary function ----------\\
-function willFaded(elementId, dlay, duration)
+function hideElement(elementId, dlay, duration)
 {
     $(elementId).delay(dlay).fadeOut(duration);
 }
 
-function willUnFaded(elementId, dlay, duration)
+function showElement(elementId, dlay, duration)
 {
     $(elementId).delay(dlay).fadeIn(duration);
 }
 
-function groupWillFaded(elementClassName, dlay, duration)
+function hideGroupOfElements(elementClassName, dlay, duration)
 {
     $(elementClassName).each(function()
     {
-        willFaded($(this), dlay, duration);
+        hideElement($(this), dlay, duration);
     });
 }
 
-function groupWillUnFaded(elementClassName, dlay, duration)
+function showeGroupOfElements(elementClassName, dlay, duration)
 {
     $(elementClassName).each(function()
     {
-        willUnFaded($(this), dlay, duration);
+        showElement($(this), dlay, duration);
     });
 }
 
 //----------------- my functions -----------------\\
 function openMobileMenu()
 {
-    willFaded("#open_mobile_menu", 0, 0);
-    willUnFaded("#top_menu_mobile", 0, 1000);
-    willUnFaded("#close_mobile_menu", 0, 1000);
+    showElement("#top_menu_mobile", withoutDelay, animationTime);
+    showElement("#close_mobile_menu", withoutDelay, animationTime);
+    hideElement("#open_mobile_menu", withoutDelay, withoutAnimation);
 }
 
 function closeMobileMenu()
 {
-    willFaded("#close_mobile_menu", 0, 1000);
-    willFaded("#top_menu_mobile", 0, 1000);
-    willUnFaded("#open_mobile_menu", 1000, 0);
+    hideElement("#close_mobile_menu", withoutDelay, animationTime);
+    hideElement("#top_menu_mobile", withoutDelay, animationTime);
+    showElement("#open_mobile_menu", delayTime, withoutAnimation);
 }
 
 function openAddMovieForm()
 {
-    groupWillUnFaded(".add_movie_modal_part", 0, 0);
+    showeGroupOfElements(".add_movie_modal_part", withoutDelay, withoutAnimation);
 }
 
 function closeAddMovieForm()
 {
-    groupWillFaded(".add_movie_modal_part", 0, 0);
+    hideGroupOfElements(".add_movie_modal_part", withoutDelay, withoutAnimation);
 }
 
-function removeRedBorder()
+function undoFieldError()
 {
     $(this).removeClass("red_border");
+}
+
+function FieldError(field)
+{
+    $(field).addClass("red_border");
 }
 
 function processingAddMovieForm(event)
 {
     let movieFields = $(".checked_movie_field");
     event.preventDefault();
+    /*movieFields.each(function () {
+
+    });*/
     let empty = false;
     for (let i = 0; i < movieFields.length; i++)
     {
         if ($(movieFields[i]).val() === '')
         {
-            $(movieFields[i]).addClass("red_border");
+            FieldError(movieFields[i]);
             empty = true;
         }
     }
@@ -119,7 +132,7 @@ $(window).on("load", function ()
     registerClickOnSet(".add_film_button", openAddMovieForm);
     registerClickOnSet(".add_film_button", closeMobileMenu);
     registerClick("#send_add_movie", processingAddMovieForm);
-    registerClickOnSet(".checked_movie_field", removeRedBorder);
+    registerClickOnSet(".checked_movie_field", undoFieldError);
     registerClickOnSet(".close_modal_window", closeAddMovieForm);
     smoothScroll(".about_me_button", "#name");
     smoothScroll(".my_hobby_button", "#hobby");

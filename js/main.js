@@ -4,7 +4,7 @@ function getById(id)
     return document.getElementById(id);
 }
 
-function getByClass(className)
+function getByElementClass(className)
 {
     return document.getElementsByClassName(className);
 }
@@ -18,7 +18,7 @@ function registerEvent(id, eventName, func)
 
 function registerSetOfEvents(className, eventName, func)
 {
-    let elements = getByClass(className);
+    let elements = getByElementClass(className);
     for(let i = 0; i < elements.length; i++)
     {
         elements[i].addEventListener(eventName, func);
@@ -38,19 +38,6 @@ function removeClass(targetElem, addedClass)
     target.classList.remove(addedClass);
 }
 
-//---------- start ----------\\
-function pageLoaded()
-{
-    registerEvent("write_me_link", "click", openModal);
-    registerEvent("send_write_me", "click", checkForm);
-    registerSetOfEvents("checked_write_me_field", "click", removeRedBorder);
-    registerEvent("modal_overlay", "click", closeModal);
-    registerEvent("close_write_me_form", "click", closeModal);
-    registerEvent("all_movies", "click", showMoreFilms);
-}
-
-window.onload = pageLoaded;
-
 //----------------- my functions -----------------\\
 function showMoreFilms(event)
 {
@@ -65,12 +52,12 @@ function showMoreFilms(event)
 function checkForm(event)
 {
     event.preventDefault();
-    let fields = getByClass("checked_write_me_field");
+    let fields = getByElementClass("checked_write_me_field");
     for(let i = 0; i < fields.length; i++)
     {
         if(fields[i].value === '')
         {
-            addClass(fields[i].id, "red_border");
+            fieldError(fields[i]);
         }
     }
 
@@ -83,9 +70,14 @@ function checkForm(event)
     );*/
 }
 
-function removeRedBorder()
+function undoFieldError()
 {
     removeClass(this.id, "red_border");
+}
+
+function fieldError(field)
+{
+    addClass(field.id, "red_border");
 }
 
 function openModal(event)
@@ -101,3 +93,16 @@ function closeModal(event)
     removeClass("write_me_form", "visible");
     removeClass("modal_overlay", "visible");
 }
+
+//---------- start ----------\\
+function pageLoaded()
+{
+    registerEvent("write_me_link", "click", openModal);
+    registerEvent("send_write_me", "click", checkForm);
+    registerSetOfEvents("checked_write_me_field", "click", undoFieldError);
+    registerEvent("modal_overlay", "click", closeModal);
+    registerEvent("close_write_me_form", "click", closeModal);
+    registerEvent("all_movies", "click", showMoreFilms);
+}
+
+window.addEventListener("load", pageLoaded);
