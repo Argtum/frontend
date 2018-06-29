@@ -66,6 +66,7 @@
   margin: 0 auto;
   background: url("../images/background.png") no-repeat 50% 0; }
   .article .content .main {
+    width: 960px;
     max-width: 100%;
     margin: 0 auto; }
     .article .content .main .top_menu_mobile {
@@ -348,22 +349,24 @@
     display: none; }
   .article .content {
     background-image: none; }
-    .article .content .main .column_one {
-      margin: 20px auto 0;
-      float: none;
-      max-width: 600px; }
-      .article .content .main .column_one .picture {
-        max-width: 330px;
-        height: auto;
-        margin: 0 auto; }
-    .article .content .main .column_two {
-      margin: 30px auto 0;
-      float: none;
-      max-width: 600px; }
-      .article .content .main .column_two .quote {
-        color: #333; }
-        .article .content .main .column_two .quote .author {
+    .article .content .main {
+      width: 100%; }
+      .article .content .main .column_one {
+        margin: 20px auto 0;
+        float: none;
+        max-width: 600px; }
+        .article .content .main .column_one .picture {
+          max-width: 330px;
+          height: auto;
+          margin: 0 auto; }
+      .article .content .main .column_two {
+        margin: 30px auto 0;
+        float: none;
+        max-width: 600px; }
+        .article .content .main .column_two .quote {
           color: #333; }
+          .article .content .main .column_two .quote .author {
+            color: #333; }
     .article .content .my_movies {
       max-width: 600px; }
       .article .content .my_movies .my_movies_container .movie {

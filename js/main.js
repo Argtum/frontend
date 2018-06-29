@@ -10,10 +10,18 @@ function getByElementClass(className)
 }
 
 //---------- registrar ---------\\
-function registerEvent(id, eventName, func)
+function registerEvent(element, eventName, func)
 {
-    let element = getById(id);
-    element.addEventListener(eventName, func);
+    let item;
+    if (element.length > 0)
+    {
+        item = getById(element);
+    }
+    else
+    {
+        item = element;
+    }
+    item.addEventListener(eventName, func);
 }
 
 function registerSetOfEvents(className, eventName, func)
@@ -44,7 +52,8 @@ function showMoreFilms(event)
     event.preventDefault();
     addClass("all_movies", "hide_button");
     addClass("hidden_movie_container", "display_movie_container");
-    setTimeout(function() {
+    setTimeout(function()
+    {
         addClass("hidden_movie_container", "opacity_movie_container");
     }, 0);
 }
@@ -53,24 +62,17 @@ function checkForm(event)
 {
     event.preventDefault();
     let fields = getByElementClass("checked_write_me_field");
-    for(let i = 0; i < fields.length; i++)
-    {
-        if(fields[i].value === '')
-        {
-            fieldError(fields[i]);
-        }
-    }
 
-    /*fields.forEach(function(item) {
-            if(item.value === '')
-            {
-                addClass(item.id, "red_border");
-            }
+    [].forEach.call(fields, function(item)
+    {
+        if(item.value === '')
+        {
+            fieldError(item);
         }
-    );*/
+    });
 }
 
-function undoFieldError()
+function clearFieldError()
 {
     removeClass(this.id, "red_border");
 }
@@ -99,10 +101,10 @@ function pageLoaded()
 {
     registerEvent("write_me_link", "click", openModal);
     registerEvent("send_write_me", "click", checkForm);
-    registerSetOfEvents("checked_write_me_field", "click", undoFieldError);
+    registerSetOfEvents("checked_write_me_field", "click", clearFieldError);
     registerEvent("modal_overlay", "click", closeModal);
     registerEvent("close_write_me_form", "click", closeModal);
     registerEvent("all_movies", "click", showMoreFilms);
 }
 
-window.addEventListener("load", pageLoaded);
+registerEvent(window, "load", pageLoaded);

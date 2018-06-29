@@ -22,12 +22,26 @@ function hideGroupOfElements(elementClassName, dlay, duration)
     });
 }
 
-function showeGroupOfElements(elementClassName, dlay, duration)
+function showGroupOfElements(elementClassName, dlay, duration)
 {
     $(elementClassName).each(function()
     {
         showElement($(this), dlay, duration);
     });
+}
+
+//---------- registrar ---------\\
+function registerClickOnSet(className, func)
+{
+    $(className).each(function()
+    {
+        $(this).click(func);
+    });
+}
+
+function registerClick(id, func)
+{
+    $(id).click(func);
 }
 
 //----------------- my functions -----------------\\
@@ -47,7 +61,7 @@ function closeMobileMenu()
 
 function openAddMovieForm()
 {
-    showeGroupOfElements(".add_movie_modal_part", withoutDelay, withoutAnimation);
+    showGroupOfElements(".add_movie_modal_part", withoutDelay, withoutAnimation);
 }
 
 function closeAddMovieForm()
@@ -55,73 +69,62 @@ function closeAddMovieForm()
     hideGroupOfElements(".add_movie_modal_part", withoutDelay, withoutAnimation);
 }
 
-function undoFieldError()
+function clearFieldError()
 {
     $(this).removeClass("red_border");
 }
 
-function FieldError(field)
+function fieldError(field)
 {
     $(field).addClass("red_border");
 }
 
-function processingAddMovieForm(event)
+function addNewMovie(movieFields)
 {
-    let movieFields = $(".checked_movie_field");
-    event.preventDefault();
-    /*movieFields.each(function () {
+    let newMovie = (
+        '<div class="movie">' +
+        '<img class="movie_image" src="'+ $(movieFields[0]).val() +'" alt="movie picture">' +
+        '<h4 class="movie_name revealator-slideup revealator-delay3">'+ $(movieFields[1]).val() +'</h4>' +
+        '<p class="movie_brief revealator-slideup revealator-delay3">'+ $(movieFields[2]).val() +'</p>' +
+        '</div>'
+    );
+    $("#hidden_movie_container").append(newMovie);
+}
 
-    });*/
-    let empty = false;
-    for (let i = 0; i < movieFields.length; i++)
+function processAddMovieForm(event)
+{
+    event.preventDefault();
+    let movieFields = $(".checked_movie_field");
+    let noFieldEmpty = true;
+
+    $(movieFields).each(function()
     {
-        if ($(movieFields[i]).val() === '')
+        if ($(this).val() === '')
         {
-            FieldError(movieFields[i]);
-            empty = true;
+            fieldError(this);
+            noFieldEmpty = false;
         }
-    }
-    if (!empty)
+    });
+
+    if (noFieldEmpty)
     {
-        let newMovie = (
-            '<div class="movie">' +
-            '<img class="movie_image" src="'+ $(movieFields[0]).val() +'" alt="movie picture">' +
-            '<h4 class="movie_name revealator-slideup revealator-delay3">'+ $(movieFields[1]).val() +'</h4>' +
-            '<p class="movie_brief revealator-slideup revealator-delay3">'+ $(movieFields[2]).val() +'</p>' +
-            '</div>'
-        );
-        $("#hidden_movie_container").append(newMovie);
+        addNewMovie(movieFields);
         closeAddMovieForm();
     }
 }
 
 function smoothScroll(className, targetId)
 {
-    $(className).each(function()
+    registerClickOnSet(className, scrollToTarget);
+
+    function scrollToTarget()
     {
-        $(this).click(function()
+        closeMobileMenu();
+        $.smoothScroll(
         {
-            closeMobileMenu();
-            $.smoothScroll(
-            {
-                scrollTarget: $(targetId)
-            });
+            scrollTarget: $(targetId)
         });
-    });
-}
-
-//---------- registrar ---------\\
-function registerClickOnSet(className, func)
-{
-    $(className).each(function()
-    {
-        $(this).click(func);
-    });
-}
-
-function registerClick(id, func)
-{
-    $(id).click(func);
+    }
 }
 
 //---------- start ----------\\
@@ -129,10 +132,10 @@ $(window).on("load", function ()
 {
     registerClick("#open_mobile_menu", openMobileMenu);
     registerClick("#close_mobile_menu", closeMobileMenu);
-    registerClickOnSet(".add_film_button", openAddMovieForm);
     registerClickOnSet(".add_film_button", closeMobileMenu);
-    registerClick("#send_add_movie", processingAddMovieForm);
-    registerClickOnSet(".checked_movie_field", undoFieldError);
+    registerClickOnSet(".add_film_button", openAddMovieForm);
+    registerClick("#send_add_movie", processAddMovieForm);
+    registerClickOnSet(".checked_movie_field", clearFieldError);
     registerClickOnSet(".close_modal_window", closeAddMovieForm);
     smoothScroll(".about_me_button", "#name");
     smoothScroll(".my_hobby_button", "#hobby");
